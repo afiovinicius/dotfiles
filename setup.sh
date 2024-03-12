@@ -9,7 +9,7 @@ sysctl -a | grep -i swappiness
 
 # Configuração das fonts e emojis
 sudo pacman -S --noconfirm noto-fonts-emoji adobe-source-code-pro-fonts adobe-source-serif-fonts adobe-source-sans-fonts ttf-inconsolata
-sudo mkdir ~/.config/fontconfig
+sudo mkdir "$HOME"/.config/fontconfig
 echo -e '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE fontconfig SYSTEM "fonts.dtd">\n<fontconfig>\n
 <!-- ## serif ## -->\n  <alias>\n               <family>serif</family>\n                <prefer>\n                      <family>Noto Serif</family>\n                     <family>emoji</family>\n                        <family>Liberation Serif</family>\n
         <family>Nimbus Roman</family>\n                 <family>DejaVu Serif</family>\n         </prefer>\n     </alias>\n      <!-- ## sans-serif ## -->\n       <alias>\n               <family>sans-serif</family>\n           <prefer>\n                      <family>Noto Sans</family>\n                      <family>emoji</family>\n                        <family>Liberation Sans</family>\n                        <family>Nimbus Sans</family>\n                  <family>DejaVu Sans</family>\n          </prefer>\n     </alias>\n</fontconfig>' > /home/$USER/.config/fontconfig/fonts.conf
@@ -17,7 +17,7 @@ echo -e '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE fontconfig SYSTEM "fo
 
 echo -n "Instalações globais"
 # Pacotes Base
-sudo pacman -S --noconfirm base base-devel linux-lts linux-firmware sof-firmware networkmanager network-manager-applet grub grub-btrfs btrfs-progs efibootmgr net-tools xf86-video-ati ffmpegthumbnailer ffmpegthumbs alsa-utils alsa-firmware a52dec faac flac jasper lame libdca libmpeg2 libtheora libvorbis libxv wavpack x264 x265 xvidcore xorg xorg-server xorg-apps xorg-xinit xorg-drivers xdg-desktop-portal xdg-desktop-portal-gtk texinfo
+sudo pacman -S --noconfirm base base-devel linux-firmware sof-firmware networkmanager network-manager-applet grub grub-btrfs btrfs-progs efibootmgr net-tools xf86-video-ati ffmpegthumbnailer ffmpegthumbs alsa-utils alsa-firmware a52dec faac flac jasper lame libdca libmpeg2 libtheora libvorbis libxv wavpack x264 x265 xvidcore xorg xorg-server xorg-apps xorg-xinit xorg-drivers xdg-desktop-portal xdg-desktop-portal-gtk texinfo
 # Sistema
 sudo pacman -S --noconfirm dmenu clipmenu dunst polybar feh peek picom nitrogen sxhkd wmname rofi reflector flatpak neofetch htop ffmpeg gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav gstreamer ufw gufw libinput thunar
 echo -n "Finalizado"
@@ -62,14 +62,14 @@ echo -n "Instalando utiliarios do sistema"
 sudo pacman -S --noconfirm vim kitty alacritty zsh starship conky flameshot copyq
 # Download oh my zsh +  plugins
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cd ~/.oh-my-zsh/plugins
+cd "$HOME"/.oh-my-zsh/plugins
 git clone https://github.com/zsh-users/zsh-completions.git
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
-cd ~/
+cd "$HOME"
 echo -n "Finalizado"
 # Apps do usuário do AUR
-mkdir ~/aur && cd ~/aur
+mkdir "$HOME"/aur && cd ~/aur
 git clone https://aur.archlinux.org/yay.git
 cd yay && makepkg -sic --skippgpcheck
 cd ..
@@ -78,7 +78,7 @@ cd ncurses5-compat-libs && makepkg -sic --skippgpcheck
 cd ..
 git clone https://aur.archlinux.org/local-by-flywheel-bin.git
 cd local-by-flywheel-bin && makepkg -sic --skippgpcheck
-cd ~/
+cd "$HOME"
 
 yay -Syu onlyoffice-bin spotify visual-studio-code-bin mockoon-bin obsidian-bin postman-bin
 # Configurações BSPWM
