@@ -1,4 +1,5 @@
-# Path to your oh-my-zsh installation.
+export TERM='alacritty'
+export TERMINAL='alacritty'
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes

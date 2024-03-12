@@ -81,6 +81,23 @@ cd local-by-flywheel-bin && makepkg -sic --skippgpcheck
 cd ~/
 
 yay -Syu onlyoffice-bin spotify visual-studio-code-bin mockoon-bin obsidian-bin postman-bin
+# Configurações BSPWM
+echo -n "Git config e clonando repo"
+git config --global user.name "afiovinicius" && git config --global user.email "afiovinicius@gmail.com"
+repo_url="https://github.com/afiovinicius/stp-bspwm"
+repo_dir="$HOME/.stp-bspwm"
+
+git clone --depth=1 "$repo_url" "$repo_dir"
+echo -n "Clonagem foi um sucesso"
+# Configurandoa arquivos
+echo -n "Modelando os arquivos"
+cd "$HOME"
+printf "copiando arquivo de configuração do zsh"
+cp -p "$HOME"/.stp-bspwm/.zshrc "$HOME"
+printf "arquivo de configuração do zsh copiado"
+printf "copiando pasta de configurações do bspwm"
+cp -p "$HOME"/.stp-bspwm/config/bspwm "$HOME"/.config/
+printf "pasta de configurações do bspwm copiada"
 # Finalizado
 sudo pacman-key --refresh-keys 
 sudo pacman -Syu && sudo pacman -Rs $(pacman -Qqdt)
