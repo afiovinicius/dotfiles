@@ -25,7 +25,7 @@ echo -e '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE fontconfig SYSTEM "fo
 # Sistema
 ##
 printf "Instalando ferramentas globais"
-sudo pacman -S --noconfirm dmenu clipmenu dunst polybar feh imv gvfs peek picom nitrogen sxhkd ranger wmname rofi reflector neofetch htop ffmpeg gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav ufw gufw libinput galculator
+sudo pacman -S --noconfirm dmenu clipmenu dunst polybar feh imv gvfs peek picom nitrogen sxhkd ranger wmname rofi reflector neofetch htop bpytop ffmpeg gst-plugins-ugly gst-plugins-good gst-plugins-base gst-plugins-bad gst-libav ufw gufw libinput galculator
 
 ##
 # Gerenciador de Arquivos
@@ -135,6 +135,8 @@ printf "pasta de configurações do bspwm copiada"
 
 # Finalizado
 sudo pacman-key --refresh-keys 
+sudo pacman -Sc
 sudo pacman -Syu && sudo pacman -Rs $(pacman -Qqdt)
+sync; echo 3 > /proc/sys/vm/drop_caches
 printf "Setup completo"
 reboot
