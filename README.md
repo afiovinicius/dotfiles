@@ -129,14 +129,12 @@
   <summary><strong>💻 Instalação do ambiente desktop</strong></summary>
   
   <blockquote>
-    Ao iniciar o sistema novamente siga os passoas abaixo.
+    Ao reiniciar o sistema, verifique se está conectado à internet e siga os passos abaixo.
   </blockquote>
 
   1. Baixe o script de inicialização:
-
-    ``` bash
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/afiovinicius/dotfiles/main/init-setup)"
-    ```
+     
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/afiovinicius/dotfiles/main/init-setup)"
 
 </details>
 
