@@ -126,12 +126,26 @@
 
 ***
 <details>
+  <summary><strong>💻 Instalação do ambiente desktop</strong></summary>
+  
+  <blockquote>
+    Ao iniciar o sistema novamente siga os passoas abaixo.
+  </blockquote>
+
+  1. Baixe o script de inicialização:
+
+    ``` bash
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/afiovinicius/dotfiles/main/init-setup)"
+    ```
+
+</details>
+
+***
+<details>
   <summary><strong>🗂️ Estrutura</strong></summary>
   
   ```
-  |—— .gitignore
   |—— files
-  |    |—— .zshrc
   |    |—— assets
   |        |—— icon-menu.png
   |        |—— set-wallpaper.sh
@@ -151,11 +165,34 @@
   |            |—— bg-13.jpg
   |            |—— bg-14.jpg
   |            |—— bg-15.jpg
+  |    |—— config
+  |        |—— zsh
+  |            |—— .zcompdump
+  |            |—— .zcompdump.aesthetic.27552
+  |            |—— .zshrc
+  |            |—— aliases.zsh
+  |            |—— env.zsh
+  |            |—— keybinds.zsh
+  |            |—— options.zsh
+  |            |—— plugins.zsh
+  |            |—— prompt.zsh
+  |            |—— theme.zsh
+  |            |—— utility.zsh
   |    |—— kde
   |        |—— install.sh
-  |    |—— xfce
-  |        |—— install.sh
+  |    |—— .zshenv
+  |—— scripts
+  |    |—— configs-desktop.sh
+  |    |—— configs-system.sh
+  |    |—— ecosystem.sh
+  |    |—— utils.sh
+  |—— .gitignore
+  |—— init-setup
   |—— setup.sh
-  |—— utils
   ```
 </details>
+***
+
+# 🏅 Setup
+
+![setup](./files/assets/setup.jpg)
