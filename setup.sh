@@ -17,6 +17,11 @@ pf "Bem-vindo ao script de instalação! $BANNER"
 ## end block ##
 
 ## init block ##
+#~~|¨Default Packages¨|~~#
+
+## end block ##
+
+## init block ##
 #~~|¨Install DE¨|~~#
 while true; do
 read -rep "Qual ambiente desktop você quer instalar? (KDE ou XFCE)" DE
