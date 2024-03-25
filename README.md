@@ -1,179 +1,161 @@
-Script de instalação customizada para Arch Linux
-===
-### Estrutura
-```
-|—— .gitignore
-|—— files
-|    |—— .zshrc
-|    |—— assets
-|        |—— icon-menu.png
-|        |—— set-wallpaper.sh
-|        |—— wallpapers
-|            |—— bg-01.jpg
-|            |—— bg-02.jpg
-|            |—— bg-03.jpg
-|            |—— bg-04.jpg
-|            |—— bg-05.jpg
-|            |—— bg-06.jpg
-|            |—— bg-07.jpg
-|            |—— bg-08.jpg
-|            |—— bg-09.jpg
-|            |—— bg-10.jpg
-|            |—— bg-11.jpg
-|            |—— bg-12.jpg
-|            |—— bg-13.jpg
-|            |—— bg-14.jpg
-|            |—— bg-15.jpg
-|    |—— kde
-|        |—— install.sh
-|    |—— xfce
-|        |—— install.sh
-|—— setup.sh
-|—— utils
-```
-## Guia de Instalação
-### Configuração do Teclado
+# Script de instalação para Arch Linux
 
-1. Lista os layouts disponíveis para vocês escolher qual se adequa ao seu teclado:
-  ```bash
-  localectl list-keymaps
-  ```
-2. Carregue a configuração para o teclado (exemplo para ABNT2):
-  ```bash
-  loadkeys br-abnt2
-  ```
-### Configuração de Região e Idioma (Opcional)
+<small>
+  Este é um guia de instalação simples e rápida do Arch Linux, acompanhado de um script para instalar uma interface gráfica e um conjunto abrangente de ferramentas para o seu dia a dia. Com esta abordagem, você pode realizar uma instalação rápida sem   a necessidade de gastar muito tempo baixando ou configurando componentes iniciais.</br></br>
+  É importante destacar que este script não personaliza a interface, mas oferece um pacote de wallpapers para adicionar um toque de personalização. Sinta-se à vontade para explorar e se divertir com eles! No entanto, para uma experiência mais completa e alinhada às suas preferências, recomendo pesquisar e estudar mais a fundo sobre a interface gráfica e o ecossistema que deseja montar dentro do seu sistema.</br></br>
+  Ao seguir este guia, você estará no caminho para uma instalação eficiente do Arch Linux, com acesso rápido a uma variedade de ferramentas e recursos para facilitar o seu dia a dia. Vamos começar!
+</small>
 
-1. Abra o arquivo de configuração de localidades para edição:
-```bash
-nano /etc/locale.gen
-```
-    > Remova o “#” na frente da linha do idioma da sua escolha por exemplo: #pt_BR.UTF-8 UTF-8 > pt_BR.UTF-8 UTF-8 . Após isso use os atalhos CTRL+O e aperte ENTER depois CTRL+X e aperte ENTER.
-    > 
-2. Gera as localidade definida no arquivo /etc/locale.gen:
+***
+<details>
+  <summary><strong>🚀 Guia de Instalação Rápida do Arch Linux</strong></summary>
+  
+  ### Configuração do Teclado
+  1. Lista os layouts disponíveis para vocês escolher qual se adequa ao seu teclado:
+     
+    localectl list-keymaps
     
-    ```bash
+  2. Carregue a configuração para o teclado (exemplo para ABNT2):
+     
+    loadkeys br-abnt2
+    
+  ### Configuração de Região e Idioma (Opcional)
+  1. Abra o arquivo de configuração de localidades para edição:
+ 
+    nano /etc/locale.gen
+
+  <blockquote>
+    Remova o “#” na frente da linha do idioma da sua escolha por exemplo: #pt_BR.UTF-8 UTF-8 > pt_BR.UTF-8 UTF-8 . Após isso use os atalhos CTRL+O e aperte ENTER depois CTRL+X e aperte ENTER.
+  </blockquote>
+    
+  2. Gera as localidade definida no arquivo /etc/locale.gen:
+
     locale-gen
-    ```
-    
-3. Define o idioma padrão do sistema (exemplo para pt-br):
-    
-    ```bash
+
+  3. Define o idioma padrão do sistema (exemplo para pt-br):
+
     export LANG=pt_BR.UTF-8
-    ```
-    
 
-### **Atualizar o relógio do sistema**
+  ### Atualizar o relógio do sistema
+  
+  1. Ativa a sincronização automática de hora e data pela rede utilizando NTP (Network Time Protocol).
 
-1. Ativa a sincronização automática de hora e data pela rede utilizando NTP (Network Time Protocol).
-    
-    ```bash
     timedatectl set-ntp true
-    ```
-    
-2. Verificando mudança na configuração de hora e data:
-    
-    ```bash
+      
+  2. Verificando mudança na configuração de hora e data:
+
     timedatectl status
-    ```
-    
 
-### Modo de inicialização
+  ### Modo de inicialização
+  
+  1. Verifica se o sistema utiliza UEFI (mais moderno), o que é importante para alguns ajustes posteriores.
 
-1. Verifica se o sistema utiliza UEFI (mais moderno), o que é importante para alguns ajustes posteriores.
-    
-    ```bash
     ls /sys/firmware/efi/efivars
-    ```
-    
-2. Verifique o número de bits do UEFI:
-    
-    ```bash
+
+  2. Verifique o número de bits do UEFI:
+
     cat /sys/firmware/efi/fw_platform_size
-    ```
-    
 
-### **Configuração de Rede sem Fio**
+  ### Configuração de Rede sem Fio
 
-> Para instalar o Arch Linux precisa ter conexão via Wi-Fi ou Ethernet. Siga as instruções abaixo para caso queira usar internet sem fio.
-> 
-1. Liste as interfaces de rede disponíveis no sistema:
-    
-    ```bash
+  <blockquote>
+    Para instalar o Arch Linux precisa ter conexão via Wi-Fi ou Ethernet. Siga as instruções abaixo para caso queira usar internet sem fio.
+  </blockquote>
+  
+  1. Liste as interfaces de rede disponíveis no sistema:
+
     ip link
-    ```
-    
-2. Ativa a interface de rede especificada (por exemplo, `ip link set wlan0 up` para ativar a rede sem fio):
-    
-    ```bash
+
+  2. Ativa a interface de rede especificada (por exemplo, `ip link set wlan0 up` para ativar a rede sem fio):
+
     sudo rfkill unblock wifi && ip link set {interface} up
-    ```
-    
-    > Aqui estamos desbloqueando a placa de rede e ativando ela… Não esqueça de trocar “{interface}” pela sua placa de rede.
-    > 
-3. Inicie a ferramenta de configuração de rede sem fio:
-    
-    ```bash
+
+  <blockquote>
+    Aqui estamos desbloqueando a placa de rede e ativando ela… Não esqueça de trocar “{interface}” pela sua placa de rede.
+  </blockquote>
+  
+  3. Inicie a ferramenta de configuração de rede sem fio:
+
     iwctl
-    ```
-    
-4. Liste os dispositivos de rede sem fio disponíveis:
-    
-    ```bash
+
+  4. Liste os dispositivos de rede sem fio disponíveis:
+
     device list
-    ```
-    
-5. Faz uma busca por redes sem fio disponíveis na interface escolhida (por exemplo, `station wlan0 scan`  para busca na rede sem fio):
-    
-    ```bash
+
+  5. Faz uma busca por redes sem fio disponíveis na interface escolhida (por exemplo, `station wlan0 scan`  para busca na rede sem fio):
+
     station {interface} scan
-    ```
-    
-6. Mostra as redes da busca anterior:
-    
-    ```bash
+
+  6. Mostra as redes da busca anterior:
+
     station {interface} get-networks
-    ```
-    
-7. Conecta à rede sem fio especificada pelo SSID:
-    
-    ```bash
+
+  7. Conecta à rede sem fio especificada pelo SSID:
+
     station {interface} connect SSID
-    ```
-    
-    > Vai abrir um campo no console para preencher com a senha da rede.
-    > 
-8. Mostra detalhes da conexão atual na interface:
-    
-    ```bash
+
+  <blockquote>
+    Vai abrir um campo no console para preencher com a senha da rede.
+  </blockquote>
+  
+  8. Mostra detalhes da conexão atual na interface:
+
     station {interface} show
-    ```
-    
-9. Saia do iwctl:
-    
-    ```bash
+
+  9. Saia do iwctl:
+
     exit
-    ```
-    
-    Em seguida teste a rede:
-    
-    ```bash
-    
-    ping -c 5 vicit.studio
-    ```
-    
 
-### Instalação
+  <p>Em seguida teste a rede:</p>
+  
+    ping -c 5 archlinux.org
 
-1. O arch linux tem um script de instalação intuitivo ([https://archinstall.archlinux.page/](https://archinstall.archlinux.page/)):
-    
-    ```bash
+  ### Instalação
+  
+  1. O arch linux tem um script de instalação intuitivo ([https://archinstall.archlinux.page/](https://archinstall.archlinux.page/)):
+
     archinstall
-    ```
     
-    ![arch](https://www.edivaldobrito.com.br/wp-content/uploads/2023/03/archinstall-2-5-4-lancado-com-novos-recursos-e-varias-melhorias.webp)
+  <blockquote>
+    No perfil escolha o tipo MINIMAL.
+  </blockquote>
     
-    > No perfil escolha o tipo **MINIMAL.**
-    > 
+  ![arch](https://www.edivaldobrito.com.br/wp-content/uploads/2023/03/archinstall-2-5-4-lancado-com-novos-recursos-e-varias-melhorias.webp)
+  
+</details>
 
-###
+***
+<details>
+  <summary><strong>🗂️ Estrutura</strong></summary>
+  
+  ```
+  |—— .gitignore
+  |—— files
+  |    |—— .zshrc
+  |    |—— assets
+  |        |—— icon-menu.png
+  |        |—— set-wallpaper.sh
+  |        |—— wallpapers
+  |            |—— bg-01.jpg
+  |            |—— bg-02.jpg
+  |            |—— bg-03.jpg
+  |            |—— bg-04.jpg
+  |            |—— bg-05.jpg
+  |            |—— bg-06.jpg
+  |            |—— bg-07.jpg
+  |            |—— bg-08.jpg
+  |            |—— bg-09.jpg
+  |            |—— bg-10.jpg
+  |            |—— bg-11.jpg
+  |            |—— bg-12.jpg
+  |            |—— bg-13.jpg
+  |            |—— bg-14.jpg
+  |            |—— bg-15.jpg
+  |    |—— kde
+  |        |—— install.sh
+  |    |—— xfce
+  |        |—— install.sh
+  |—— setup.sh
+  |—— utils
+  ```
+</details>
