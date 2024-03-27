@@ -207,6 +207,7 @@ SETTIGNS=(
   "htop" 
   "bpytop" 
   "seahorse"
+  "bleachbit"
 )
 
 PKGS_AUR=(
