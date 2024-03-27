@@ -20,6 +20,16 @@ fi
 ## end block ##
 
 ## init block ##
+#~~|¨Docker¨|~~#
+pf "Ajustando neofetch." "warn"
+if [ ! -d "$DIR_USER/.config/neofetch" ]; then
+  run_cmd_valid "cp -r "../files/config/neofetch" "$DIR_USER/.config/neofetch"" "Configurações do Neofetch"
+else
+  pf "O diretório ~/.config/neofetch já existe. Seguindo com as configurações!"
+fi
+## end block ##
+
+## init block ##
 #~~|¨Terminal¨|~~#
 pf "Iniciando configurações do Alacritty." "warn"
 if [ ! -d "$DIR_USER/.config/alacritty" ]; then

@@ -163,7 +163,7 @@ GRAPHICS=(
   "gimp" 
   "inkscape" 
   "krita"
-  "ristretto" 
+  "gwenview" 
 )
 
 IOT=(
@@ -178,7 +178,7 @@ MEDIA=(
   "obs-studio" 
   "yt-dlp" 
   "audacious"
-  "parole" 
+  "vlc" 
   "kamoso" 
   "kdenlive"
 )
@@ -202,7 +202,6 @@ SETTIGNS=(
   "kwrite"
   "ufw" 
   "gufw"
-  "reflector" 
   "pcmanfm" 
   "neofetch" 
   "htop" 
