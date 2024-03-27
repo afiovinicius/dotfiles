@@ -6,7 +6,7 @@ export ZSH="$HOME/.config/zsh/.oh-my-zsh"
 ##
 # Themes config with Oh My ZSH
 ##
-ZSH_THEME="jispwoso"
+ZSH_THEME="spaceship"
 # For use = jispwoso ; kafeitu ; juanghurtado ; spaceship
 
 ##

@@ -48,6 +48,10 @@ if [ -d "$DIR_USER/.oh-my-zsh" ]; then
 else
     pf "O diretório ~/.oh-my-zsh/plugins não foi encontrado. Terminando o script." "error"
 fi
+pf "Instalando spaceship" "warn"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH/themes/spaceship.zsh-theme"
+pf "Instalação do spaceship concluída!" "warn"
 ## end block ##
 
 ## init block ##
