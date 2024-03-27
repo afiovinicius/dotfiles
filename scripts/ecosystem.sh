@@ -2,7 +2,7 @@
 
 ## init block ##
 #~~|¨Head Script¨|~~#
-source "./utils.sh"
+source "$HOME/dotfiles/scripts/utils.sh"
 ## end block ##
 
 ## init block ##
@@ -68,19 +68,18 @@ plist "${PKGS_AUR[@]}"
 
 read -n1 -rep "Deseja continuar com a instação? (s/n)" AURPKGS
 if [[ $AURPKGS == [Ss] ]]; then
-  pf "Criando diretório do aur..." "warn"
-  mkdir "$DIR_USER/aur" && cd "$DIR_USER/aur"
-  pf "Diretório criado! Usuário no diretório $PWD" "success"
-  pf "Clonando repo do yay e iniciando instalação..." "warn"
-  git clone https://aur.archlinux.org/yay.git
-  cd yay && makepkg -sic --skippgpcheck
-  pf "Instalação concluída!" "success"
-  cd "$DIR_NAV"
-  break
-elif [[ $AURPKGS == [Nn] ]]; then
-  break
-else
-  pf "Opção inválida. Por favor digite novamente." "error"
+  if ! command -v yay &>/dev/null; then
+    pf "Criando diretório do aur..." "warn"
+    mkdir "$DIR_USER/aur" && cd "$DIR_USER/aur"
+    pf "Diretório criado! Usuário no diretório $PWD" "success"
+    pf "Clonando repo do yay e iniciando instalação..." "warn"
+    git clone https://aur.archlinux.org/yay.git
+    cd yay && makepkg -sic --skippgpcheck
+    yay -S --needed --noconfirm "${PKGS_AUR[@]}"
+    pf "Instalação concluída!" "success"
+  else
+    yay -S --needed --noconfirm "${PKGS_AUR[@]}"
+  fi
 fi
 ## end block ##
 

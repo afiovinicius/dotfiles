@@ -59,6 +59,9 @@ PKGS_DEFAULT=(
   "gstreamer"
   "libinput" 
   "gvfs"
+  "lighttpd"
+  "reflector"
+  "wget"
 )
 
 DRIVERS_AMD=(
@@ -115,18 +118,16 @@ DEVELOPMENT=(
   "kate"
   "vim" 
   "zsh" 
-  "kitty" 
-  "alacritty" 
-  "starship"
+  "alacritty"
 )
 
 GAMES=(
-  "steam" 
+  "steam"
   "mangohud"
-  "wine-staging" 
+  "wine-staging"
   "wine-mono" 
   "wine-gecko" 
-  "winetricks" 
+  "winetricks"
   "lutris"
   "zenity"
   "vulkan-icd-loader"
@@ -211,13 +212,14 @@ SETTIGNS=(
 
 PKGS_AUR=(
   "brave-bin" 
-  "onlyoffice-bin "
-  "spotify-bin" 
+  "onlyoffice-bin"
+  "spotify" 
   "visual-studio-code-bin" 
   "mockoon-bin" 
   "obsidian-bin" 
   "postman-bin" 
   "local-by-flywheel-bin"
+  "figma-linux-bin"
 )
 ## end block ##
 
@@ -266,5 +268,16 @@ pkg_i() {
       pf "Opção inválida. Por favor digite novamente." "error"
     fi
   done
+}
+
+run_cmd_valid() {
+  local COMMAND_RUN=$1
+  local COMMAND_M=$2
+
+  if $COMMAND_RUN; then
+    pf "$COMMAND_M concluído!" "success"
+  else
+      pf "Falha em $COMMAND_M." "error"
+  fi
 }
 ## end block ##

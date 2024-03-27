@@ -36,7 +36,7 @@ if [[ $ECOSYS == "S" || $ECOSYS == "s" ]]; then
   pf "Instalando..." "warn"
   cd "../../scripts/"
   sleep 0.5
-  "./ecosysteco.sh"
+  "./ecosystem.sh"
   pf "Ecossistema instalado e configurado!" "success"
 fi
 ## end block ##
