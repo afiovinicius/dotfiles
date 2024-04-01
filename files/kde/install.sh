@@ -10,7 +10,7 @@ source "../../scripts/utils.sh"
 read -n1 -rep "Deseja iniciar instalação do kde? (s/n)" INIT
 if [[ $INIT =~ ^[Ss]$ ]]; then
   pf "Instalando KDE Plasma" "warn"
-  sudo pacman -S --needed --noconfirm plasma plasma-desktop sddm
+  sudo pacman -S --needed --noconfirm plasma plasma-desktop sddm kpackage qt5-tools
   pf "Instalação concluída!" "success"
 else
   exit

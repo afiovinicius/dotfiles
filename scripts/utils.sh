@@ -107,9 +107,12 @@ DEVELOPMENT=(
   "pnpm" 
   "pm2" 
   "apache" 
-  "php" 
+  "php"
+  "rust" 
   "php-apache" 
-  "phpmyadmin" 
+  "phpmyadmin"
+  "postgresql"
+  "postgresql-libs" 
   "sqlite" 
   "python" 
   "python-pip" 
@@ -208,6 +211,7 @@ SETTIGNS=(
   "bpytop" 
   "seahorse"
   "bleachbit"
+  "numlockx"
 )
 
 PKGS_AUR=(

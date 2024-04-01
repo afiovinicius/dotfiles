@@ -12,6 +12,11 @@ sudo sysctl -w vm.swappiness=10
 sudo sysctl -a | grep -i swappiness
 ## end block ##
 
+## init blocl ##
+#~~|¬Numlock On¬|~~#
+
+## end block ##
+
 ## init block ##
 #~~|¨Config Pacman¨|~~#
 pf "Iniciando configuração do pacman para melhor desempenho." "warn"
