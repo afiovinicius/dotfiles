@@ -26,7 +26,6 @@ pkg_i "${PKGS_DEFAULT[@]}"
 ## init block ##
 #~~|¨Drivers¨|~~#
 pf "Vamos iniciar a instalação dos drivers!" "warn"
-
 while true; do
   read -rep "Qual o seu processador? (AMD ou Intel)" DVRS
   if [[ $DVRS == "AMD" || $DVRS == "amd" ]]; then
@@ -47,6 +46,7 @@ done
 
 ## init block ##
 #~~|¨Xorg & Wayland¨|~~#
+pf "Escolha o seu servidor de exibição!" "warn"
 while true; do
   read -rep "Qual servidor de exibição você usa? (Xorg ou Wayland)" SE
   if [[ $SE == "XORG" || $SE == "xorg" ]]; then
@@ -81,7 +81,7 @@ fi
 while true; do
   read -rep "Qual ambiente desktop você deseja instalar? (KDE)" DE
   if [[ $DE == "KDE" || $DE == "kde" ]]; then
-    cd "$DIR_FILES/kde"
+    cd "./files/kde"
     sleep 0.5
     "./install.sh"
     break
@@ -95,7 +95,7 @@ done
 #~~|¨Set Wallpaper¨|~~#
 read -n1 -rep "Você gostaria de configurar wallpaper usando o feh? (s,n)" SETWALL
 if [[ $SETWALL == [Ss] ]]; then
-  cd "$DIR_FILES/assets"
+  cd "./files/assets"
   sleep 0.5
   "./set-wallpaper.sh"
 fi

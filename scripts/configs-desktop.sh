@@ -2,7 +2,7 @@
 
 ## init block ##
 #~~|¨Head Script¨|~~#
-source "$HOME/dotfiles/scripts/utils.sh"
+source "./utils.sh"
 ## end block ##
 
 ## init block ##
@@ -54,7 +54,7 @@ if [ -d "$DIR_USER/.oh-my-zsh" ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions.git
     cd "$DIR_USER"
     mv "$DIR_USER/.oh-my-zsh" "$DIR_USER/.config/zsh"
-    rm -r .zshrc
+    rm -r "$DIR_USER/.zshrc"
 else
     pf "O diretório ~/.oh-my-zsh/plugins não foi encontrado. Terminando o script." "error"
 fi
@@ -62,6 +62,21 @@ pf "Instalando spaceship" "warn"
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH/themes/spaceship.zsh-theme"
 pf "Instalação do spaceship concluída!" "warn"
+## end block ##
+
+## init blocl ##
+#~~|¨Nvim¨|~~#
+pf "Iniciando configurações do Neo Vim." "warn"
+if [ ! -d "$DIR_USER/.config/nvim" ]; then
+  read -n1 -rep "Você gostaria de continuar com essa configuração? (s,n)" NVIMC
+  if [[ $NVIMC == "S" || $NVIMC == "s" ]]; then
+      run_cmd_valid "cp -r "../files/config/nvim" "$DIR_USER/.config/nvim"" "Configurações do Neo Vim"
+  fi
+else
+  pf "O diretório ~/.config/nvim já existe. Seguindo com as configurações!"
+fi
+# plugin: https://github.com/folke/lazy.nvim
+# aprender: https://github.com/folke/lazy.nvim
 ## end block ##
 
 ## init block ##

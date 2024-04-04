@@ -2,7 +2,7 @@
 
 ## init block ##
 #~~|¨Head Script¨|~~#
-source "$HOME/dotfiles/scripts/utils.sh"
+source "./utils.sh"
 ## end block ##
 
 ## init block ##
@@ -10,11 +10,6 @@ source "$HOME/dotfiles/scripts/utils.sh"
 pf "Configurando SWAP." "warn"
 sudo sysctl -w vm.swappiness=10
 sudo sysctl -a | grep -i swappiness
-## end block ##
-
-## init blocl ##
-#~~|¬Numlock On¬|~~#
-
 ## end block ##
 
 ## init block ##

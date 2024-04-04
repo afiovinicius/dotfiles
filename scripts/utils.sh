@@ -14,9 +14,8 @@ COLOR_WHITE="\e[37m"
 
 ## init block ##
 #~~|¨Variables¨|~~#
-DIR_USER=$HOME
-DIR_NAV=$PWD
-DIR_FILES=$DIR_NAV/files
+DIR_USER="$HOME"
+DIR_NAV="$PWD"
 PACMAN_CONF="/etc/pacman.conf"
 
 PKGS_DEFAULT=(
@@ -106,23 +105,24 @@ DEVELOPMENT=(
   "yarn" 
   "pnpm" 
   "pm2" 
-  "apache" 
-  "php"
-  "rust" 
-  "php-apache" 
-  "phpmyadmin"
+  "sqlite" 
   "postgresql"
   "postgresql-libs" 
-  "sqlite" 
+  "apache" 
+  "php"
+  "php-apache" 
+  "phpmyadmin"
   "python"
   "pyenv" 
   "python-pip" 
   "python-pipx"
   "python-poetry"
-  "docker" 
+  "docker"
+  "docker-compose"
   "jdk-openjdk"
   "kate"
-  "vim" 
+  "vim"
+  "neovim"
   "zsh" 
   "alacritty"
 )
@@ -177,7 +177,6 @@ IOT=(
   "qbittorrent"
   "discord" 
   "telegram-desktop"
-  "kmail"
 )
 
 MEDIA=(
@@ -214,7 +213,7 @@ SETTIGNS=(
   "bpytop" 
   "seahorse"
   "bleachbit"
-  "numlockx"
+  "fontconfig"
 )
 
 PKGS_AUR=(
