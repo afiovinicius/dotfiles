@@ -142,52 +142,69 @@
 <details>
   <summary><strong>🗂️ Estrutura</strong></summary>
   
-  ```
-  |—— files
-  |    |—— assets
-  |        |—— icon-menu.png
-  |        |—— set-wallpaper.sh
-  |        |—— wallpapers
-  |            |—— bg-01.jpg
-  |            |—— bg-02.jpg
-  |            |—— bg-03.jpg
-  |            |—— bg-04.jpg
-  |            |—— bg-05.jpg
-  |            |—— bg-06.jpg
-  |            |—— bg-07.jpg
-  |            |—— bg-08.jpg
-  |            |—— bg-09.jpg
-  |            |—— bg-10.jpg
-  |            |—— bg-11.jpg
-  |            |—— bg-12.jpg
-  |            |—— bg-13.jpg
-  |            |—— bg-14.jpg
-  |            |—— bg-15.jpg
-  |    |—— config
-  |        |—— zsh
-  |            |—— .zcompdump
-  |            |—— .zcompdump.aesthetic.27552
-  |            |—— .zshrc
-  |            |—— aliases.zsh
-  |            |—— env.zsh
-  |            |—— keybinds.zsh
-  |            |—— options.zsh
-  |            |—— plugins.zsh
-  |            |—— prompt.zsh
-  |            |—— theme.zsh
-  |            |—— utility.zsh
-  |    |—— kde
-  |        |—— install.sh
-  |    |—— .zshenv
-  |—— scripts
-  |    |—— configs-desktop.sh
-  |    |—— configs-system.sh
-  |    |—— ecosystem.sh
-  |    |—— utils.sh
-  |—— .gitignore
-  |—— init-setup
-  |—— setup.sh
-  ```
+ ```
+|—— files
+|    |—— assets
+|        |—— icon-menu.png
+|        |—— set-wallpaper.sh
+|        |—— setup.jpg
+|        |—— wallpapers
+|            |—— bg-01.jpg
+|            |—— bg-02.jpg
+|            |—— bg-03.jpg
+|            |—— bg-04.jpg
+|            |—— bg-05.jpg
+|            |—— bg-06.jpg
+|            |—— bg-07.jpg
+|            |—— bg-08.jpg
+|            |—— bg-09.jpg
+|            |—— bg-10.jpg
+|            |—— bg-11.jpg
+|            |—— bg-12.jpg
+|            |—— bg-13.jpg
+|            |—— bg-14.jpg
+|            |—— bg-15.jpg
+|            |—— bg-16.jpg
+|            |—— bg-17.jpg
+|            |—— bg-18.jpg
+|            |—— bg-19.jpg
+|            |—— bg-20.jpg
+|    |—— config
+|        |—— alacritty
+|            |—— alacritty.toml
+|            |—— themes
+|                |—— vicit.toml
+|        |—— neofetch
+|            |—— config.conf
+|        |—— nvim
+|            |—— .stylua.toml
+|            |—— LICENSE
+|            |—— README.md
+|            |—— init.lua
+|            |—— lua
+|                |—— chadrc.lua
+|                |—— configs
+|                    |—— conform.lua
+|                    |—— lazy.lua
+|                    |—— lspconfig.lua
+|                |—— mappings.lua
+|                |—— options.lua
+|                |—— plugins
+|                    |—— init.lua
+|        |—— zsh
+|            |—— .zshenv
+|            |—— .zshrc
+|    |—— kde
+|        |—— install.sh
+|—— scripts
+|    |—— configs-desktop.sh
+|    |—— configs-system.sh
+|    |—— ecosystem.sh
+|    |—— utils.sh
+|—— .gitignore
+|—— init-setup
+|—— setup.sh
+```
 </details>
 
 ***
