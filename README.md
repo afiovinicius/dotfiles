@@ -182,15 +182,6 @@
 |            |—— README.md
 |            |—— init.lua
 |            |—— lua
-|                |—— chadrc.lua
-|                |—— configs
-|                    |—— conform.lua
-|                    |—— lazy.lua
-|                    |—— lspconfig.lua
-|                |—— mappings.lua
-|                |—— options.lua
-|                |—— plugins
-|                    |—— init.lua
 |        |—— zsh
 |            |—— .zshenv
 |            |—— .zshrc
