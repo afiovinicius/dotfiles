@@ -177,11 +177,6 @@
 |        |—— neofetch
 |            |—— config.conf
 |        |—— nvim
-|            |—— .stylua.toml
-|            |—— LICENSE
-|            |—— README.md
-|            |—— init.lua
-|            |—— lua
 |        |—— zsh
 |            |—— .zshenv
 |            |—— .zshrc

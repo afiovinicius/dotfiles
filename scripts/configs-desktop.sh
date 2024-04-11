@@ -66,24 +66,24 @@ pf "Instalação do spaceship concluída!" "warn"
 
 ## init blocl ##
 #~~|¨Nvim¨|~~#
-pf "Iniciando configurações do Neo Vim." "warn"
-if [ ! -d "$DIR_USER/.config/nvim" ]; then
-  while true; do
-    read -rep "Você gostaria de usar qual preset do Nvim? (NvChad ou Lunar)" NVIMC
-    if [[ $NVIMC == "NVCHAD" || $NVIMC == "nvchad" ]]; then
-      mkdir "$DIR_USER/.config/nvim"
-      run_cmd_valid "cp -r "../files/config/nvim/nvchad-vim" "$DIR_USER/.config/nvim"" "Configurações do NvChad"
-      break
-    elif [[ $NVIMC == "LUNAR" || $NVIMC == "lunar" ]]; then
-      run_cmd_valid "LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)" "Configurações do Lunar Vim"
-      break
-    else
-      pf "Opção inválida. Por favor, escolha um das opções informadas." "error"
-    fi
-  done
-else
-  pf "O diretório ~/.config/nvim já existe. Seguindo com as configurações!"
-fi
+# pf "Iniciando configurações do Neo Vim." "warn"
+# if [ ! -d "$DIR_USER/.config/nvim" ]; then
+#   while true; do
+#     read -rep "Você gostaria de usar qual preset do Nvim? (NvChad ou Lunar)" NVIMC
+#     if [[ $NVIMC == "NVCHAD" || $NVIMC == "nvchad" ]]; then
+#       mkdir "$DIR_USER/.config/nvim"
+#       run_cmd_valid "cp -r "../files/config/nvim" "$DIR_USER/.config/nvim"" "Configurações do NvChad"
+#       break
+#     elif [[ $NVIMC == "LUNAR" || $NVIMC == "lunar" ]]; then
+#       run_cmd_valid "LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)" "Configurações do Lunar Vim"
+#       break
+#     else
+#       pf "Opção inválida. Por favor, escolha um das opções informadas." "error"
+#     fi
+#   done
+# else
+#   pf "O diretório ~/.config/nvim já existe. Seguindo com as configurações!"
+# fi
 # plugin: https://github.com/folke/lazy.nvim
 # aprender: https://github.com/folke/lazy.nvim
 ## end block ##
