@@ -129,12 +129,12 @@ DEVELOPMENT=(
 
 GAMES=(
   "steam"
+  "lutris"
   "mangohud"
   "wine-staging"
   "wine-mono" 
   "wine-gecko" 
   "winetricks"
-  "lutris"
   "zenity"
   "vulkan-icd-loader"
   "vkd3d"
@@ -210,7 +210,6 @@ SETTIGNS=(
   "pcmanfm" 
   "neofetch" 
   "htop" 
-  "bpytop" 
   "seahorse"
   "bleachbit"
   "fontconfig"
@@ -225,7 +224,6 @@ PKGS_AUR=(
   "obsidian-bin" 
   "postman-bin" 
   "local-by-flywheel-bin"
-  "figma-linux-bin"
 )
 ## end block ##
 

@@ -14,7 +14,7 @@ sudo sysctl -a | grep -i swappiness
 
 ## init block ##
 #~~|¨Config Pacman¨|~~#
-pf "Iniciando configuração do pacman para melhor desempenho." "warn"
+pf "Iniciando configuração do pacman." "warn"
 configure_pacman() {
   pf "Remover os comentários das linhas relevantes." "warn"
   sudo sed -i 's/^#ParallelDownloads = 5/ParallelDownloads = 10/' "$PACMAN_CONF"
