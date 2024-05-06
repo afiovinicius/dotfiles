@@ -24,6 +24,9 @@ pkg_i "${DEVELOPMENT[@]}"
 pf "Esseas são as ferramentas para jogos:" "warn"
 plist "${GAMES[@]}"
 pkg_i "${GAMES[@]}"
+# https://wiki.archlinux.org/title/gaming
+# https://github.com/lutris/docs/blob/master/WineDependencies.md#archendeavourosmanjaroother-arch-derivatives
+# https://arch.d3sox.me/gaming/
 ## end block ##
 
 ## init block ##

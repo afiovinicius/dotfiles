@@ -144,6 +144,7 @@ GAMES=(
   "libpulse" 
   "mpg123" 
   "gamemode"
+  "lib32-gamemode"
   "giflib"  
   "libpng"  
   "libldap" 
@@ -218,7 +219,8 @@ SETTIGNS=(
 PKGS_AUR=(
   "brave-bin" 
   "onlyoffice-bin"
-  "spotify" 
+  "spotify"
+  "protonup-qt"
   "visual-studio-code-bin" 
   "mockoon-bin" 
   "obsidian-bin" 
