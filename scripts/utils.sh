@@ -30,6 +30,7 @@ PKGS_DEFAULT=(
   "net-tools" 
   "xf86-video-ati" 
   "mesa" 
+  "ffmpeg"
   "ffmpegthumbnailer" 
   "ffmpegthumbs" 
   "alsa-utils" 
@@ -48,14 +49,13 @@ PKGS_DEFAULT=(
   "x264" 
   "x265" 
   "xvidcore"
-  "nano"
-  "ffmpeg"
+  "gstreamer"
   "gst-plugins-ugly"
   "gst-plugins-good" 
   "gst-plugins-base" 
   "gst-plugins-bad" 
   "gst-libav" 
-  "gstreamer"
+  "nano"
   "libinput" 
   "gvfs"
   "lighttpd"
@@ -69,6 +69,7 @@ DRIVERS_AMD=(
   "vulkan-swrast"
   "amdvlk" 
   "mesa-vdpau"
+  "amd-ucode"
 )
 
 DRIVERS_INTEL=(
@@ -91,10 +92,6 @@ WAYLAND=(
 
 ACCESSORIES=(
   "flameshot"
-  "kcalc"
-  "kfind"
-  "kcolorchooser"
-  "kvantum"
 )
 
 DEVELOPMENT=(
@@ -120,7 +117,6 @@ DEVELOPMENT=(
   "docker"
   "docker-compose"
   "jdk-openjdk"
-  "kate"
   "vim"
   "neovim"
   "zsh" 
@@ -168,9 +164,7 @@ GAMES=(
 
 GRAPHICS=(
   "gimp" 
-  "inkscape" 
-  "krita"
-  "gwenview" 
+  "inkscape"  
 )
 
 IOT=(
@@ -185,14 +179,10 @@ MEDIA=(
   "yt-dlp" 
   "audacious"
   "vlc" 
-  "kamoso" 
-  "kdenlive"
 )
 
 OFFICE=(
-  "okular" 
-  "skanlite" 
-  "korganizer"  
+  "libreoffice"
 )
 
 SETTIGNS=(
@@ -201,11 +191,6 @@ SETTIGNS=(
   "gzip" 
   "zip"
   "p7zip"
-  "partitionmanager"
-  "discover"
-  "dolphin"
-  "knotes"
-  "kwrite"
   "ufw" 
   "gufw"
   "pcmanfm" 
@@ -218,14 +203,76 @@ SETTIGNS=(
 
 PKGS_AUR=(
   "brave-bin" 
-  "onlyoffice-bin"
   "spotify"
-  "protonup-qt"
   "visual-studio-code-bin" 
   "mockoon-bin" 
   "obsidian-bin" 
   "postman-bin" 
   "local-by-flywheel-bin"
+)
+
+PKGS_KDE=(
+  "kate"
+  "kcalc"
+  "kfind"
+  "kcolorchooser"
+  "kvantum"
+  "krita"
+  "gwenview"
+  "kamoso" 
+  "kdenlive"
+  "okular" 
+  "skanlite" 
+  "korganizer"  
+  "partitionmanager"
+  "discover"
+  "dolphin"
+  "knotes"
+  "kwrite"
+  "kpackage" 
+  "qt5-tools"
+)
+
+PKGS_XFCE=(
+  "xfwm4"
+  "xfdesktop"
+  "archlinux-xdg-menu"
+  "xdg-desktop-portal-xapp"
+  "xfwm4-themes"
+  "xfce4-appfinder"
+  "xfce4-whiskermenu-plugin"
+  "xfce4-battery-plugin"
+  "xfce4-clipman-plugin"
+  "xfce4-cpufreq-plugin"
+  "xfce4-cpugraph-plugin"
+  "xfce4-datetime-plugin"
+  "xfce4-dev-tools"
+  "xfce4-session"
+  "xfce4-settings"
+  "xfce4-panel"
+  "xfce4-power-manager"
+  "xfce4-pulseaudio-plugin"
+  "xfce4-screensaver"
+  "xfce4-screenshooter"
+  "xfce4-sensors-plugin"
+  "xfce4-notifyd"
+  "xfce4-terminal"
+  "xorg-xkill"
+  "xdotool"
+  "xfconf"
+  "sound-theme-freedesktop"
+  "thunar"
+  "thunar-volman"
+  "ristretto"
+  "mousepad"
+  "exo"
+  "cairo"
+  "tumbler"
+  "xfmpc"
+  "libxfce4util"
+  "libxfce4ui"
+  "libxfce4windowing"
+  "pipewire-pulse"
 )
 ## end block ##
 

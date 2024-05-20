@@ -7,21 +7,21 @@ source "./utils.sh"
 
 ## init block ##
 #~~|¨Accessories¨|~~#
-pf "Esseas são as ferramentas de acessórios do sistema:" "warn"
+pf "Essas são as ferramentas de acessórios do sistema:" "warn"
 plist "${ACCESSORIES[@]}"
 pkg_i "${ACCESSORIES[@]}"
 ## end block ##
 
 ## init block ##
 #~~|¨Development¨|~~#
-pf "Esseas são as ferramentas para desenvolvedor:" "warn"
+pf "Essas são as ferramentas para desenvolvedor:" "warn"
 plist "${DEVELOPMENT[@]}"
 pkg_i "${DEVELOPMENT[@]}"
 ## end block ##
 
 ## init block ##
 #~~|¨Games¨|~~#
-pf "Esseas são as ferramentas para jogos:" "warn"
+pf "Essas são as ferramentas para jogos:" "warn"
 plist "${GAMES[@]}"
 pkg_i "${GAMES[@]}"
 # https://wiki.archlinux.org/title/gaming
@@ -31,35 +31,35 @@ pkg_i "${GAMES[@]}"
 
 ## init block ##
 #~~|¨Graphics¨|~~#
-pf "Esseas são as ferramentas para design:" "warn"
+pf "Essas são as ferramentas para design:" "warn"
 plist "${GRAPHICS[@]}"
 pkg_i "${GRAPHICS[@]}"
 ## end block ##
 
 ## init block ##
 #~~|¨IOT¨|~~#
-pf "Esseas são as ferramentas para internet:" "warn"
+pf "Essas são as ferramentas para internet:" "warn"
 plist "${IOT[@]}"
 pkg_i "${IOT[@]}"
 ## end block ##
 
 ## init block ##
 #~~|¨Multimedia¨|~~#
-pf "Esseas são as ferramentas para áudio visual:" "warn"
+pf "Essas são as ferramentas para áudio visual:" "warn"
 plist "${MEDIA[@]}"
 pkg_i "${MEDIA[@]}"
 ## end block ##
 
 ## init block ##
 #~~|¨Office¨|~~#
-pf "Esseas são as ferramentas para escritório:" "warn"
+pf "Essas são as ferramentas para escritório:" "warn"
 plist "${OFFICE[@]}"
 pkg_i "${OFFICE[@]}"
 ## end block ##
 
 ## init block ##
 #~~|¨System¨|~~#
-pf "Esseas são as ferramentas gerais do sistema:" "warn"
+pf "Essas são as ferramentas gerais do sistema:" "warn"
 plist "${SETTIGNS[@]}"
 pkg_i "${SETTIGNS[@]}"
 ## end block ##

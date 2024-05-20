@@ -79,9 +79,14 @@ fi
 ## init block ##
 #~~|¨Install DE¨|~~#
 while true; do
-  read -rep "Qual ambiente desktop você deseja instalar? (KDE)" DE
+  read -rep "Qual ambiente desktop você deseja instalar? (KDE ou XFCE)" DE
   if [[ $DE == "KDE" || $DE == "kde" ]]; then
     cd "./files/kde"
+    sleep 0.5
+    "./install.sh"
+    break
+  elif [[ $SE == "XFCE" || $SE == "xfce" ]]; then
+    cd "./files/xfce"
     sleep 0.5
     "./install.sh"
     break

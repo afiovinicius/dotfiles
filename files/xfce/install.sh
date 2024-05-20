@@ -6,22 +6,23 @@ source "../../scripts/utils.sh"
 ## end block ##
 
 ## init block ##
-#~~|¨Install KDE¨|~~#
-read -n1 -rep "Deseja iniciar instalação do kde? (s/n)" INIT
+#~~|¨Install XFCE¨|~~#
+read -n1 -rep "Deseja iniciar instalação do xfce? (s/n)" INIT
 if [[ $INIT =~ ^[Ss]$ ]]; then
-  pf "Instalando KDE Plasma" "warn"
-  sudo pacman -S --needed --noconfirm plasma plasma-desktop sddm
+  pf "Instalando XFCE4" "warn"
+  sudo pacman -S --needed --noconfirm xfce4 xfce4-goodies
   pf "Instalação concluída!" "success"
 else
   exit
 fi
+# https://docs.xfce.org/#core_modules
 ## end block ##
 
 ## init block ##
 #~~|¨Systemd Tools¨|~~#
-pf "Essas são as ferramentas do ambiente KDE:" "warn"
-plist "${PKGS_KDE[@]}"
-pkg_i "${PKGS_KDE[@]}"
+pf "Essas são as ferramentas do ambiente XFCE:" "warn"
+plist "${PKGS_XFCE[@]}"
+pkg_i "${PKGS_XFCE[@]}"
 ## end block ##
 
 ## init block ##
@@ -32,8 +33,9 @@ pf "Habilitando fstrim para melhor desempenho do SSD." "warn"
 sudo systemctl enable fstrim.timer
 pf "Habilitando NetworkManager." "warn"
 sudo systemctl enable NetworkManager
-pf "Habilitando sddm." "warn"
-sudo systemctl enable sddm
+pf "Habilitando Pipewire." "warn"
+sudo systemctl enable pipewire-pulse.service
+sudo systemctl start pipewire-pulse.service
 ## end block ##
 
 ## init block ##

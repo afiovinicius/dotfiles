@@ -142,7 +142,7 @@
 <details>
   <summary><strong>🗂️ Estrutura</strong></summary>
   
- ```
+```
 |—— files
 |    |—— assets
 |        |—— icon-menu.png
@@ -176,11 +176,12 @@
 |                |—— vicit.toml
 |        |—— neofetch
 |            |—— config.conf
-|        |—— nvim
 |        |—— zsh
 |            |—— .zshenv
 |            |—— .zshrc
 |    |—— kde
+|        |—— install.sh
+|    |—— xfce
 |        |—— install.sh
 |—— scripts
 |    |—— configs-desktop.sh
@@ -197,4 +198,8 @@
 
 # 🏅 Setup
 
-![setup](./files/assets/setup.jpg)
+### KDE Plasma
+![setup](./files/assets/setup-kde.jpg)
+
+### XFCE4
+![setup](./files/assets/setup-xfce.jpg)
