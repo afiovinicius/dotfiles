@@ -70,8 +70,9 @@ done
 read -n1 -rep "Você gostaria de iniciar a configuração do sistema? (s,n)" ECOSETT
 if [[ $ECOSETT == "S" || $ECOSETT == "s" ]]; then
   pf "Iniciando configurações..." "warn"
+  cd "./scripts"
   sleep 0.5
-  "./scripts/configs-system.sh"
+  "./configs-system.sh"
   pf "Configuração concluída!" "success"
 fi
 ## end block ##
@@ -85,7 +86,7 @@ while true; do
     sleep 0.5
     "./install.sh"
     break
-  elif [[ $SE == "XFCE" || $SE == "xfce" ]]; then
+  elif [[ $DE == "XFCE" || $DE == "xfce" ]]; then
     cd "./files/xfce"
     sleep 0.5
     "./install.sh"
