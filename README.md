@@ -147,7 +147,8 @@
 |    |—— assets
 |        |—— icon-menu.png
 |        |—— set-wallpaper.sh
-|        |—— setup.jpg
+|        |—— setup-kde.jpg
+|        |—— setup-xfce.jpg
 |        |—— wallpapers
 |            |—— bg-01.jpg
 |            |—— bg-02.jpg
@@ -173,7 +174,7 @@
 |        |—— alacritty
 |            |—— alacritty.toml
 |            |—— themes
-|                |—— vicit.toml
+|                |—— vct-theme.toml
 |        |—— neofetch
 |            |—— config.conf
 |        |—— zsh
