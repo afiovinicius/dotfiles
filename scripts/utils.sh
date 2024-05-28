@@ -21,6 +21,7 @@ PACMAN_CONF="/etc/pacman.conf"
 PKGS_DEFAULT=(
   "base" 
   "base-devel" 
+  "multilib-devel"
   "linux-firmware" 
   "sof-firmware" 
   "networkmanager"
