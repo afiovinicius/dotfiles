@@ -279,6 +279,7 @@ PKGS_XFCE=(
   "libxfce4ui"
   "libxfce4windowing"
   "pipewire-pulse"
+  "pavucontrol"
 )
 ## end block ##
 
