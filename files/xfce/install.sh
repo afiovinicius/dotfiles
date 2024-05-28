@@ -10,7 +10,7 @@ source "../../scripts/utils.sh"
 read -n1 -rep "Deseja iniciar instalação do xfce? (s/n)" INIT
 if [[ $INIT =~ ^[Ss]$ ]]; then
   pf "Instalando XFCE4" "warn"
-  sudo pacman -S --needed --noconfirm xfce4 xfce4-goodies
+  sudo pacman -S --needed --noconfirm xfce4 xfce4-goodies lightdm lightdm-gtk-greeter
   pf "Instalação concluída!" "success"
 else
   exit
@@ -33,9 +33,8 @@ pf "Habilitando fstrim para melhor desempenho do SSD." "warn"
 sudo systemctl enable fstrim.timer
 pf "Habilitando NetworkManager." "warn"
 sudo systemctl enable NetworkManager
-pf "Habilitando Pipewire." "warn"
-sudo systemctl enable pipewire-pulse.service
-sudo systemctl start pipewire-pulse.service
+pf "Habilitando Lightdm." "warn"
+sudo systemctl enable lightdm.service
 ## end block ##
 
 ## init block ##

@@ -68,7 +68,6 @@ pkg_i "${SETTIGNS[@]}"
 #~~|¨AUR Packages¨|~~#
 pf "Você está prestes a instalar os pacotes do AUR:" "warn"
 plist "${PKGS_AUR[@]}"
-
 read -n1 -rep "Deseja continuar com a instação? (s/n)" AURPKGS
 if [[ $AURPKGS == [Ss] ]]; then
   if ! command -v yay &>/dev/null; then

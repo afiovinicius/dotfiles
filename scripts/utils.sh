@@ -55,6 +55,8 @@ PKGS_DEFAULT=(
   "gst-plugins-base" 
   "gst-plugins-bad" 
   "gst-libav" 
+  "bluez"
+  "bluez-utils"
   "nano"
   "libinput" 
   "gvfs"
@@ -116,7 +118,6 @@ DEVELOPMENT=(
   "python-poetry"
   "docker"
   "docker-compose"
-  "jdk-openjdk"
   "vim"
   "neovim"
   "zsh" 
@@ -164,7 +165,8 @@ GAMES=(
 
 GRAPHICS=(
   "gimp" 
-  "inkscape"  
+  "inkscape"
+  "openshot"  
 )
 
 IOT=(
@@ -172,6 +174,7 @@ IOT=(
   "qbittorrent"
   "discord" 
   "telegram-desktop"
+  "thunderbird"
 )
 
 MEDIA=(
@@ -212,6 +215,7 @@ PKGS_AUR=(
 )
 
 PKGS_KDE=(
+  "bluedevil"
   "kate"
   "kcalc"
   "kfind"
@@ -227,6 +231,7 @@ PKGS_KDE=(
   "partitionmanager"
   "discover"
   "dolphin"
+  "konsole"
   "knotes"
   "kwrite"
   "kpackage" 
