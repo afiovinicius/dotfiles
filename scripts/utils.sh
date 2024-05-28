@@ -91,6 +91,7 @@ WAYLAND=(
   "wayland"
   "xorg-xwayland"
   "wayland-protocols"
+  "qt5-wayland"
 )
 
 ACCESSORIES=(
@@ -175,7 +176,6 @@ IOT=(
   "qbittorrent"
   "discord" 
   "telegram-desktop"
-  "thunderbird"
 )
 
 MEDIA=(
@@ -217,26 +217,14 @@ PKGS_AUR=(
 
 PKGS_KDE=(
   "bluedevil"
-  "kate"
-  "kcalc"
-  "kfind"
-  "kcolorchooser"
   "kvantum"
   "krita"
-  "gwenview"
-  "kamoso" 
-  "kdenlive"
-  "okular" 
-  "skanlite" 
-  "korganizer"  
-  "partitionmanager"
   "discover"
-  "dolphin"
-  "konsole"
-  "knotes"
   "kwrite"
   "kpackage" 
   "qt5-tools"
+  "kde-applications"
+  "oxygen5"
 )
 
 PKGS_XFCE=(
