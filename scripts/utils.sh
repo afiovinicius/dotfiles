@@ -63,6 +63,7 @@ PKGS_DEFAULT=(
   "lighttpd"
   "reflector"
   "wget"
+  "dosfstools"
 )
 
 DRIVERS_AMD=(
