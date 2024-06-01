@@ -70,9 +70,7 @@ done
 read -n1 -rep "Você gostaria de iniciar a configuração do sistema? (s,n)" ECOSETT
 if [[ $ECOSETT == "S" || $ECOSETT == "s" ]]; then
   pf "Iniciando configurações..." "warn"
-  cd "./scripts"
-  sleep 0.5
-  "./configs-system.sh"
+  "./scripts/configs-system.sh"
   pf "Configuração concluída!" "success"
 fi
 ## end block ##

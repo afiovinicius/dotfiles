@@ -2,7 +2,7 @@
 
 ## init block ##
 #~~|¨Head Script¨|~~#
-source "./utils.sh"
+source "$HOME/dotfiles/scripts/utils.sh"
 ## end block ##
 
 ## init block ##

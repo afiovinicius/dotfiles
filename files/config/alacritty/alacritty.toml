@@ -1,6 +1,6 @@
 # Theme for Alacritty
 import = [
-  "~/.config/alacritty/themes/vicit.toml"
+  "~/.config/alacritty/themes/vct-theme.toml"
 ]
 
 [shell]

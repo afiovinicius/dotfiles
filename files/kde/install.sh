@@ -41,7 +41,7 @@ sudo systemctl enable sddm
 read -n1 -rep "Você gostaria de iniciar a instalação do ecossistema? (s,n)" ECOSYS
 if [[ $ECOSYS == "S" || $ECOSYS == "s" ]]; then
   pf "Instalando..." "warn"
-  cd "../../scripts/"
+  cd "$HOME/dotfiles/scripts/"
   sleep 0.5
   "./ecosystem.sh"
   pf "Ecossistema instalado e configurado!" "success"
