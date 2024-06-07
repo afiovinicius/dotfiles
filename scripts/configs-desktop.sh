@@ -99,6 +99,10 @@ read -rep "Qual seu nome de email do github?" RESMAIL
 if [[ -n "$RESMAIL" ]]; then
   run_cmd_valid "git config --global user.email "$RESMAIL"" "Configurando email"
 fi
+read -rep "Qual nome padrão você deseja para sua branch inicial?" RESBH
+if [[ -n "$RESBH" ]]; then
+  run_cmd_valid "git config --global init.defaultBranch "$RESBH"" "Configurando branchs"
+fi
 if command -v gh &>/dev/null; then
   pf "Você já tem o GitHub CLI instalado. Ao iniciar o sistema com a interface, use o comando 'gh auth login' em seu terminal."
 fi
