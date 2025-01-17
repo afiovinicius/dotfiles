@@ -35,18 +35,20 @@ SPACESHIP_CHAR_SUFFIX=" "
 # Plugins to Oh My ZSH
 ##
 plugins=(
-    git
-    github
-    python
-    pip
-    poetry
-    node
-    npm
-    yarn
-    zsh-autosuggestions
-    zsh-completions
-    zsh-syntax-highlighting
-    zsh-navigation-tools
+  git
+  github
+  python
+  pip
+  poetry
+  node
+  npm
+  yarn
+  ng
+  zsh-autosuggestions
+  zsh-completions
+  zsh-syntax-highlighting
+  zsh-navigation-tools
+  zsh-interactive-cd
 )
 
 ##

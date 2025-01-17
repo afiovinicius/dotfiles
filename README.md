@@ -6,7 +6,8 @@
   Ao seguir este guia, você estará no caminho para uma instalação eficiente do Arch Linux, com acesso rápido a uma variedade de ferramentas e recursos para facilitar o seu dia a dia. Vamos começar!
 </small>
 
-***
+---
+
 <details>
   <summary><strong>🚀 Guia de Instalação Rápida do Arch Linux</strong></summary>
   
@@ -32,31 +33,31 @@
 
     locale-gen
 
-  3. Define o idioma padrão do sistema (exemplo para pt-br):
+3. Define o idioma padrão do sistema (exemplo para pt-br):
 
-    export LANG=pt_BR.UTF-8
+   export LANG=pt_BR.UTF-8
 
-  ### Atualizar o relógio do sistema
-  
-  1. Ativa a sincronização automática de hora e data pela rede utilizando NTP (Network Time Protocol).
+### Atualizar o relógio do sistema
 
-    timedatectl set-ntp true
-      
-  2. Verificando mudança na configuração de hora e data:
+1. Ativa a sincronização automática de hora e data pela rede utilizando NTP (Network Time Protocol).
 
-    timedatectl status
+   timedatectl set-ntp true
 
-  ### Modo de inicialização
-  
-  1. Verifica se o sistema utiliza UEFI (mais moderno), o que é importante para alguns ajustes posteriores.
+2. Verificando mudança na configuração de hora e data:
 
-    ls /sys/firmware/efi/efivars
+   timedatectl status
 
-  2. Verifique o número de bits do UEFI:
+### Modo de inicialização
 
-    cat /sys/firmware/efi/fw_platform_size
+1. Verifica se o sistema utiliza UEFI (mais moderno), o que é importante para alguns ajustes posteriores.
 
-  ### Configuração de Rede sem Fio
+   ls /sys/firmware/efi/efivars
+
+2. Verifique o número de bits do UEFI:
+
+   cat /sys/firmware/efi/fw_platform_size
+
+### Configuração de Rede sem Fio
 
   <blockquote>
     Para instalar o Arch Linux precisa ter conexão via Wi-Fi ou Ethernet. Siga as instruções abaixo para caso queira usar internet sem fio.
@@ -66,9 +67,9 @@
 
     ip link
 
-  2. Ativa a interface de rede especificada (por exemplo, `ip link set wlan0 up` para ativar a rede sem fio):
+2. Ativa a interface de rede especificada (por exemplo, `ip link set wlan0 up` para ativar a rede sem fio):
 
-    sudo rfkill unblock wifi && ip link set {interface} up
+   sudo rfkill unblock wifi && ip link set {interface} up
 
   <blockquote>
     Aqui estamos desbloqueando a placa de rede e ativando ela… Não esqueça de trocar “{interface}” pela sua placa de rede.
@@ -78,21 +79,21 @@
 
     iwctl
 
-  4. Liste os dispositivos de rede sem fio disponíveis:
+4. Liste os dispositivos de rede sem fio disponíveis:
 
-    device list
+   device list
 
-  5. Faz uma busca por redes sem fio disponíveis na interface escolhida (por exemplo, `station wlan0 scan`  para busca na rede sem fio):
+5. Faz uma busca por redes sem fio disponíveis na interface escolhida (por exemplo, `station wlan0 scan` para busca na rede sem fio):
 
-    station {interface} scan
+   station {interface} scan
 
-  6. Mostra as redes da busca anterior:
+6. Mostra as redes da busca anterior:
 
-    station {interface} get-networks
+   station {interface} get-networks
 
-  7. Conecta à rede sem fio especificada pelo SSID:
+7. Conecta à rede sem fio especificada pelo SSID:
 
-    station {interface} connect SSID
+   station {interface} connect SSID
 
   <blockquote>
     Vai abrir um campo no console para preencher com a senha da rede.
@@ -102,20 +103,20 @@
 
     station {interface} show
 
-  9. Saia do iwctl:
+9. Saia do iwctl:
 
-    exit
+   exit
 
   <p>Em seguida teste a rede:</p>
   
     ping -c 5 archlinux.org
 
-  ### Instalação
-  
-  1. O arch linux tem um script de instalação intuitivo ([https://archinstall.archlinux.page/](https://archinstall.archlinux.page/)):
+### Instalação
 
-    archinstall
-    
+1. O arch linux tem um script de instalação intuitivo ([https://archinstall.archlinux.page/](https://archinstall.archlinux.page/)):
+
+   archinstall
+
   <blockquote>
     No perfil escolha o tipo MINIMAL.
   </blockquote>
@@ -124,7 +125,8 @@
   
 </details>
 
-***
+---
+
 <details>
   <summary><strong>💻 Instalação do ambiente desktop</strong></summary>
   
@@ -132,57 +134,41 @@
     Ao reiniciar o sistema, verifique se está conectado à internet e siga os passos abaixo.
   </blockquote>
 
-  1. Baixe o script de inicialização:
-     
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/afiovinicius/dotfiles/main/init-setup)"
+1. Baixe o script de inicialização:
+
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/afiovinicius/dotfiles/main/init-setup)"
 
 </details>
 
-***
+---
+
 <details>
   <summary><strong>🗂️ Estrutura</strong></summary>
   
 ```
 |—— files
 |    |—— assets
-|        |—— icon-menu.png
-|        |—— set-wallpaper.sh
-|        |—— setup-kde.jpg
-|        |—— setup-xfce.jpg
 |        |—— wallpapers
 |            |—— bg-01.jpg
 |            |—— bg-02.jpg
 |            |—— bg-03.jpg
 |            |—— bg-04.jpg
 |            |—— bg-05.jpg
-|            |—— bg-06.jpg
-|            |—— bg-07.jpg
-|            |—— bg-08.jpg
-|            |—— bg-09.jpg
-|            |—— bg-10.jpg
-|            |—— bg-11.jpg
-|            |—— bg-12.jpg
-|            |—— bg-13.jpg
-|            |—— bg-14.jpg
-|            |—— bg-15.jpg
-|            |—— bg-16.jpg
-|            |—— bg-17.jpg
-|            |—— bg-18.jpg
-|            |—— bg-19.jpg
-|            |—— bg-20.jpg
+|            |—— .........
+|        |—— icon-menu.png
+|        |—— setup-kde.jpg
 |    |—— config
 |        |—— alacritty
 |            |—— alacritty.toml
 |            |—— themes
 |                |—— vct-theme.toml
+|                |—— vicit.toml
 |        |—— neofetch
 |            |—— config.conf
 |        |—— zsh
 |            |—— .zshenv
 |            |—— .zshrc
 |    |—— kde
-|        |—— install.sh
-|    |—— xfce
 |        |—— install.sh
 |—— scripts
 |    |—— configs-desktop.sh
@@ -195,12 +181,10 @@
 ```
 </details>
 
-***
+---
 
 # 🏅 Setup
 
 ### KDE Plasma
-![setup](./files/assets/setup-kde.jpg)
 
-### XFCE4
-![setup](./files/assets/setup-xfce.jpg)
+![setup](./files/assets/setup-kde.jpg)

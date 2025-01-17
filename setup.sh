@@ -1,29 +1,15 @@
 #!/bin/sh
 
-## init block ##
 #~~|¨Head Script¨|~~#
 source "./scripts/utils.sh"
 
-BANNER="
-  ___    __  _                ___              _     
- / _ \  / _|(_)              / _ \            | |    
-/ /_\ \| |_  _   ___        / /_\ \ _ __  ___ | |__  
-|  _  ||  _|| | / _ \   __  |  _  || '__|/ __|| '_ \ 
-| | | || |  | || (_) | |__| | | | || |  | (__ | | | |
-\_| |_/|_|  |_| \___/       \_| |_/|_|   \___||_| |_|
-"
-
 pf "Bem-vindo ao script de instalação! $BANNER"
-## end block ##
-
-## init block ##
+  
 #~~|¨Default Packages¨|~~#
 pf "Você está prestes a instalar os seguintes pacotes:" "warn"
 plist "${PKGS_DEFAULT[@]}"
-pkg_i "${PKGS_DEFAULT[@]}"
-## end block ##
-
-## init block ##
+pkg_i "${PKGS_DEFAULT[@]}" 
+  
 #~~|¨Drivers¨|~~#
 pf "Vamos iniciar a instalação dos drivers!" "warn"
 while true; do
@@ -42,9 +28,7 @@ while true; do
     pf "Opção inválida. Por favor, escolha um das opções informadas." "error"
   fi
 done
-## end block ##
-
-## init block ##
+  
 #~~|¨Xorg & Wayland¨|~~#
 pf "Escolha o seu servidor de exibição!" "warn"
 while true; do
@@ -63,9 +47,7 @@ while true; do
     pf "Opção inválida. Por favor, escolha um das opções informadas." "error"
   fi
 done
-## end block ##
-
-## init block ##
+  
 #~~|¨Config System¨|~~#
 read -n1 -rep "Você gostaria de iniciar a configuração do sistema? (s,n)" ECOSETT
 if [[ $ECOSETT == "S" || $ECOSETT == "s" ]]; then
@@ -73,63 +55,35 @@ if [[ $ECOSETT == "S" || $ECOSETT == "s" ]]; then
   "./scripts/configs-system.sh"
   pf "Configuração concluída!" "success"
 fi
-## end block ##
-
-## init block ##
-#~~|¨Install DE¨|~~#
+  
+#~~|¨Install Desktop Environment¨|~~#
 while true; do
-  read -rep "Qual ambiente desktop você deseja instalar? (KDE ou XFCE)" DE
+  read -rep "Qual ambiente desktop você deseja instalar? (KDE)" DE
   if [[ $DE == "KDE" || $DE == "kde" ]]; then
-    cd "./files/kde"
-    sleep 0.5
-    "./install.sh"
-    break
-  elif [[ $DE == "XFCE" || $DE == "xfce" ]]; then
-    cd "./files/xfce"
-    sleep 0.5
-    "./install.sh"
+    "./files/kde/install.sh"
     break
   else
     pf "Opção inválida. Por favor, escolha um dos ambientes desktop listados." "error"
   fi
 done
-## end block ##
-
-## init block ##
-#~~|¨Set Wallpaper¨|~~#
-read -n1 -rep "Você gostaria de configurar wallpaper usando o feh? (s,n)" SETWALL
-if [[ $SETWALL == [Ss] ]]; then
-  cd "./files/assets"
-  sleep 0.5
-  "./set-wallpaper.sh"
-fi
-## end block ##
-
-## init block ##
+  
 #~~|¨Clear Caches¨|~~#
 pf "Limpando caches do sistema de páginas, inode e dentry."
 sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"
-
+sudo paccache -r
 pf "Limpando o cache do pacman." 
 sudo pacman -Sc --noconfirm
-## end block ##
 
-## init block ##
 #~~|¨Setup Finally¨|~~#
 pf "Atualizando o sistema."
 sudo pacman -Syu --noconfirm
-
 pf "Removendo todos os pacotes órfãos do seu sistema."
-sudo pacman -Rs $(pacman -Qqdt >/dev/null)
-## end block ##
+sudo pacman -Rs $(pacman -Qqdt)
 
-## init block ##
 #~~|¨Congratulations¨|~~#
 pf "Script foi finalizado com sucesso!!🎉" "success"
-
 read -n1 -rep "Você gostaria de Reiniciar o sistema agora? (s,n)" SYSF
 if [[ $SYSF == [Ss] ]]; then
   pf "Reiniciando o sistema!" "warn"
   reboot
 fi
-## end block ##
