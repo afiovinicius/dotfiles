@@ -1,9 +1,5 @@
-# Theme for Alacritty
-import = [
-  "~/.config/alacritty/themes/vct-theme.toml"
-]
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 
 [window]
@@ -23,3 +19,11 @@ hide_when_typing = true
 
 [cursor]
 style = { shape = "Beam", blinking = "On" }
+
+[general]
+# Theme for Alacritty
+import = [
+  "~/.config/alacritty/themes/vct-theme.toml"
+]
+
+[terminal]
