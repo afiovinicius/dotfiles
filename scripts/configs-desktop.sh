@@ -40,10 +40,10 @@ else
 fi
 pf "Instalando Oh My ZSH" "warn"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-if [ -d "$HOME/.oh-my-zsh/plugins" ]; then
-    git clone https://github.com/zsh-users/zsh-completions.git "$HOME/.oh-my-zsh/plugins"
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/plugins"
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git "$HOME/.oh-my-zsh/plugins"
+if [ -d "$HOME/.oh-my-zsh" ]; then
+    git clone https://github.com/zsh-users/zsh-completions.git "$HOME/.oh-my-zsh/plugins/"
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/plugins/"
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git "$HOME/.oh-my-zsh/plugins/"
     mv "$HOME/.oh-my-zsh" "$HOME/.config/zsh"
     rm -r "$HOME/.zshrc"
 else
@@ -61,7 +61,7 @@ if [ ! -d "$HOME/.config/nvim" ]; then
     read -rep "Você gostaria de usar qual preset do Nvim? (NvChad ou Lunar)" NVIMC
     if [[ $NVIMC == "NVCHAD" || $NVIMC == "nvchad" ]]; then
       mkdir "$HOME/.config/nvim"
-      git clone https://github.com/NvChad/starter "~/.config/nvim"
+      git clone https://github.com/NvChad/starter ~/.config/nvim
       break
     elif [[ $NVIMC == "LUNAR" || $NVIMC == "lunar" ]]; then
       run_cmd_valid "LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)" "Configurações do Lunar Vim"

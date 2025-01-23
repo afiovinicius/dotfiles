@@ -57,8 +57,10 @@ if [[ $AURPKGS == [Ss] ]]; then
     pf "Diretório criado!" "success"
     pf "Clonando repo do yay e iniciando instalação..." "warn"
     git clone https://aur.archlinux.org/yay.git "$HOME/aur/yay"
-    makepkg -C -C "$HOME/aur/yay" -sic --skippgpcheck
+    cd "$HOME/aur/yay"
+    makepkg -sic --skippgpcheck
     yay -S --needed --noconfirm "${PKGS_AUR[@]}"
+    cd "$HOME/dotfiles"
     pf "Instalação concluída!" "success"
   else
     yay -S --needed --noconfirm "${PKGS_AUR[@]}"
