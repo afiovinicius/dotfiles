@@ -169,6 +169,9 @@ GAMES=(
   "composable-kernel" # Kernel para computação em GPUs AMD.
   "lib32-amdvlk" # Versão de 32 bits do driver Vulkan oficial da AMD.
   "lib32-vulkan-radeon" # Versão de 32 bits do driver Vulkan Mesa para AMD.
+  "nvidia-prime" # Para rodar drivers da NVIDIA em offload.
+  "vulkan-mesa-layers" # Para rodar jogos com placa dedicada NVIDIA.
+  "lib32-vulkan-mesa-layers" # Para rodar jogos com placa dedicada NVIDIA em 32bit.
 )
 
 GRAPHICS=(
