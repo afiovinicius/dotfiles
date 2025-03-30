@@ -224,6 +224,7 @@ PKGS_AUR=(
   "stripe-cli" # CLI do Stripe
   "slack-desktop" # Para para comunicação de times de desenvolvimento
   "beekeeper-studio-bin" # Interface para gerenciamento de banco de dados
+  "note-liber-bin" # App de anotações rápido
 )
 
 PKGS_KDE=(
