@@ -114,7 +114,6 @@ DEVELOPMENT=(
   "pyenv" # Ferramenta para gerenciar múltiplas versões do Python.
   "python-pip" # Gerenciador de pacotes oficial do Python.
   "python-pipx" # Executa pacotes Python em ambientes virtuais isolados.
-  "python-poetry" # Ferramenta para gerenciar dependências e projetos Python.
   "docker" # Plataforma para criar e gerenciar contêineres.
   "docker-compose" # Ferramenta para orquestrar aplicações multicontêiner.
   "vim" # Editor de texto poderoso e configurável para o terminal.
@@ -217,10 +216,14 @@ PKGS_AUR=(
   "brave-bin" # Navegador focado em privacidade e desempenho (versão binária).
   "spotify" # Cliente oficial do Spotify para streaming de música.
   "visual-studio-code-bin" # Editor de código da Microsoft (versão binária).
-  "mockoon-bin" # Simulador de APIs local para desenvolvedores (versão binária).
+  # "mockoon-bin" # Simulador de APIs local para desenvolvedores (versão binária).
   # "obsidian-bin" # Aplicativo de notas baseado em Markdown (comentado na lista).
   "postman-bin" # Ferramenta para desenvolvimento e teste de APIs (versão binária).
   # "local-by-flywheel-bin" # Ambiente de desenvolvimento WordPress local (comentado na lista).
+  # "wps-office" # Suíte de escritório.
+  "stripe-cli" # CLI do Stripe
+  "slack-desktop" # Para para comunicação de times de desenvolvimento
+  "beekeeper-studio-bin" # Interface para gerenciamento de banco de dados
 )
 
 PKGS_KDE=(
