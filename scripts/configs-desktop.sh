@@ -103,6 +103,13 @@ if command -v poetry &>/dev/null; then
   pf "Poetry instalado e configurado." "success"
 fi
 
+#~~|¨Angular CLI¨|~~#
+pf "Iniciando instalação e configuração do Angular CLI." "warn"
+if command -v ng &>/dev/null; then
+  sudo npm install -g @angular/cli
+  pf "Angular CLI instalado e configurado." "success"
+fi
+
 #~~|¨Docker¨|~~#
 pf "Iniciando o docker no systemd." "warn"
 if command -v docker &>/dev/null; then
