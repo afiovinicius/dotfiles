@@ -61,6 +61,9 @@ PKGS_DEFAULT=(
   "lm_sensors" # Monitoramento de temperatura, tensão e ventiladores de hardware.
   "pacman-contrib" # Exclui todas as versões em cache de pacotes instalados.
   "fwupd" # Daemon simples para permitir que atualize o firmware em sua máquina local.
+  "smartmontool"
+  "sysstat"
+  "gsmartcontrol"
 )
 
 DRIVERS_AMD=(
