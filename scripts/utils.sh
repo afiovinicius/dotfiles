@@ -120,6 +120,7 @@ DEVELOPMENT=(
   "neovim" # Fork modernizado do Vim com melhorias.
   "zsh" # Shell interativo poderoso e personalizável.
   "alacritty" # Terminal GPU acelerado, leve e rápido.
+  "zed" # IDE para desenvolvimento web
 )
 
 GAMES=(
