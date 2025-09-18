@@ -70,7 +70,6 @@ done
 #~~|¨Clear Caches¨|~~#
 pf "Limpando caches do sistema de páginas, inode e dentry."
 sudo sh -c "echo 3 > /proc/sys/vm/drop_caches"
-sudo paccache -r
 pf "Limpando o cache do pacman." 
 sudo pacman -Sc --noconfirm
 

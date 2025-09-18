@@ -61,9 +61,9 @@ PKGS_DEFAULT=(
   "lm_sensors" # Monitoramento de temperatura, tensão e ventiladores de hardware.
   "pacman-contrib" # Exclui todas as versões em cache de pacotes instalados.
   "fwupd" # Daemon simples para permitir que atualize o firmware em sua máquina local.
-  "smartmontool"
-  "sysstat"
-  "gsmartcontrol"
+  # "smartmontool" # CLI para monitorar S.M.A.R.T
+  "sysstat" # Monitoramento em tempo real do SSD
+  "gsmartcontrol" # Interface para monitoramento SMART baseado no smartmontool
 )
 
 DRIVERS_AMD=(
@@ -165,10 +165,7 @@ GAMES=(
   "libxcrypt" # Biblioteca para autenticação e funções de criptografia.
   "libxcrypt-compat" # Compatibilidade com versões antigas de libxcrypt.
   "glibc" # Biblioteca padrão C para sistemas Linux.
-  "opencl-clover-mesa" # Implementação OpenCL no driver Mesa.
-  "lib32-opencl-clover-mesa" # Versão de 32 bits do Clover OpenCL no Mesa.
   "rocm-opencl-runtime" # Runtime OpenCL para GPUs AMD com ROCm.
-  "lib32-opencl-rusticl-mesa" # Implementação Rusticl de OpenCL no Mesa (32 bits).
   "composable-kernel" # Kernel para computação em GPUs AMD.
   "lib32-amdvlk" # Versão de 32 bits do driver Vulkan oficial da AMD.
   "lib32-vulkan-radeon" # Versão de 32 bits do driver Vulkan Mesa para AMD.
@@ -180,6 +177,7 @@ GAMES=(
 GRAPHICS=(
   "gimp" # Editor de imagens avançado e de código aberto.
   "inkscape" # Editor de gráficos vetoriais em SVG.
+  "blender" # Software para modelagem 3D
 )
 
 IOT=(
@@ -194,6 +192,8 @@ MEDIA=(
   "yt-dlp" # Ferramenta para baixar vídeos de várias plataformas.
   "audacious" # Leitor de música leve e focado em simplicidade.
   "vlc" # Reprodutor multimídia versátil e de código aberto.
+  "vlc-plugins-all" # Conjunto completo de plugins para o VLC.
+  "vlc-plugins-extra" # Plugins adicionais para o VLC.
 )
 
 OFFICE=(
@@ -209,7 +209,7 @@ SETTIGNS=(
   "ufw" # Firewall simples e fácil de usar.
   "gufw" # Interface gráfica para gerenciar o UFW.
   "pcmanfm" # Gerenciador de arquivos leve e rápido.
-  "neofetch" # Exibe informações do sistema no terminal.
+  "fastfetch" # Exibe informações do sistema no terminal.
   "htop" # Monitor de recursos interativo e avançado para o terminal.
   "seahorse" # Gerenciador de chaves e senhas no GNOME.
   "bleachbit" # Ferramenta para limpeza e liberação de espaço em disco.
