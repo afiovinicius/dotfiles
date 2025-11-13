@@ -61,9 +61,9 @@ PKGS_DEFAULT=(
   "lm_sensors" # Monitoramento de temperatura, tensão e ventiladores de hardware.
   "pacman-contrib" # Exclui todas as versões em cache de pacotes instalados.
   "fwupd" # Daemon simples para permitir que atualize o firmware em sua máquina local.
-  # "smartmontool" # CLI para monitorar S.M.A.R.T
-  "sysstat" # Monitoramento em tempo real do SSD
-  "gsmartcontrol" # Interface para monitoramento SMART baseado no smartmontool
+  # "smartmontool" # CLI para monitorar S.M.A.R.T.
+  "sysstat" # Monitoramento em tempo real do SSD.
+  "gsmartcontrol" # Interface para monitoramento SMART baseado no smartmontool.
 )
 
 DRIVERS_AMD=(
@@ -123,7 +123,7 @@ DEVELOPMENT=(
   "neovim" # Fork modernizado do Vim com melhorias.
   "zsh" # Shell interativo poderoso e personalizável.
   "alacritty" # Terminal GPU acelerado, leve e rápido.
-  "zed" # IDE para desenvolvimento web
+  "zed" # IDE para desenvolvimento web.
 )
 
 GAMES=(
@@ -177,7 +177,7 @@ GAMES=(
 GRAPHICS=(
   "gimp" # Editor de imagens avançado e de código aberto.
   "inkscape" # Editor de gráficos vetoriais em SVG.
-  "blender" # Software para modelagem 3D
+  "blender" # Software para modelagem 3D.
 )
 
 IOT=(
@@ -197,7 +197,7 @@ MEDIA=(
 )
 
 OFFICE=(
-  "libreoffice" # Suíte de escritório completa e de código aberto.
+  # "libreoffice" # Suíte de escritório completa e de código aberto.
 )
 
 SETTIGNS=(
@@ -217,6 +217,7 @@ SETTIGNS=(
 )
 
 PKGS_AUR=(
+  "note-liber-bin" # App de anotações rápido
   "brave-bin" # Navegador focado em privacidade e desempenho (versão binária).
   "spotify" # Cliente oficial do Spotify para streaming de música.
   "visual-studio-code-bin" # Editor de código da Microsoft (versão binária).
@@ -225,10 +226,10 @@ PKGS_AUR=(
   "postman-bin" # Ferramenta para desenvolvimento e teste de APIs (versão binária).
   # "local-by-flywheel-bin" # Ambiente de desenvolvimento WordPress local (comentado na lista).
   # "wps-office" # Suíte de escritório.
-  "stripe-cli" # CLI do Stripe
-  "slack-desktop" # Para para comunicação de times de desenvolvimento
-  "beekeeper-studio-bin" # Interface para gerenciamento de banco de dados
-  "note-liber-bin" # App de anotações rápido
+  "stripe-cli" # CLI do Stripe.
+  "slack-desktop" # Para para comunicação de times de desenvolvimento.
+  "beekeeper-studio-bin" # Interface para gerenciamento de banco de dados.
+  "howdy" # Windows Hello para Linux sensor ir.
 )
 
 PKGS_KDE=(
