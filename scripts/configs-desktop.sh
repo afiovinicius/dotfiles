@@ -110,6 +110,15 @@ if command -v ng &>/dev/null; then
   pf "Angular CLI instalado e configurado." "success"
 fi
 
+#~~|¨NVM¨|~~#
+pf "Iniciando instalação do NVM para versionamento do node." "warn"
+if command -v nvm &>/dev/null; then
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+  \. "$HOME/.nvm/nvm.sh"
+  nvm install lts
+  pf "NVM instalado e configurado." "success"
+fi
+
 #~~|¨Docker¨|~~#
 pf "Iniciando o docker no systemd." "warn"
 if command -v docker &>/dev/null; then

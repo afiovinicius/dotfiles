@@ -2,6 +2,7 @@
 # Import configs externals
 ##
 export ZSH="$HOME/.config/zsh/.oh-my-zsh"
+export NVM_DIR="$HOME/.nvm"
 
 ##
 # Themes config with Oh My ZSH
@@ -55,3 +56,11 @@ plugins=(
 # Sourcers
 ##
 source $ZSH/oh-my-zsh.sh
+source <(ng completion script)
+
+##
+# Loadrs
+##
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
+

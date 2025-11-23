@@ -64,6 +64,7 @@ PKGS_DEFAULT=(
   # "smartmontool" # CLI para monitorar S.M.A.R.T.
   "sysstat" # Monitoramento em tempo real do SSD.
   "gsmartcontrol" # Interface para monitoramento SMART baseado no smartmontool.
+  "fuse2" # Jeito do Linux deixar programas criarem sistemas de arquivos fake sem mexer no kernel.
 )
 
 DRIVERS_AMD=(
