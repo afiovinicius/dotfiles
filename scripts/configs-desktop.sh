@@ -15,14 +15,6 @@ else
   pf "O diretório ~/.config/fontconfig já existe. Seguindo com as configurações!"
 fi
 
-#~~|¨Neofetch¨|~~#
-pf "Ajustando neofetch." "warn"
-if [ ! -d "$HOME/.config/neofetch" ]; then
-  run_cmd_valid "cp -r "./files/config/neofetch" "$HOME/.config/neofetch"" "Configurações do Neofetch"
-else
-  pf "O diretório ~/.config/neofetch já existe. Seguindo com as configurações!"
-fi
-
 #~~|¨Terminal¨|~~#
 pf "Iniciando configurações do Alacritty." "warn"
 if [ ! -d "$HOME/.config/alacritty" ]; then
@@ -94,11 +86,11 @@ if command -v gh &>/dev/null; then
   pf "Você já tem o GitHub CLI instalado. Ao iniciar o sistema com a interface, use o comando 'gh auth login' em seu terminal."
 fi
 
-#~~|¨Poetry¨|~~#
-pf "Iniciando instalação e configuração do Poetry." "warn"
+#~~|¨Poetry & UV¨|~~#
+pf "Iniciando instalação e configuração do Poetry e UV." "warn"
 if command -v poetry &>/dev/null; then
   pipx ensurepath
-  pipx install poetry
+  pipx install poetry uv
   pipx inject poetry poetry-plugin-shell
   pf "Poetry instalado e configurado." "success"
 fi

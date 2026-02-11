@@ -211,6 +211,7 @@ SETTIGNS=(
   "gufw" # Interface gráfica para gerenciar o UFW.
   "pcmanfm" # Gerenciador de arquivos leve e rápido.
   "fastfetch" # Exibe informações do sistema no terminal.
+  "tree" # Exibe a estrutura de diretórios em formato de árvore.
   "htop" # Monitor de recursos interativo e avançado para o terminal.
   "seahorse" # Gerenciador de chaves e senhas no GNOME.
   "bleachbit" # Ferramenta para limpeza e liberação de espaço em disco.
