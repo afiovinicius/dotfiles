@@ -18,7 +18,6 @@ pf "Essas são as ferramentas para jogos:" "warn"
 plist "${GAMES[@]}"
 pkg_i "${GAMES[@]}"
 # https://wiki.archlinux.org/title/gaming
-# https://github.com/lutris/docs/blob/master/WineDependencies.md#archendeavourosmanjaroother-arch-derivatives
 # https://arch.d3sox.me/gaming/
 
 #~~|¨Graphics¨|~~#

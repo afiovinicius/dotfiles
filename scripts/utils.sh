@@ -47,7 +47,11 @@ PKGS_DEFAULT=(
   "gst-plugins-good" # Plugins GStreamer de alta qualidade e bem suportados.
   "gst-plugins-base" # Plugins GStreamer essenciais para funcionalidades básicas.
   "gst-plugins-bad" # Plugins GStreamer experimentais ou menos suportados.
+  "gst-plugin-pipewire" # Integração do PipeWire como backend de áudio/vídeo em GStreamer.
+  "gst-plugin-onnx" # Plugin GStreamer para inferência de modelos de IA usando ONNX.
+  "gst-plugin-opencv" # Plugin GStreamer para processamento de imagem e visão computacional com OpenCV.
   "gst-libav" # Suporte a vários formatos de áudio/vídeo em GStreamer via libav.
+  "gst-devtools"
   "bluez" # Suporte a dispositivos Bluetooth.
   "bluez-utils" # Ferramentas adicionais para dispositivos Bluetooth.
   "nano" # Editor de texto simples e fácil de usar.
@@ -61,7 +65,6 @@ PKGS_DEFAULT=(
   "lm_sensors" # Monitoramento de temperatura, tensão e ventiladores de hardware.
   "pacman-contrib" # Exclui todas as versões em cache de pacotes instalados.
   "fwupd" # Daemon simples para permitir que atualize o firmware em sua máquina local.
-  # "smartmontool" # CLI para monitorar S.M.A.R.T.
   "sysstat" # Monitoramento em tempo real do SSD.
   "gsmartcontrol" # Interface para monitoramento SMART baseado no smartmontool.
   "fuse2" # Jeito do Linux deixar programas criarem sistemas de arquivos fake sem mexer no kernel.
@@ -83,6 +86,7 @@ DRIVERS_INTEL=(
 
 XORG=(
   "xorg" # Meta-pacote para instalar o sistema Xorg completo.
+  "plasma-x11-session" # Pacote de integração da sessão x11
   "xorg-server" # Servidor de exibição X (necessário para interfaces gráficas baseadas em X11).
   "xorg-apps" # Conjunto de utilitários e ferramentas para Xorg.
   "xdg-desktop-portal" # Interface entre aplicativos e ambientes desktop (necessária para sandboxing e Wayland).
@@ -223,11 +227,8 @@ PKGS_AUR=(
   "brave-bin" # Navegador focado em privacidade e desempenho (versão binária).
   "spotify" # Cliente oficial do Spotify para streaming de música.
   "visual-studio-code-bin" # Editor de código da Microsoft (versão binária).
-  # "mockoon-bin" # Simulador de APIs local para desenvolvedores (versão binária).
-  # "obsidian-bin" # Aplicativo de notas baseado em Markdown (comentado na lista).
   "postman-bin" # Ferramenta para desenvolvimento e teste de APIs (versão binária).
-  # "local-by-flywheel-bin" # Ambiente de desenvolvimento WordPress local (comentado na lista).
-  # "wps-office" # Suíte de escritório.
+  "local-by-flywheel-bin" # Ambiente de desenvolvimento WordPress local (comentado na lista).
   "stripe-cli" # CLI do Stripe.
   "slack-desktop" # Para para comunicação de times de desenvolvimento.
   "beekeeper-studio-bin" # Interface para gerenciamento de banco de dados.
