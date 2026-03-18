@@ -20,9 +20,6 @@ hide_when_typing = true
 style = { shape = "Beam", blinking = "On" }
 
 [general]
-# Theme for Alacritty
 import = [
   "~/.config/alacritty/themes/vct-theme.toml"
 ]
-
-[terminal]

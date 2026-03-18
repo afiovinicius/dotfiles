@@ -51,7 +51,7 @@ PKGS_DEFAULT=(
   "gst-plugin-onnx" # Plugin GStreamer para inferência de modelos de IA usando ONNX.
   "gst-plugin-opencv" # Plugin GStreamer para processamento de imagem e visão computacional com OpenCV.
   "gst-libav" # Suporte a vários formatos de áudio/vídeo em GStreamer via libav.
-  "gst-devtools"
+  "gst-devtools" # GStreamer development tools package.
   "bluez" # Suporte a dispositivos Bluetooth.
   "bluez-utils" # Ferramentas adicionais para dispositivos Bluetooth.
   "nano" # Editor de texto simples e fácil de usar.
@@ -65,9 +65,18 @@ PKGS_DEFAULT=(
   "lm_sensors" # Monitoramento de temperatura, tensão e ventiladores de hardware.
   "pacman-contrib" # Exclui todas as versões em cache de pacotes instalados.
   "fwupd" # Daemon simples para permitir que atualize o firmware em sua máquina local.
+  "irqbalance" # Melhora distribuição de carga nos cores do CPU (bom para jogos/compilação)
+  "prelockd" # Evita que o sistema trave sob carga pesada de memória (OOM)
   "sysstat" # Monitoramento em tempo real do SSD.
   "gsmartcontrol" # Interface para monitoramento SMART baseado no smartmontool.
   "fuse2" # Jeito do Linux deixar programas criarem sistemas de arquivos fake sem mexer no kernel.
+  "zlib" # Biblioteca de compressão de dados.
+  "xz" # Ferramenta de compressão com alta taxa de compressão.
+  "tk" # Toolkit para criar interfaces gráficas com Tcl.
+  "lcms2" # Biblioteca para gerenciamento de cores e conversão de perfis ICC.
+  "ttf-jetbrains-mono-nerd" # Fonte monoespacial JetBrains Mono com ícones Nerd Font.
+  "noto-fonts" # Família abrangente de fontes que suporta múltiplos idiomas e scripts.
+  "noto-fonts-emoji" # Fonte com suporte completo a emojis da família Noto.
 )
 
 DRIVERS_AMD=(
@@ -81,6 +90,7 @@ DRIVERS_AMD=(
 
 DRIVERS_INTEL=(
   "xf86-video-intel" # Driver para GPUs Intel integradas no Xorg.
+  "lib32-vulkan-intel" # Versão de 32 bits da implementação Vulkan para GPUs Intel via Mesa.
   "vulkan-intel" # Implementação Vulkan para GPUs Intel via Mesa.
 )
 
@@ -111,6 +121,7 @@ DEVELOPMENT=(
   "yarn" # Alternativa rápida e confiável ao npm.
   "pnpm" # Gerenciador de pacotes eficiente para Node.js.
   "pm2" # Gerenciador de processos para aplicações Node.js.
+  "rustup" # O instalador da cadeia de ferramentas Rust
   "sqlite" # Banco de dados leve e embutido.
   "postgresql" # Sistema de gerenciamento de banco de dados relacional.
   "postgresql-libs" # Bibliotecas essenciais para PostgreSQL.
@@ -129,6 +140,9 @@ DEVELOPMENT=(
   "zsh" # Shell interativo poderoso e personalizável.
   "alacritty" # Terminal GPU acelerado, leve e rápido.
   "zed" # IDE para desenvolvimento web.
+  "ghidra" # Descompiladore de engenharia reversa de código aberto desenvolvido pela NSA.
+  "tree-sitter" # Parser incremental para construção de árvores de sintaxe.
+  "tree-sitter-cli" # Ferramenta CLI para trabalhar com Tree-sitter.
 )
 
 GAMES=(
@@ -172,11 +186,13 @@ GAMES=(
   "glibc" # Biblioteca padrão C para sistemas Linux.
   "rocm-opencl-runtime" # Runtime OpenCL para GPUs AMD com ROCm.
   "composable-kernel" # Kernel para computação em GPUs AMD.
+  "lib32-mesa" # Versão de 32 bits da implementação de gráficos 3D de código aberto Mesa.
   "lib32-amdvlk" # Versão de 32 bits do driver Vulkan oficial da AMD.
   "lib32-vulkan-radeon" # Versão de 32 bits do driver Vulkan Mesa para AMD.
   "nvidia-prime" # Para rodar drivers da NVIDIA em offload.
   "vulkan-mesa-layers" # Para rodar jogos com placa dedicada NVIDIA.
   "lib32-vulkan-mesa-layers" # Para rodar jogos com placa dedicada NVIDIA em 32bit.
+  "gamescope" # Compositor Wayland para jogos, fornece modo tela cheia otimizado e scaling de resolução.
 )
 
 GRAPHICS=(
@@ -190,6 +206,7 @@ IOT=(
   "qbittorrent" # Cliente leve e funcional para torrent.
   "discord" # Plataforma de comunicação por texto, voz e vídeo.
   "telegram-desktop" # Aplicativo oficial do Telegram para desktops.
+  "spotify-launcher" # Cliente oficial do Spotify para streaming de música.
 )
 
 MEDIA=(
@@ -225,7 +242,6 @@ SETTIGNS=(
 PKGS_AUR=(
   "note-liber-bin" # App de anotações rápido
   "brave-bin" # Navegador focado em privacidade e desempenho (versão binária).
-  "spotify" # Cliente oficial do Spotify para streaming de música.
   "visual-studio-code-bin" # Editor de código da Microsoft (versão binária).
   "postman-bin" # Ferramenta para desenvolvimento e teste de APIs (versão binária).
   "local-by-flywheel-bin" # Ambiente de desenvolvimento WordPress local (comentado na lista).
@@ -233,6 +249,8 @@ PKGS_AUR=(
   "slack-desktop" # Para para comunicação de times de desenvolvimento.
   "beekeeper-studio-bin" # Interface para gerenciamento de banco de dados.
   "howdy" # Windows Hello para Linux sensor ir.
+  "heroic-games-launcher-bin" # Gerenciador gráfico para jogos no Linux.
+  "dnspyex-wine-bin" # Descompilador .NET com suporte para análise de código gerenciado via Wine.
 )
 
 PKGS_KDE=(
@@ -254,6 +272,7 @@ PKGS_KDE=(
   "kamoso" # Aplicativo para capturar fotos e vídeos de webcams.
   "kate" # Editor de texto avançado com suporte a múltiplas linguagens.
   "kcalc" # Calculadora gráfica do KDE.
+  "kclock" # Relógio gráfico do KDE.
   "kcolorchooser" # Ferramenta para selecionar e gerenciar cores.
   "kde-dev-scripts" # Scripts para desenvolvedores no ambiente KDE.
   "kde-dev-utils" # Conjunto de utilitários para desenvolvimento no KDE.

@@ -57,10 +57,14 @@ plugins=(
 ##
 source $ZSH/oh-my-zsh.sh
 source <(ng completion script)
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
 
 ##
 # Loadrs
 ##
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
+
 

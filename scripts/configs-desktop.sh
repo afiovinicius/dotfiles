@@ -46,28 +46,6 @@ git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH/themes/spaceship.zsh-theme"
 pf "Instalação do spaceship concluída!" "warn"
 
-#~~|¨Nvim¨|~~#
-# pf "Iniciando configurações do Neo Vim." "warn"
-# if [ ! -d "$HOME/.config/nvim" ]; then
-#   while true; do
-#     read -rep "Você gostaria de usar qual preset do Nvim? (NvChad ou Lunar)" NVIMC
-#     if [[ $NVIMC == "NVCHAD" || $NVIMC == "nvchad" ]]; then
-#       mkdir "$HOME/.config/nvim"
-#       git clone https://github.com/NvChad/starter ~/.config/nvim
-#       break
-#     elif [[ $NVIMC == "LUNAR" || $NVIMC == "lunar" ]]; then
-#       run_cmd_valid "LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)" "Configurações do Lunar Vim"
-#       break
-#     else
-#       pf "Opção inválida. Por favor, escolha um das opções informadas." "error"
-#     fi
-#   done
-# else
-#   pf "O diretório ~/.config/nvim já existe. Seguindo com as configurações!"
-# fi
-# plugin: https://github.com/folke/lazy.nvim
-# aprender: https://github.com/folke/lazy.nvim
-
 #~~|¨Git¨|~~#
 pf "Vamos começar com as configurações do GitHub. Fique atento!" "warn"
 read -rep "Qual seu nome de usuário no github?" RESUSER
