@@ -66,7 +66,6 @@ PKGS_DEFAULT=(
   "pacman-contrib" # Exclui todas as versões em cache de pacotes instalados.
   "fwupd" # Daemon simples para permitir que atualize o firmware em sua máquina local.
   "irqbalance" # Melhora distribuição de carga nos cores do CPU (bom para jogos/compilação)
-  "prelockd" # Evita que o sistema trave sob carga pesada de memória (OOM)
   "sysstat" # Monitoramento em tempo real do SSD.
   "gsmartcontrol" # Interface para monitoramento SMART baseado no smartmontool.
   "fuse2" # Jeito do Linux deixar programas criarem sistemas de arquivos fake sem mexer no kernel.
@@ -187,7 +186,6 @@ GAMES=(
   "rocm-opencl-runtime" # Runtime OpenCL para GPUs AMD com ROCm.
   "composable-kernel" # Kernel para computação em GPUs AMD.
   "lib32-mesa" # Versão de 32 bits da implementação de gráficos 3D de código aberto Mesa.
-  "lib32-amdvlk" # Versão de 32 bits do driver Vulkan oficial da AMD.
   "lib32-vulkan-radeon" # Versão de 32 bits do driver Vulkan Mesa para AMD.
   "nvidia-prime" # Para rodar drivers da NVIDIA em offload.
   "vulkan-mesa-layers" # Para rodar jogos com placa dedicada NVIDIA.
@@ -206,7 +204,6 @@ IOT=(
   "qbittorrent" # Cliente leve e funcional para torrent.
   "discord" # Plataforma de comunicação por texto, voz e vídeo.
   "telegram-desktop" # Aplicativo oficial do Telegram para desktops.
-  "spotify-launcher" # Cliente oficial do Spotify para streaming de música.
 )
 
 MEDIA=(
@@ -242,15 +239,17 @@ SETTIGNS=(
 PKGS_AUR=(
   "note-liber-bin" # App de anotações rápido
   "brave-bin" # Navegador focado em privacidade e desempenho (versão binária).
+  "spotify" # Cliente oficial do Spotify para streaming de música.
   "visual-studio-code-bin" # Editor de código da Microsoft (versão binária).
   "postman-bin" # Ferramenta para desenvolvimento e teste de APIs (versão binária).
   "local-by-flywheel-bin" # Ambiente de desenvolvimento WordPress local (comentado na lista).
   "stripe-cli" # CLI do Stripe.
   "slack-desktop" # Para para comunicação de times de desenvolvimento.
   "beekeeper-studio-bin" # Interface para gerenciamento de banco de dados.
-  "howdy" # Windows Hello para Linux sensor ir.
+  # "howdy" # Windows Hello para Linux sensor ir.
   "heroic-games-launcher-bin" # Gerenciador gráfico para jogos no Linux.
-  "dnspyex-wine-bin" # Descompilador .NET com suporte para análise de código gerenciado via Wine.
+  # "dnspyex-wine-bin" # Descompilador .NET com suporte para análise de código gerenciado via Wine.
+  "warp-terminal-bin" # O Warp é o terminal inteligente com IA 
 )
 
 PKGS_KDE=(

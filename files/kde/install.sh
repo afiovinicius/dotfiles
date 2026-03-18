@@ -38,7 +38,7 @@ configure_numlock() {
     sed -i 's/^NumLock=.*/NumLock=1/' "$HOME/.config/kcminputrc"
   else
       echo -e "\n[Keyboard]" >> "$HOME/.config/kcminputrc"
-      echo "NumLock=1" >> "$HOME/.config/kcminputrc"
+      echo "NumLock=0" >> "$HOME/.config/kcminputrc"
   fi
   pf "Configuração do NumLock aplicada no KDE Plasma." "success"
 }
