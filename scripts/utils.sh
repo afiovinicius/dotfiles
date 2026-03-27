@@ -250,6 +250,8 @@ PKGS_AUR=(
   "heroic-games-launcher-bin" # Gerenciador gráfico para jogos no Linux.
   # "dnspyex-wine-bin" # Descompilador .NET com suporte para análise de código gerenciado via Wine.
   "warp-terminal-bin" # O Warp é o terminal inteligente com IA 
+  "caido-desktop" # Conjunto de ferramentas para auditoria de segurança web.
+  "claude-desktop-bin" # Claude desktop, controle de IA via mcp
 )
 
 PKGS_KDE=(
