@@ -26,6 +26,11 @@ sudo systemctl enable bluetooth.service
 pf "Habilitando e iniciando Reflector." "warn"
 sudo systemctl enable reflector.service
 sudo systemctl start reflector.service
+pf "Habilitando e iniciando gerenciamento de bateria." "warn"
+sudo systemctl enable --now power-profiles-daemon.service
+sudo systemctl enable --now power-profiles-daemon
+sudo systemctl start power-profiles-daemon.service
+sudo systemctl start power-profiles-daemon
 
 #~~|¨Config Reflector¨|~~#
 pf "Iniciando configuração do Reflector." "warn"

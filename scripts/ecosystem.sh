@@ -20,6 +20,10 @@ pkg_i "${GAMES[@]}"
 # https://wiki.archlinux.org/title/gaming
 # https://arch.d3sox.me/gaming/
 
+pf "Esses são os drivers para NVIDIA:" "warn"
+plist "${GAMES[@]}"
+pkg_i "${GAMES[@]}"
+
 #~~|¨Graphics¨|~~#
 pf "Essas são as ferramentas para design:" "warn"
 plist "${GRAPHICS[@]}"

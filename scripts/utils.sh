@@ -57,12 +57,13 @@ PKGS_DEFAULT=(
   "nano" # Editor de texto simples e fácil de usar.
   "libinput" # Biblioteca para lidar com dispositivos de entrada, como touchpads.
   "gvfs" # Abstração para acessar diferentes sistemas de arquivos.
-  "lighttpd" # Servidor web leve e rápido.
   "reflector" # Atualiza automaticamente os espelhos de pacotes para os mais rápidos.
   "wget" # Ferramenta de linha de comando para download de arquivos via HTTP/FTP.
   "dosfstools" # Ferramentas para manipular sistemas de arquivos FAT.
   "cpupower" # Ferramentas para gerenciamento de energia do processador.
   "lm_sensors" # Monitoramento de temperatura, tensão e ventiladores de hardware.
+  "power-profiles-daemon"
+  "powertop"
   "pacman-contrib" # Exclui todas as versões em cache de pacotes instalados.
   "fwupd" # Daemon simples para permitir que atualize o firmware em sua máquina local.
   "irqbalance" # Melhora distribuição de carga nos cores do CPU (bom para jogos/compilação)
@@ -76,13 +77,15 @@ PKGS_DEFAULT=(
   "ttf-jetbrains-mono-nerd" # Fonte monoespacial JetBrains Mono com ícones Nerd Font.
   "noto-fonts" # Família abrangente de fontes que suporta múltiplos idiomas e scripts.
   "noto-fonts-emoji" # Fonte com suporte completo a emojis da família Noto.
+  "openssl" # Biblioteca para criptografia e comunicações seguras.
+  "gnutls" # Implementação de segurança de rede e TLS.
 )
 
 DRIVERS_AMD=(
   "xf86-video-amdgpu" # Driver de código aberto para GPUs AMD mais recentes no Xorg.
   "vulkan-radeon" # Implementação Vulkan para GPUs AMD usando o driver Mesa.
-  "vulkan-swrast" # Renderização Vulkan em software via llvmpipe (fallback).
-  "amdvlk" # Driver Vulkan oficial da AMD para GPUs Radeon.
+  # "vulkan-swrast" # Renderização Vulkan em software via llvmpipe
+  # "amdvlk" # Driver Vulkan oficial da AMD para GPUs Radeon.
   "mesa-vdpau" # Suporte para aceleração de vídeo VDPAU em GPUs AMD.
   "amd-ucode" # Firmware para CPUs e GPUs AMD.
 )
@@ -91,6 +94,16 @@ DRIVERS_INTEL=(
   "xf86-video-intel" # Driver para GPUs Intel integradas no Xorg.
   "lib32-vulkan-intel" # Versão de 32 bits da implementação Vulkan para GPUs Intel via Mesa.
   "vulkan-intel" # Implementação Vulkan para GPUs Intel via Mesa.
+)
+
+DRIVERS_NVIDIA=(
+  "egl-wayland"
+  "nvidia-prime" # Para rodar drivers da NVIDIA em offload.
+  "nvidia-utils"
+  "nvidia-settings"
+  "nvidia-open-dkms"
+  "vulkan-mesa-layers" # Para rodar jogos com placa dedicada NVIDIA.
+  "lib32-vulkan-mesa-layers" # Para rodar jogos com placa dedicada NVIDIA em 32bit.
 )
 
 XORG=(
@@ -142,6 +155,7 @@ DEVELOPMENT=(
   "ghidra" # Descompiladore de engenharia reversa de código aberto desenvolvido pela NSA.
   "tree-sitter" # Parser incremental para construção de árvores de sintaxe.
   "tree-sitter-cli" # Ferramenta CLI para trabalhar com Tree-sitter.
+  "lighttpd" # Servidor web leve e rápido.
 )
 
 GAMES=(
@@ -155,8 +169,6 @@ GAMES=(
   "zenity" # Ferramenta para criar caixas de diálogo gráficas via terminal.
   "vulkan-icd-loader" # Loader para implementações Vulkan.
   "vkd3d" # Tradução de Direct3D 12 para Vulkan.
-  "openssl" # Biblioteca para criptografia e comunicações seguras.
-  "gnutls" # Implementação de segurança de rede e TLS.
   "openal" # Biblioteca para áudio posicional em 3D.
   "libpulse" # Biblioteca para integração com PulseAudio.
   "mpg123" # Ferramenta para decodificar e tocar arquivos MP3.
@@ -183,13 +195,10 @@ GAMES=(
   "libxcrypt" # Biblioteca para autenticação e funções de criptografia.
   "libxcrypt-compat" # Compatibilidade com versões antigas de libxcrypt.
   "glibc" # Biblioteca padrão C para sistemas Linux.
-  "rocm-opencl-runtime" # Runtime OpenCL para GPUs AMD com ROCm.
+  # "rocm-opencl-runtime" # Runtime OpenCL para GPUs AMD com ROCm.
   "composable-kernel" # Kernel para computação em GPUs AMD.
   "lib32-mesa" # Versão de 32 bits da implementação de gráficos 3D de código aberto Mesa.
   "lib32-vulkan-radeon" # Versão de 32 bits do driver Vulkan Mesa para AMD.
-  "nvidia-prime" # Para rodar drivers da NVIDIA em offload.
-  "vulkan-mesa-layers" # Para rodar jogos com placa dedicada NVIDIA.
-  "lib32-vulkan-mesa-layers" # Para rodar jogos com placa dedicada NVIDIA em 32bit.
   "gamescope" # Compositor Wayland para jogos, fornece modo tela cheia otimizado e scaling de resolução.
 )
 
