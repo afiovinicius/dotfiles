@@ -21,25 +21,26 @@ style = "blue"
 
 [cmd_duration]
 min_time = 500
-format = '\[[⏱ $duration]($style)\]'
+format = '󱦟 $duration($style)'
 
 [docker_context]
-format = '\[[$symbol$context]($style)\]'
+format = '$symbol$context($style)'
 
 [git_branch]
 symbol = " "
 
 [nodejs]
-format = '\[[$symbol($version)]($style)\]'
+symbol = " "
+format = '[$symbol($version)]($style)'
 
 [package]
-format = '\[[$symbol$version]($style)\]'
+format = '[$symbol$version]($style) '
 
 [python]
-format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+format = '${symbol}${pyenv_prefix}[(${version}) (\($virtualenv\))]($style)'
 
 [rust]
-format = '\[[$symbol($version)]($style)\]'
+format = '[$symbol($version)]($style)'
 
 [solidity]
-format = '\[[$symbol($version)]($style)\]'
+format = '[$symbol($version)]($style)'

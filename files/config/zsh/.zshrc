@@ -42,6 +42,13 @@ bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
 
 ##
+# Alias
+##
+alias ls='eza -lbF --icons'
+alias la='eza -lbhHigUmuSa --time-style=long-iso --icons'
+alias cat='bat'
+
+##
 # Plugins
 ##
 fpath+=($ZSH/plugins/zsh-completions/src)

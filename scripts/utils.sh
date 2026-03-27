@@ -162,6 +162,8 @@ DEVELOPMENT=(
   "fzf" 
   "fd" 
   "ripgrep"
+  "bat"
+  "eza"
 )
 
 GAMES=(
