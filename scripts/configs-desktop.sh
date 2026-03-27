@@ -22,29 +22,25 @@ if [ ! -d "$HOME/.config/alacritty" ]; then
 else
   pf "O diretório ~/.config/alacritty já existe. Seguindo com as configurações!"
 fi
-pf "Iniciando instalação e configuração do terminal zsh + oh-my-zsh." "warn"
+pf "Configurando ZSH." "warn"
 if [ ! -d "$HOME/.config/zsh" ]; then
   run_cmd_valid "cp -r "./files/config/zsh" "$HOME/.config/zsh"" "Configurações do Shell"
   sleep 0.5
   mv "$HOME/.config/zsh/.zshenv" "$HOME/.zshenv"
+  mkdir "$HOME/.config/zsh/plugins"
+  sleep 0.5
+  git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.config/zsh/plugins/zsh-autosuggestions"
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting "$HOME/.config/zsh/plugins/zsh-syntax-highlighting"
+  git clone https://github.com/zsh-users/zsh-completions "$HOME/.config/zsh/plugins/zsh-completions"
 else
   pf "O diretório ~/.config/zsh já existe. Seguindo com as configurações!"
 fi
-pf "Instalando Oh My ZSH" "warn"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-if [ -d "$HOME/.oh-my-zsh" ]; then
-    git clone https://github.com/zsh-users/zsh-completions.git "$HOME/.oh-my-zsh/plugins/"
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/plugins/"
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git "$HOME/.oh-my-zsh/plugins/"
-    mv "$HOME/.oh-my-zsh" "$HOME/.config/zsh"
-    rm -r "$HOME/.zshrc"
-else
-    pf "O diretório ~/.oh-my-zsh/plugins não foi encontrado. Terminando o script." "error"
+pf "Instalando e configurando Starship" "warn"
+sudo pacman -S --needed --noconfirm starship
+if [ ! -f "$HOME/.config/starship.toml" ]; then
+  run_cmd_valid "cp "./files/config/starship/starship.toml" "$HOME/.config"" "Configurações do Starship"
 fi
-pf "Instalando spaceship" "warn"
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH/themes/spaceship.zsh-theme"
-pf "Instalação do spaceship concluída!" "warn"
+pf "Terminal configurado com sucesso!" "success"
 
 #~~|¨Git¨|~~#
 pf "Vamos começar com as configurações do GitHub. Fique atento!" "warn"

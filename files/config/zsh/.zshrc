@@ -1,70 +1,72 @@
 ##
-# Import configs externals
+# Exports
 ##
-export ZSH="$HOME/.config/zsh/.oh-my-zsh"
+export ZSH="$HOME/.config/zsh"
+export PATH="$HOME/.local/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 
 ##
-# Themes config with Oh My ZSH
+# History
 ##
-ZSH_THEME="spaceship"
-# For use = jispwoso ; kafeitu ; juanghurtado ; spaceship
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_find_no_dups
+setopt hist_save_no_dups
+setopt inc_append_history
 
 ##
-# Config Spaceship Theme
+# Completion
 ##
-SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  host          # Hostname section
-  dir           # Current directory section
-  git           # Git section (git_branch + git_status)
-  python        # Python section
-  node          # Node section
-  venv           # virtualenv section
-  exec_time     # Execution time
-  line_sep      # Line break
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="❯"
-SPACESHIP_CHAR_SUFFIX=" "
+autoload -Uz compinit
+compinit
+
+# Cache
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.cache/zsh
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu select
 
 ##
-# Plugins to Oh My ZSH
+# Plugins
 ##
-plugins=(
-  git
-  github
-  python
-  pip
-  poetry
-  node
-  npm
-  yarn
-  ng
-  zsh-autosuggestions
-  zsh-completions
-  zsh-syntax-highlighting
-  zsh-navigation-tools
-  zsh-interactive-cd
-)
+fpath+=($ZSH/plugins/zsh-completions/src)
+source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/plugins/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh
+source $ZSH/plugins/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ##
-# Sourcers
+# Evals
 ##
-source $ZSH/oh-my-zsh.sh
-source <(ng completion script)
+eval "$(starship init zsh)"
 eval "$(uv generate-shell-completion zsh)"
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
 
 ##
 # Loadrs
 ##
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
+lazy_load_nvm() {
+  unset -f node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
 
+node() { lazy_load_nvm; node "$@"; }
+npm()  { lazy_load_nvm; npm "$@"; }
+npx()  { lazy_load_nvm; npx "$@"; }
 
+lazy_load_ng() {
+  unset -f ng
+  command -v ng &>/dev/null && source <(ng completion script)
+}
+
+ng() {
+  lazy_load_ng
+  command ng "$@"
+}

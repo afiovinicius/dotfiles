@@ -77,6 +77,9 @@ PKGS_DEFAULT=(
   "ttf-jetbrains-mono-nerd" # Fonte monoespacial JetBrains Mono com ícones Nerd Font.
   "noto-fonts" # Família abrangente de fontes que suporta múltiplos idiomas e scripts.
   "noto-fonts-emoji" # Fonte com suporte completo a emojis da família Noto.
+  "ttf-nerd-fonts-symbols"
+  "ttf-nerd-fonts-symbols-common"
+  "ttf-nerd-fonts-symbols-mono"
   "openssl" # Biblioteca para criptografia e comunicações seguras.
   "gnutls" # Implementação de segurança de rede e TLS.
 )
@@ -156,6 +159,9 @@ DEVELOPMENT=(
   "tree-sitter" # Parser incremental para construção de árvores de sintaxe.
   "tree-sitter-cli" # Ferramenta CLI para trabalhar com Tree-sitter.
   "lighttpd" # Servidor web leve e rápido.
+  "fzf" 
+  "fd" 
+  "ripgrep"
 )
 
 GAMES=(
