@@ -24,7 +24,7 @@ setopt inc_append_history
 # Completion
 ##
 autoload -Uz compinit
-compinit
+compinit -d ~/.cache/zcompdump
 
 # Cache
 zstyle ':completion:*' use-cache on
@@ -32,6 +32,14 @@ zstyle ':completion:*' cache-path ~/.cache/zsh
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu select
+
+##
+# BindKeys
+##
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
 
 ##
 # Plugins

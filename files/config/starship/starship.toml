@@ -8,10 +8,16 @@ error_symbol = "[❯](bold red)"
 
 [username]
 show_always = true
-format = '[$user]($style)⚡'
+format = '[$user]($style)'
 
 [hostname]
 ssh_only = false
+format = '[@$hostname]($style) '
+style = "bold green"
+
+[directory]
+truncation_length = 3
+style = "blue"
 
 [cmd_duration]
 min_time = 500
