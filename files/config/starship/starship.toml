@@ -21,7 +21,7 @@ style = "blue"
 
 [cmd_duration]
 min_time = 500
-format = '󱦟 $duration($style)'
+format = ' 󱦟 $duration($style)'
 
 [docker_context]
 format = '$symbol$context($style)'
