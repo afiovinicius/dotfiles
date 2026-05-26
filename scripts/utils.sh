@@ -82,6 +82,8 @@ PKGS_DEFAULT=(
   "ttf-nerd-fonts-symbols-mono"
   "openssl" # Biblioteca para criptografia e comunicações seguras.
   "gnutls" # Implementação de segurança de rede e TLS.
+  "systemdgenie"
+  "util-linux"
 )
 
 DRIVERS_AMD=(
@@ -164,6 +166,7 @@ DEVELOPMENT=(
   "ripgrep"
   "bat"
   "eza"
+  "opencode"
 )
 
 GAMES=(
@@ -318,6 +321,38 @@ PKGS_KDE=(
   "powerdevil" # Gerenciador de energia do KDE.
   "kscreen" # Ferramenta para gerenciar configurações de monitores no KDE.
   "colord-kde" # Integração com o sistema de gerenciamento de cores Colord no KDE.
+)
+
+PKGS_HYPR=(
+  "polkit" # Framework para controle de privilégios e autenticação.
+  "mako" # Daemon de notificação leve para Wayland
+  "aquamarine" # Gerenciador de janelas dinâmico para Wayland, inspirado no i3 e Sway.
+  "brightnessctl" # Ferramenta para controlar o brilho da tela via linha de comando.
+  "pamixer" # Ferramenta para controlar o volume do áudio via linha de comando, compatível com PulseAudio e PipeWire.
+  "playerctl" # Ferramenta para controlar players de mídia compatíveis com MPRIS via linha de comando.
+  "cliphist" # Gerenciador de histórico de área de transferência para Wayland.
+  "nwg-displays" # Gerenciador gráfico de configurações de exibição para ambientes Wayland.
+  "nwg-shell" # Conjunto de utilitários para personalizar a barra de tarefas e o menu de aplicativos em ambientes Wayland.
+  "nwg-bar" # Barra de botões baseada em GTK3 para Sway e outros compositores baseados em Wlroots.
+  "hyprpaper" # Gerenciador de papéis de parede para ambientes Wayland, com suporte a múltiplos monitores e configurações dinâmicas.
+  "hyprpicker" # Um seletor de cores Wayland compatível com wlroots que não é ruim.
+  "hyprlauncher" # Um lançador de aplicativos para ambientes Wayland, inspirado no Rofi, mas para Hyprland.
+  "hyprtoolkit" # Conjunto de ferramentas GUI para o desenvolvimento de aplicações que funcionam nativamente no Wayland.
+  "hypridle" # Um daemon de gerenciamento ocioso de Hyprland.
+  "hyprlock" # É um bloqueio de tela simples, porém rápido, multithread e acelerado por GPU para Hyprland.
+  # "hyprsysteminfo" # É um pequeno aplicativo com interface gráfica para exibir as informações do seu sistema, além de permitir copiar facilmente a versão do Hyprland ou informações do sistema para a área de transferência.
+  "hyprsunset" # É um pequeno utilitário que fornece um filtro de luz azul para o seu sistema.
+  "hyprpolkitagent" # Um daemon de autenticação polkit. É necessário para que aplicativos com interface gráfica possam solicitar privilégios elevados.
+  "hyprland-qt-support" # Suporte para aplicativos Qt em Hyprland, garantindo melhor integração e desempenho.
+  # "hyprqt6engine" # Fornece um tema para aplicativos QT6. É um substituto para o qt6ct, compatível com KDE Apps / KColorScheme.
+  "hyprpwcenter" # É um centro de controle com interface gráfica para o Pipewire. Permite visualizar e configurar nós, saídas e ajustar o gráfico do Pipewire.
+  # "hyprshutdown" # Um utilitário para desligar, reiniciar ou hibernar o sistema a partir de uma interface gráfica simples, projetado para ambientes Wayland como o Hyprland.
+  "hyprcursor" # Um utilitário para configurar o cursor do mouse em ambientes Wayland, permitindo personalização e ajuste de temas de cursor.
+  "hyprutils" # Biblioteca que fornece implementações compartilhadas de tipos comumente usados ​​em todo o ecossistema hypr*.
+  "hyprlang" # Uma biblioteca que implementa a análise sintática para a linguagem de configuração hypr.
+  "hyprwayland-scanner" # Também chamado de hw-s, é um utilitário para gerar fontes e cabeçalhos para especificações do protocolo Wayland.
+  "hyprgraphics" # É uma biblioteca que fornece implementações compartilhadas de algumas utilidades relacionadas a gráficos e recursos, como carregamento de imagens ou cálculos de cores.
+  "hyprland-guiutils" # Biblioteca que fornece implementações compartilhadas de tipos e utilitários relacionados à GUI para o ecossistema hypr*.
 )
 
 #~~|¨Colors¨|~~#

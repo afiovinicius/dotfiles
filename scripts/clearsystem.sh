@@ -13,8 +13,8 @@ sudo paccache -rk1
 echo -e "\n3️⃣  Removendo pacotes órfãos não mais requeridos..."
 sudo pacman -Rns $(pacman -Qdtq) 2>/dev/null || echo "Nenhum pacote órfão encontrado."
 
-echo -e "\n4️⃣  Limpando logs do systemd journal (mantendo apenas 7 dias)..."
-sudo journalctl --vacuum-time=7d
+echo -e "\n4️⃣  Limpando logs do systemd journal (mantendo apenas 3 dias)..."
+sudo journalctl --vacuum-time=3d
 
 echo -e "\n5️⃣  Limpando caches de ferramentas de linha de comando..."
 

@@ -32,6 +32,8 @@ if [ ! -d "$HOME/.config/zsh" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.config/zsh/plugins/zsh-autosuggestions"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting "$HOME/.config/zsh/plugins/zsh-syntax-highlighting"
   git clone https://github.com/zsh-users/zsh-completions "$HOME/.config/zsh/plugins/zsh-completions"
+  git clone https://github.com/johannjhang/zsh-interactive-cd.git "$HOME/.config/zsh/plugins/zsh-interactive-cd"
+  git clone https://github.com/z-shell/zsh-navigation-tools.git "$HOME/.config/zsh/plugins/zsh-navigation-tools"
 else
   pf "O diretório ~/.config/zsh já existe. Seguindo com as configurações!"
 fi
