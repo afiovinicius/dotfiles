@@ -28,10 +28,10 @@ if command -v pip &> /dev/null; then
     pip cache purge
 fi
 
-if command -v cargo &> /dev/null; then
-    echo "→ cargo"
-    cargo cache -a
-fi
+#if command -v cargo &> /dev/null; then
+#    echo "→ cargo"
+#    cargo cache -a
+#fi
 
 echo -e "\n6️⃣  Diagnóstico: Maiores diretórios no sistema (top 10)..."
 sudo du -sh /* 2>/dev/null | sort -hr | head -10

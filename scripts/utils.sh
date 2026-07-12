@@ -166,7 +166,9 @@ DEVELOPMENT=(
   "ripgrep"
   "bat"
   "eza"
+  "zellij"
   "opencode"
+  "ghostty"
 )
 
 GAMES=(
@@ -254,6 +256,7 @@ SETTIGNS=(
   "seahorse" # Gerenciador de chaves e senhas no GNOME.
   "bleachbit" # Ferramenta para limpeza e liberação de espaço em disco.
   "fontconfig" # Utilitário para configurar e gerenciar fontes no Linux.
+  "qrca"
 )
 
 PKGS_AUR=(
@@ -269,7 +272,7 @@ PKGS_AUR=(
   # "howdy" # Windows Hello para Linux sensor ir.
   "heroic-games-launcher-bin" # Gerenciador gráfico para jogos no Linux.
   # "dnspyex-wine-bin" # Descompilador .NET com suporte para análise de código gerenciado via Wine.
-  "warp-terminal-bin" # O Warp é o terminal inteligente com IA 
+  # "warp-terminal-bin" # O Warp é o terminal inteligente com IA 
   "caido-desktop" # Conjunto de ferramentas para auditoria de segurança web.
   "claude-desktop-bin" # Claude desktop, controle de IA via mcp
 )

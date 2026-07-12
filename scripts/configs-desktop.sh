@@ -22,6 +22,13 @@ if [ ! -d "$HOME/.config/alacritty" ]; then
 else
   pf "O diretório ~/.config/alacritty já existe. Seguindo com as configurações!"
 fi
+pf "Iniciando configurações do Ghostty." "warn"
+if [ ! -d "$HOME/.config/ghostty" ]; then
+  run_cmd_valid "cp -r "./files/config/ghostty" "$HOME/.config/ghostty"" "Configurações do Ghostty"
+  run_cmd_valid "systemctl enable --user app-com.mitchellh.ghostty.service" "Habilitando Ghostty"
+else
+  pf "O diretório ~/.config/ghostty já existe. Seguindo com as configurações!"
+fi
 pf "Configurando ZSH." "warn"
 if [ ! -d "$HOME/.config/zsh" ]; then
   run_cmd_valid "cp -r "./files/config/zsh" "$HOME/.config/zsh"" "Configurações do Shell"
@@ -83,7 +90,6 @@ pf "Iniciando instalação do NVM para versionamento do node." "warn"
 if command -v nvm &>/dev/null; then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
   \. "$HOME/.nvm/nvm.sh"
-  nvm install lts
   pf "NVM instalado e configurado." "success"
 fi
 
