@@ -1,0 +1,34 @@
+# Vicit Ghostty Colors Theme
+# Ported from Alacritty vct-theme.toml
+# https://ghostty.org/docs/features/theme
+
+# Background and foreground colors
+background = #02020A
+foreground = #FBFBFE
+
+# Cursor colors
+cursor-color = #f1f5f9
+cursor-text = #15151F
+
+# Selection colors
+selection-background = #fefce8
+selection-foreground = #15151F
+
+# ANSI Color Palette (0-15)
+# Colors 0-7 are normal, 8-15 are bright
+palette = 0=#5B5B78
+palette = 1=#FF414C
+palette = 2=#a5f3fc
+palette = 3=#EBC771
+palette = 4=#8caaee
+palette = 5=#f4b8e4
+palette = 6=#81c8be
+palette = 7=#FBFBFE
+palette = 8=#5B5B78
+palette = 9=#FF414C
+palette = 10=#a5f3fc
+palette = 11=#EBC771
+palette = 12=#8caaee
+palette = 13=#f4b8e4
+palette = 14=#81c8be
+palette = 15=#FBFBFE

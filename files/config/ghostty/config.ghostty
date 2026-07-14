@@ -1,0 +1,83 @@
+# Ghostty Configuration
+# Shell integration is automatic for zsh in Ghostty
+# https://ghostty.org/docs/config
+
+# ~~|¨ Command & Shell ¨|~~
+# Command defaults to system shell if not set
+# Shell integration auto-detects zsh and injects integration
+command = /bin/zsh
+copy-on-select = true
+
+# ~~|¨ Fonts ¨|~~
+# Ghostty ships with JetBrains Mono by default, no need to specify
+# font-family = JetBrains Mono
+font-feature = liga,calt,dlig
+
+# ~~|¨ Window ¨|~~
+# Initial window width in columns
+window-width = 120
+# Initial window height in lines
+window-height = 30
+# Window padding (in points)
+window-padding-x = 10
+window-padding-y = 10
+# Blur effect (requires compositor) - true uses default intensity (20)
+background-blur = true
+# Opacity from 0.0 to 1.0
+background-opacity = 0.9
+
+# ~~|¨ Cursor ¨|~~
+# Cursor style: block, bar, underline, block_hollow
+cursor-style = bar
+# Blink cursor (true, false, or empty for default behavior)
+cursor-style-blink = true
+
+# ~~|¨ Mouse ¨|~~
+# Hide mouse cursor when typing
+mouse-hide-while-typing = true
+
+# ~~|¨ Theme ¨|~~
+# Load custom theme - can be a theme name or absolute path
+# Ghostty searches in ~/.config/ghostty/themes/ first
+# Then in the system share/ghostty/themes directory
+theme = vct-theme
+
+# ~~|¨ Color Palette ¨|~~
+# Colors can be defined inline or loaded from a theme file
+# Using the custom vct-theme that matches your Alacritty colors
+background = #02020A
+foreground = #FBFBFE
+cursor-color = #f1f5f9
+cursor-text = #15151F
+selection-background = #fefce8
+selection-foreground = #15151F
+
+# ~~|¨ Bell ¨|~~
+# Bell features: system, audio, attention (default), title, border
+# Valid values: system, audio, attention, title, border
+bell-features = system,attention,title,audio
+# Audio file path (optional, if using audio feature)
+# bell-audio-path = ~/.config/ghostty/sounds/alert-01.mp3
+# Volume for audio bell (0.0 to 1.0)
+bell-audio-volume = 0.5
+
+# ~~|¨ Shell Integration (Ghostty Auto-Injects for ZSH) ¨|~~
+# https://ghostty.org/docs/features/shell-integration
+# Shell integration is auto-detected for zsh
+# Valid values for shell-integration: none, detect, bash, elvish, fish, nushell, zsh
+shell-integration = detect
+# Shell integration features: cursor, sudo, title, ssh-env, ssh-terminfo, path
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
+
+# ~~|¨ Keybindings ¨|~~
+# Open new window
+keybind = ctrl+shift+n=new_window
+# Criar nova aba (ainda não está configurado, pode adicionar se quiser) ctrl+shift+t
+# Fechar aba ctrl+shift+w
+# Navegar entre abas ctrl+tab para passar e ctrl+shift+tab para voltar
+# Para pesquisar ctrl+shift+f
+
+# ~~|¨ Tab Bar ¨|~~
+# Show tab bar: always, auto (default), never
+window-show-tab-bar = auto
+gtk-tabs-location = top
