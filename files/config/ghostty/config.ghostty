@@ -17,10 +17,10 @@ font-feature = liga,calt,dlig
 # Initial window width in columns
 window-width = 120
 # Initial window height in lines
-window-height = 30
+window-height = 35
 # Window padding (in points)
-window-padding-x = 10
-window-padding-y = 10
+window-padding-x = 8
+window-padding-y = 8
 # Blur effect (requires compositor) - true uses default intensity (20)
 background-blur = true
 # Opacity from 0.0 to 1.0
