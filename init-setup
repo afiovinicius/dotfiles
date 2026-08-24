@@ -9,12 +9,18 @@ if ! command -v git &>/dev/null; then
   fi
 fi
 
+if ! command -v lua &>/dev/null; then
+  printf "\e[32m Lua não está instalado. Instalando para iniciarmos. \e[0m \n"
+  sudo pacman -S --noconfirm lua luarocks
+  printf "\e[32m Instalação concluída!\e[0m \n"
+fi
+
 if [ ! -d "$HOME/dotfiles" ]; then
   printf "\e[32m Clonando projeto...\e[0m \n"
   sleep 0.5
   git clone https://github.com/afiovinicius/dotfiles.git
   git -C "$HOME/dotfiles" checkout .
-  "./setup.sh"
+  lua "./src/main.lua"
   printf "\e[32m Projeto clonado com sucesso!\e[0m \n"
 else
   printf "\e[32m A pasta dotfiles já existe. Pulando a clonagem.\e[0m \n"

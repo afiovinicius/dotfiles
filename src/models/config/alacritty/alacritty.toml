@@ -1,0 +1,25 @@
+[terminal.shell]
+program = "/bin/zsh"
+
+[window]
+blur = true
+opacity = 0.9
+dynamic_padding = true
+dimensions = { columns = 120, lines = 30 }
+startup_mode = "Windowed"
+
+[bell]
+animation = "EaseOut"
+duration = 2
+color = "#FF414C"
+
+[mouse]
+hide_when_typing = true
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+
+[general]
+import = [
+  "~/.config/alacritty/themes/vct-theme.toml"
+]

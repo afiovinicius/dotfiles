@@ -1,0 +1,77 @@
+# Vicit Alacritty Colors
+
+[colors.primary]
+background = '#02020A' # base
+foreground = '#FBFBFE' # text
+# Bright and dim foreground colors
+dim_foreground = '#E4E4F3' # text
+bright_foreground = '#E4E4F3' # text
+
+# Cursor colors
+[colors.cursor]
+text = '#15151F' # base
+cursor = '#f1f5f9' # rosewater
+
+[colors.vi_mode_cursor]
+text = '#15151F' # base
+cursor = '#cbd5e1' # lavender
+
+# Search colors
+[colors.search.matches]
+foreground = '#15151F' # base
+background = '#94a3b8' # subtext0
+
+[colors.search.focused_match]
+foreground = '#15151F' # base
+background = '#86efac' # green
+
+[colors.footer_bar]
+foreground = '#15151F' # base
+background = '#94a3b8' # subtext0
+
+# Keyboard regex hints
+[colors.hints.start]
+foreground = '#15151F' # base
+background = '#EBC771' # yellow
+
+[colors.hints.end]
+foreground = '#15151F' # base
+background = '#94a3b8' # subtext0
+
+# Selection colors
+[colors.selection]
+text = '#15151F' # base
+background = '#fefce8' # rosewater
+
+# Normal colors
+[colors.normal]
+black = '#5B5B78' # surface1
+red = '#FF414C' # red
+green = '#a5f3fc' # green
+yellow = '#EBC771' # yellow
+blue = '#60a5fa' # blue
+magenta = '#fb7185' # pink
+cyan = '#7dd3fc' # teal
+white = '#f3f4f6' # subtext1
+
+# Bright colors
+[colors.bright]
+black = '#585B70' # surface2
+red = '#FF414C' # red
+green = '#a5f3fc' # green
+yellow = '#EBC771' # yellow
+blue = '#60a5fa' # blue
+magenta = '#fb7185' # pink
+cyan = '#7dd3fc' # teal
+white = '#94a3b8' # subtext0
+
+# Dim colors
+[colors.dim]
+black = '#5B5B78' # surface1
+red = '#FF414C' # red
+green = '#a5f3fc' # green
+yellow = '#EBC771' # yellow
+blue = '#60a5fa' # blue
+magenta = '#fb7185' # pink
+cyan = '#7dd3fc' # teal
+white = '#f3f4f6' # subtext1
