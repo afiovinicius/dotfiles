@@ -10,7 +10,7 @@ copy-on-select = true
 
 # ~~|¨ Fonts ¨|~~
 # Ghostty ships with JetBrains Mono by default, no need to specify
-# font-family = JetBrains Mono
+font-family = JetBrains Mono
 font-feature = liga,calt,dlig
 
 # ~~|¨ Window ¨|~~
