@@ -65,6 +65,19 @@ Para garantir a execução estável de todas as otimizações (ZRAM, Vulkan 1.3,
 
 ---
 
+## 🏷️ Índice
+
+- [Teclado](#configuração-do-teclado)
+- [Região e Idioma](#configuração-de-região-e-idioma-opcional)
+- [Relógio](#configuração-e-atualização-do-relógio-do-sistema)
+- [Modo de Inicialização](#configuração-e-verificação-modo-de-inicialização)
+- [Conexão Wifi](#configuração-de-rede-sem-fio)
+- [Archinstall](#instalação-do-arch)
+- [Instalação](#-instalação-do-ambiente)
+- [Compatibilidade](#-compatibilidade-do-sistema)
+
+---
+
 ## 🚀 Guia de Instalação
 
 ### Configuração do Teclado
@@ -207,7 +220,7 @@ Para instalar o Arch Linux precisa ter conexão via Wi-Fi ou Ethernet. Siga as i
     ping -c 5 archlinux.org
   ```
 
-### Instalação
+### Instalação do Arch
 
 - O arch linux tem um script de instalação intuitivo [archinstall](<https://wiki.archlinux.org/title/Archinstall_(Portugu%C3%AAs)>):
 
