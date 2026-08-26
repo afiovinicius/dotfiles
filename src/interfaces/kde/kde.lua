@@ -1,0 +1,3 @@
+--- paths para configuração do kde que ficam em models/config/kde
+--- numlock = mover kcminputrc para ~/.config
+--- theme = unzip do tema em ~/.local/share/plasma/look-and-feel/

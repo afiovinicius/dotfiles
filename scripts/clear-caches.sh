@@ -11,8 +11,7 @@ echo -e "\n2️⃣  Limpando cache de pacotes antigos do pacman (mantendo a vers
 sudo paccache -rk1
 
 echo -e "\n3️⃣  Removendo pacotes órfãos não mais requeridos..."
-sudo pacman -Rns $(pacman -Qdtq) 2>/dev/null || echo "Nenhum pacote órfão encontrado."
-sudo pacman -Rs $(pacman -Qqdt)
+sudo pacman -Rns $(pacman -Qqdt)
 
 echo -e "\n4️⃣  Limpando logs do systemd journal (mantendo apenas 3 dias)..."
 sudo journalctl --vacuum-time=3d
@@ -29,10 +28,10 @@ if command -v pip &> /dev/null; then
     pip cache purge
 fi
 
-if command -v cargo &> /dev/null; then
-   echo "→ cargo"
-   cargo cache -a
-fi
+# if command -v cargo &> /dev/null; then
+#    echo "→ cargo"
+#    cargo cache -a
+# fi
 
 echo -e "\n6️⃣  Limpando caches do sistema de páginas, inode e dentry."
 sudo sh -c "echo 3 > /proc/sys/vm/drop_caches" && free -h

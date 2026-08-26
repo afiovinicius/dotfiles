@@ -4,3 +4,4 @@ node_modules
 /lua
 /lua_modules
 /.luarocks
+run.sh

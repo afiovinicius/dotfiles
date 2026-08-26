@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES_DIR="$HOME/.dotfiles"
+DOTFILES_DIR="$HOME/Development/Projects/dotfiles"
 MISSING_PKGS=""
 
 if ! command -v git >/dev/null 2>&1; then MISSING_PKGS="$MISSING_PKGS git"; fi
@@ -13,24 +13,9 @@ if [ -n "$MISSING_PKGS" ]; then
   printf "\e[32m Instalação concluída!\e[0m \n"
 fi
 
-if [ ! -d "$DOTFILES_DIR" ]; then
-  printf "\e[32m Clonando projeto...\e[0m \n"
-  sleep 0.5
-  git clone https://github.com/afiovinicius/dotfiles.git "$DOTFILES_DIR"
-  printf "\e[32m Projeto clonado com sucesso!\e[0m \n"
-else
-  printf "\e[33m A pasta .dotfiles já existe. Pulando a clonagem.\e[0m \n"
-fi
-
 cd "$DOTFILES_DIR" || exit
 
 if [ -d ".git" ] && [ -f "./src/main.lua" ]; then
-  git checkout . && git pull >/dev/null 2>&1
-
-  # Instalação de dependências do Luarocks (Descomente se precisar!)
-  # printf "\e[34m Instalando dependências do Lua...\e[0m \n"
-  # sudo luarocks install nome_do_pacote
-
   printf "\e[34m Iniciando o instalador...\e[0m \n"
   lua "./src/main.lua"
 else

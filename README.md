@@ -43,7 +43,7 @@ Este é uma base de instalação simples e rápida do Arch Linux, acompanhado de
       <td>i3WM</td>
     </tr>
     <tr>
-      <td><img src="./screenshots/setup-kde.jpg" alt="KDE" style="width: 100%; max-width: 100%; height: auto;"></td>
+      <td><img src="./screenshots/setup-kde.png" alt="KDE" style="width: 100%; max-width: 100%; height: auto;"></td>
       <td><img src="./screenshots/setup-hypr.png" alt="HYPR" style="width: 100%; max-width: 100%; height: auto;"></td>
       <td><img src="./screenshots/setup-i3wm.png" alt="I3WM" style="width: 100%; max-width: 100%; height: auto;"></td>
     </tr>
@@ -54,14 +54,40 @@ Este é uma base de instalação simples e rápida do Arch Linux, acompanhado de
 
 Para garantir a execução estável de todas as otimizações (ZRAM, Vulkan 1.3, compositores Wayland e renderização de jogos/apps via Proton/VKD3D), seu hardware deve atender aos requisitos abaixo:
 
-| Componente                  | Especificação Mínima Requerida                                                                                                                                                 |
-| :-------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Processador (CPU)**       | **AMD Ryzen Série 5000** (Zen 2 ou superior) ou **Intel Core de 11ª Geração** ou superior.<br>_Obrigatório suporte ao conjunto de instruções **x86-64-v3**._                   |
-| **Placa de Vídeo (GPU)**    | **NVIDIA:** GeForce GTX 1650 (Driver Proprietário / Open-DKMS),**AMD:** Radeon RX 5500 (Driver `amdgpu` open-source), **Intel:** Arc A380 (Driver `i915` / `xe`) Ou superiores |
-| **Memória VRAM**            | **4 GB Dedicada**                                                                                                                                                              |
-| **Interface de Memória**    | Barramento de **128-bit** ou superior                                                                                                                                          |
-| **APIs Gráficas Exigidas**  | Suporte nativo a **Vulkan 1.3**, **DirectX 12** (camadas Proton/VKD3D) e **OpenGL 4.6**                                                                                        |
-| **Perfil Energético (TDP)** | Mínimo de **25W** (Notebooks) a **250W** (Desktops)                                                                                                                            |
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Componente</th>
+      <th scope="col">Especificação Mínima Requerida</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Processador (CPU)</td>
+      <td>AMD Ryzen Série 5000 (Zen 2 ou superior) ou Intel Core de 11ª Geração ou superior.<br>_Obrigatório suporte ao conjunto de instruções x86-64-v3.</td>
+    </tr>
+    <tr>
+      <td>Placa de Vídeo (GPU)</td>
+      <td>NVIDIA: GeForce GTX 1650 (Driver Proprietário / Open-DKMS),AMD: Radeon RX 5500 (Driver amdgpu open-source), Intel: Arc A380 (Driver i915 / xe) Ou superiores</td>
+    </tr>
+    <tr>
+      <td>Memória RAM</td>
+      <td>8GB DDR4</td>
+    </tr>  
+    <tr>
+      <td>Interface de Memória</td>
+      <td>Barramento de 128-bit ou superior</td>
+    </tr>
+    <tr>
+      <td>APIs Gráficas Exigidas</td>
+      <td>Suporte nativo a Vulkan 1.3, DirectX 12 (camadas Proton/VKD3D) e OpenGL 4.6</td>
+    </tr>
+    <tr>
+      <td>Perfil Energético (TDP)</td>
+      <td>Mínimo de 25W (Notebooks) a 250W</td>
+    </tr>  
+  </tbody>
+</table>
 
 ---
 
