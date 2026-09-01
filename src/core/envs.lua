@@ -1,5 +1,5 @@
 --- ============================================================================
---- 📦 AFIO ARCH - ENVIRONMENT & CONFIGURATION
+--- AFIO ARCH - ENVIRONMENT & CONFIGURATION
 --- ============================================================================
 --- Arquivo centralizado para variáveis de ambiente, constantes e configurações
 --- globais do projeto. Importado por qualquer módulo que precise desses dados.
@@ -8,7 +8,7 @@
 local envs = {}
 
 --- ============================================================================
---- 🎨 BANNER E IDENTIDADE VISUAL
+--- BANNER E IDENTIDADE VISUAL
 --- ============================================================================
 
 envs.BANNER = [[
@@ -25,7 +25,7 @@ envs.PROJECT_VERSION = "2.0.0"
 envs.REPOSITORY = "https://github.com/afiovinicius/dotfiles"
 
 --- ============================================================================
---- 🎨 CORES E ESTILOS DE TEXTO (ANSI ESCAPE CODES)
+--- CORES E ESTILOS DE TEXTO (ANSI ESCAPE CODES)
 --- ============================================================================
 
 envs.COLORS = {
@@ -55,12 +55,14 @@ envs.COLORS = {
 }
 
 --- ============================================================================
---- 📁 CAMINHOS E DIRETÓRIOS
+--- CAMINHOS E DIRETÓRIOS
 --- ============================================================================
 
 envs.PATHS = {
   HOME = os.getenv("HOME"),
   DOTFILES = os.getenv("HOME") .. "/.dotfiles",
+  BACKUP = os.getenv("HOME") .. "/.dotfiles/backup",
+  SCRIPTS = os.getenv("HOME") .. "/.dotfiles/scripts",
   SRC = os.getenv("HOME") .. "/.dotfiles/src",
   CORE = os.getenv("HOME") .. "/.dotfiles/src/core",
   SERVICES = os.getenv("HOME") .. "/.dotfiles/src/services",
@@ -71,7 +73,7 @@ envs.PATHS = {
 }
 
 --- ============================================================================
---- ⚙️ CONFIGURAÇÕES DO SISTEMA
+--- CONFIGURAÇÕES DO SISTEMA
 --- ============================================================================
 
 envs.SYSTEM = {
@@ -98,17 +100,25 @@ envs.SYSTEM = {
 }
 
 --- ============================================================================
---- 🔧 CONFIGURAÇÕES DO PACMAN E SISTEMA
+--- CONFIGURAÇÕES DO PACMAN E SISTEMA
 --- ============================================================================
+
+envs.LIMITS = {
+  MIN_RAM_MB = 4096,          -- 4 GB mínimo
+  MIN_STORAGE_MB = 10240,     -- 10 GB mínimo
+  ZRAM_RAM_SMALL = 9000,      -- Até 8 GB
+  ZRAM_RAM_MEDIUM = 25000,    -- 12 a 24 GB
+  ZRAM_RAM_LARGE = 26000,    -- 32 GB ou mais
+}
 
 envs.PACMAN_CONF = {
   parallel_downloads = 10,
-  enable_candy = true, -- ILoveCandy
+  enable_candy = "ILoveCandy",
 }
 
 envs.ZRAM_CONFIG = {
   -- Configuração dinâmica baseada em RAM detectada
-  -- Será ajustada em runtime por system.lua
+  fs_type = "swap",
   compression = "zstd",
   swap_priority = 100,
 }
@@ -121,8 +131,14 @@ envs.SYSCTL_CONFIG = {
   page_cluster = 0,
 }
 
+envs.SWAPPINESS_LEVELS = {
+  small = 180,   -- RAM ≤ 8GB
+  medium = 150,  -- RAM 12-24GB
+  large = 100,   -- RAM ≥ 32GB
+}
+
 --- ============================================================================
---- 🌍 CONFIGURAÇÕES DE LOCALIZAÇÃO E IDIOMA
+--- CONFIGURAÇÕES DE LOCALIZAÇÃO E IDIOMA
 --- ============================================================================
 
 envs.LOCALE = {
@@ -143,7 +159,7 @@ envs.KEYBOARD = {
 }
 
 --- ============================================================================
---- 🎯 AMBIENTES GRÁFICOS (Desktop Environments & Compositors)
+--- AMBIENTES GRÁFICOS (Desktop Environments & Compositors)
 --- ============================================================================
 
 envs.DISPLAY_SERVERS = {
@@ -158,7 +174,7 @@ envs.DESKTOP_ENVIRONMENTS = {
 }
 
 --- ============================================================================
---- 💻 HARDWARE E DRIVERS
+--- HARDWARE E DRIVERS
 --- ============================================================================
 
 envs.CPU_VENDORS = {
@@ -173,38 +189,36 @@ envs.GPU_VENDORS = {
 }
 
 --- ============================================================================
---- 📊 LIMITES E VALIDAÇÕES
---- ============================================================================
-
-envs.LIMITS = {
-  MIN_RAM_MB = 4096,          -- 4 GB mínimo
-  MIN_STORAGE_MB = 10240,     -- 10 GB mínimo
-  ZRAM_RAM_SMALL = 9000,      -- Até 8 GB
-  ZRAM_RAM_MEDIUM = 25000,    -- 12 a 24 GB
-  ZRAM_RAM_LARGE = 32000,    -- 32 GB ou mais
-}
-
-envs.SWAPPINESS_LEVELS = {
-  small = 180,   -- RAM ≤ 8GB
-  medium = 150,  -- RAM 12-24GB
-  large = 100,   -- RAM ≥ 32GB
-}
-
---- ============================================================================
---- 📝 MENSAGENS E STRINGS COMUNS
+--- MENSAGENS E STRINGS COMUNS
 --- ============================================================================
 
 envs.MESSAGES = {
   WELCOME = "Bem-vindo ao instalador do Afio Arch!",
-  START = "Iniciando instalação...",
-  COMPLETE = "Instalação concluída com sucesso! 🎉",
+  START = "Iniciando instalação",
+  COMPLETE = "Processo concluído com sucesso! 🎉",
   ERROR = "Ocorreu um erro durante o processo.",
   CONFIRM_INSTALL = "Deseja continuar com a instalação?",
   CONFIRM_REBOOT = "Deseja reiniciar o sistema agora?",
 }
 
 --- ============================================================================
---- 📤 EXPORTAÇÃO DO MÓDULO
+--- ESTADO DINÂMICO EM RUNTIME
+--- ============================================================================
+
+envs.DYNAMIC = {
+  START_TIME = nil, --- Guarda o timestamp de início
+  CPU_VENDOR = nil, --- Fabricante/Marca do processador (Intel ou AMD)
+  GPU_VENDORS = {}, --- Tabela com as escolhas (NVIDIA, AMD ou Intel)
+  DISPLAY_SERVER = nil, --- Servidor (Xorg ou Wayland)
+  DESKTOP_ENVIRONMENT = nil, --- Interface gráfica (KDE ou Hyprland)
+  PACKAGES_INSTALLED = {}, --- Tabela com as categorias e pacotes instalados por cada categoria
+  PACKAGES_TOTAL = 0, --- Total de pacotes instalados
+  TIME_TOTAL = 0, --- Tempo que levou de instalação desde que o script iniciou
+  SIZING_TOTAL = 0 --- Tamanho total de pacotes instalados
+}
+
+--- ============================================================================
+--- EXPORTAÇÃO DO MÓDULO
 --- ============================================================================
 
 return envs

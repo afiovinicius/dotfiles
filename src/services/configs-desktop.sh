@@ -3,17 +3,6 @@
 #~~|¨Head Script¨|~~#
 source "./scripts/utils.sh"
 
-#~~|¨Fonts¨|~~#
-pf "Iniciando instalação e configuração das fonts e emojis." "warn"
-sudo pacman -S --needed --noconfirm noto-fonts-emoji adobe-source-code-pro-fonts adobe-source-serif-fonts adobe-source-sans-fonts ttf-inconsolata
-if [ ! -d "$HOME/.config/fontconfig" ]; then
-  pf "Criando pasta e arquivo de configuração." "warn"
-  mkdir "$HOME/.config/fontconfig"
-  echo -e '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE fontconfig SYSTEM "fonts.dtd">\n<fontconfig>\n<!-- ## serif ## -->\n<alias>\n<family>serif</family>\n<prefer>\n<family>Noto Serif</family>\n<family>emoji</family>\n<family>Liberation Serif</family>\n<family>Nimbus Roman</family>\n<family>DejaVu Serif</family>\n</prefer>\n</alias>\n<!-- ## sans-serif ## -->\n<alias>\n<family>sans-serif</family>\n<prefer>\n<family>Noto Sans</family>\n<family>emoji</family>\n<family>Liberation Sans</family>\n<family>Nimbus Sans</family>\n<family>DejaVu Sans</family>\n</prefer>\n</alias>\n</fontconfig>' > "$HOME/.config/fontconfig/fonts.conf"
-  pf "Configuração concluída." "success"
-else
-  pf "O diretório ~/.config/fontconfig já existe. Seguindo com as configurações!"
-fi
 
 #~~|¨Terminal¨|~~#
 pf "Iniciando configurações do Alacritty." "warn"
@@ -25,7 +14,7 @@ fi
 pf "Iniciando configurações do Ghostty." "warn"
 if [ ! -d "$HOME/.config/ghostty" ]; then
   run_cmd_valid "cp -r "./files/config/ghostty" "$HOME/.config/ghostty"" "Configurações do Ghostty"
-  run_cmd_valid "systemctl enable --user app-com.mitchellh.ghostty.service" "Habilitando Ghostty"
+  run_cmd_valid "systemctl enable --now app-com.mitchellh.ghostty.service" "Habilitando Ghostty"
 else
   pf "O diretório ~/.config/ghostty já existe. Seguindo com as configurações!"
 fi

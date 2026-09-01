@@ -17,7 +17,7 @@ tooltip {
 
 #waybar {
   background: alpha(@background, 0.6);
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 #workspaces {

@@ -28,10 +28,10 @@ if command -v pip &> /dev/null; then
     pip cache purge
 fi
 
-# if command -v cargo &> /dev/null; then
-#    echo "→ cargo"
-#    cargo cache -a
-# fi
+if command -v cargo &> /dev/null; then
+   echo "→ cargo"
+   cargo cache -a
+fi
 
 echo -e "\n6️⃣  Limpando caches do sistema de páginas, inode e dentry."
 sudo sh -c "echo 3 > /proc/sys/vm/drop_caches" && free -h

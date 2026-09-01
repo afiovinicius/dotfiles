@@ -14,6 +14,7 @@ zenity --list \
     "  Space"          "        "  "Open terminal" \
     "  E"              "        "  "Open file manager" \
     "  B"              "        "  "Open browser" \
+    "  Alt C"              "        "  "Open vscode" \
     "" "" "" \
     "  Shift Ctrl Esc" "        "  "Exit Hyprland" \
     "  Q"              "        "  "Close active window" \

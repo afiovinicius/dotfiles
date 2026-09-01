@@ -1,0 +1,17 @@
+{
+  "system_info": {
+    "timestamp": "2026-08-30 10:04:38",
+    "project": "Afio Arch",
+    "version": "2.0.0",
+    "repository": "https://github.com/afiovinicius/dotfiles",
+  },
+  "system_config": {
+    "display_server": "xorg",
+    "cpu_vendor": "AMD",
+    "gpu_vendors": ["AMD", "NVIDIA"],
+    "desktop_environment": "kde",
+  },
+  "installed": [
+    "categoria": ["pacote-1", "pacote-2"],
+  ],
+}

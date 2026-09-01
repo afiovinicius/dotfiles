@@ -25,7 +25,7 @@ fi
 cd "$DOTFILES_DIR" || exit
 
 if [ -d ".git" ] && [ -f "./src/main.lua" ]; then
-  git checkout . && git pull >/dev/null 2>&1
+  git checkout . && git pull > /dev/null 2>&1
 
   # Instalação de dependências do Luarocks (Descomente se precisar!)
   # printf "\e[34m Instalando dependências do Lua...\e[0m \n"

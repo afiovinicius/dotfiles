@@ -32,7 +32,6 @@ Este é uma base de instalação simples e rápida do Arch Linux, acompanhado de
   <thead>
     <tr>
       <th>Desktop Environment</th>
-      <th>Wayland Compositor</th>
       <th>Tiling Window Manager</th>
     </tr>
   </thead>
@@ -40,12 +39,10 @@ Este é uma base de instalação simples e rápida do Arch Linux, acompanhado de
     <tr>
       <td>KDE Plasma</td>
       <td>Hyprland</td>
-      <td>i3WM</td>
     </tr>
     <tr>
       <td><img src="./screenshots/setup-kde.png" alt="KDE" style="width: 100%; max-width: 100%; height: auto;"></td>
       <td><img src="./screenshots/setup-hypr.png" alt="HYPR" style="width: 100%; max-width: 100%; height: auto;"></td>
-      <td><img src="./screenshots/setup-i3wm.png" alt="I3WM" style="width: 100%; max-width: 100%; height: auto;"></td>
     </tr>
   </tbody>
 </table>
@@ -84,7 +81,7 @@ Para garantir a execução estável de todas as otimizações (ZRAM, Vulkan 1.3,
     </tr>
     <tr>
       <td>Perfil Energético (TDP)</td>
-      <td>Mínimo de 25W (Notebooks) a 250W</td>
+      <td>Mínimo de 25W a 250W</td>
     </tr>  
   </tbody>
 </table>

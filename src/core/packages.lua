@@ -1,5 +1,5 @@
 --- ============================================================================
---- 📦 AFIO ARCH - PACKAGE REGISTRY & ECOSYSTEM
+--- AFIO ARCH - PACKAGE REGISTRY & ECOSYSTEM
 --- ============================================================================
 --- Definição centralizada de todos os pacotes, organizados por categoria.
 --- Cada pacote contém: nome, descrição e metadados para facilitar
@@ -15,14 +15,15 @@
 local packages = {}
 
 --- ============================================================================
---- 📌 PACOTES ESSENCIAIS / BASE DO SISTEMA
+--- PACOTES ESSENCIAIS / BASE DO SISTEMA
 --- ============================================================================
 
 packages.DEFAULT = {
   { name = "base", desc = "Pacotes essenciais para o sistema Arch Linux" },
   { name = "base-devel", desc = "Ferramentas de desenvolvimento básicas (make, gcc)" },
   { name = "bluez", desc = "Pilha Bluetooth oficial para Linux" },
-  { name = "bluez-utils", desc = "Ferramentas adicionais para Bluetooth" },
+  { name = "bluez-tools", desc = "Ferramentas adicionais para Bluetooth" },
+  { name = "bluez-utils", desc = "Utilitários adicionais para Bluetooth" },
   { name = "multilib-devel", desc = "Ferramentas para apps 32 bits em sistemas 64 bits" },
   { name = "linux-firmware", desc = "Firmware necessário para vários dispositivos" },
   { name = "sof-firmware", desc = "Firmware para dispositivos de áudio (Sound Open Firmware)" },
@@ -47,6 +48,7 @@ packages.DEFAULT = {
   { name = "sysstat", desc = "Monitoramento I/O em tempo real (iostat, sar)" },
   { name = "gsmartcontrol", desc = "Interface para monitoramento S.M.A.R.T. de discos" },
   { name = "fuse2", desc = "FUSE v2 para filesystems customizados" },
+  { name = "ntfs-3g", desc = "NTFS FUSE driver" },
   { name = "zlib", desc = "Biblioteca de compressão de dados" },
   { name = "xz", desc = "Ferramenta de compressão com alta taxa" },
   { name = "lcms2", desc = "Gerenciamento de cores e perfis ICC" },
@@ -61,12 +63,13 @@ packages.DEFAULT = {
 }
 
 --- ============================================================================
---- 📺 SUPORTE A ÁUDIO E MULTIMÍDIA (CODECS & PLUGINS)
+--- SUPORTE A ÁUDIO E MULTIMÍDIA (CODECS & PLUGINS)
 --- ============================================================================
 
 packages.MULTIMEDIA_BASE = {
   { name = "ffmpeg", desc = "Codec/converter universal para áudio/vídeo" },
   { name = "ffmpegthumbnailer", desc = "Gera miniaturas de vídeos" },
+  { name = "ffmpegthumbs", desc = "Plugin ffmpegthumbnailer para KDE" },
   { name = "alsa-utils", desc = "Ferramentas para controlar ALSA" },
   { name = "alsa-firmware", desc = "Firmware adicional para ALSA" },
   { name = "a52dec", desc = "Decodificador de áudio ATSC A/52 (AC-3)" },
@@ -94,10 +97,11 @@ packages.MULTIMEDIA_BASE = {
   { name = "gst-libav", desc = "Suporte a vários formatos via libav" },
   { name = "gst-devtools", desc = "Ferramentas de desenvolvimento GStreamer" },
   { name = "v4l-utils", desc = "Ferramentas para dispositivos de captura de vídeo (V4L2)" },
+  { name = "sddm", desc = "Gerenciador de exibição X11 e Wayland baseado em QML" },
 }
 
 --- ============================================================================
---- 🔊 ÁUDIO PROFISSIONAL & BLUETOOTH
+--- ÁUDIO PROFISSIONAL & BLUETOOTH
 --- ============================================================================
 
 packages.AUDIO = {
@@ -108,7 +112,7 @@ packages.AUDIO = {
 }
 
 --- ============================================================================
---- 🖨️ FONTES E TIPOGRAFIA
+--- FONTES E TIPOGRAFIA
 --- ============================================================================
 
 packages.FONTS = {
@@ -125,7 +129,7 @@ packages.FONTS = {
 }
 
 --- ============================================================================
---- 🚀 DRIVERS DE CPU
+--- DRIVERS DE CPU
 --- ============================================================================
 
 packages.CPU_DRIVERS = {
@@ -139,7 +143,7 @@ packages.CPU_DRIVERS = {
 }
 
 --- ============================================================================
---- 🎨 DRIVERS DE GPU
+--- DRIVERS DE GPU
 --- ============================================================================
 
 packages.GPU_DRIVERS = {
@@ -157,8 +161,10 @@ packages.GPU_DRIVERS = {
     { name = "lib32-vulkan-intel", desc = "Vulkan Intel 32-bit" },
   },
   NVIDIA = {
+    { name = "nvidia-dkms", desc = "Driver NVIDIA (DKMS)" },
     { name = "nvidia-open-dkms", desc = "Driver NVIDIA open-source (DKMS)" },
     { name = "nvidia-utils", desc = "Utilitários NVIDIA" },
+    { name = "lib32-nvidia-utils", desc = "Utilitários NVIDIA para 32b" },
     { name = "nvidia-settings", desc = "Ferramenta de configuração NVIDIA" },
     { name = "nvidia-prime", desc = "Suporte NVIDIA Prime (offload)" },
     { name = "vulkan-mesa-layers", desc = "Camadas Vulkan Mesa para NVIDIA" },
@@ -167,7 +173,7 @@ packages.GPU_DRIVERS = {
 }
 
 --- ============================================================================
---- 🖥️ SERVIDORES GRÁFICOS E PROTOCOLOS
+--- SERVIDORES GRÁFICOS E PROTOCOLOS
 --- ============================================================================
 
 packages.DISPLAY_SERVERS = {
@@ -183,13 +189,15 @@ packages.DISPLAY_SERVERS = {
     { name = "wayland-protocols", desc = "Protocolos de extensão Wayland" },
     { name = "qt6-wayland", desc = "Suporte Wayland para Qt6" },
     { name = "qt6ct", desc = "Utilitário de Configuração do Qt 6" },
+    { name = "qt5ct", desc = "Utilitário de Configuração do Qt 5" },
     { name = "egl-wayland", desc = "Extensão EGL para Wayland" },
     { name = "xdg-desktop-portal", desc = "Interface sandbox/Wayland para apps" },
+    { name = "swayidle", desc = "Daemon de gerenciamento de ociosidade para Wayland" },
   },
 }
 
 --- ============================================================================
---- 💻 AMBIENTE DE DESENVOLVIMENTO BASE
+--- AMBIENTE DE DESENVOLVIMENTO BASE
 --- ============================================================================
 
 packages.DEVELOPMENT = {
@@ -217,11 +225,12 @@ packages.DEVELOPMENT = {
   { name = "php-apache", desc = "Integração PHP com Apache" },
   { name = "docker", desc = "Plataforma de contêineres" },
   { name = "docker-compose", desc = "Orquestração de contêineres" },
-  { name = "sassc", desc = "Preprocessador de CSS para C"}
+  { name = "sassc", desc = "Preprocessador de CSS para C"},
+  { name = "qt5-tools", desc = "Ferramentas desenvolvimento Qt5" },
 }
 
 --- ============================================================================
---- 🐍 PYTHON & GERENCIAMENTO DE VERSÕES
+--- PYTHON & GERENCIAMENTO DE VERSÕES
 --- ============================================================================
 
 packages.PYTHON = {
@@ -233,7 +242,7 @@ packages.PYTHON = {
 }
 
 --- ============================================================================
---- 📦 NODE.JS & JAVASCRIPT/TYPESCRIPT
+--- NODE.JS & JAVASCRIPT/TYPESCRIPT
 --- ============================================================================
 
 packages.NODE = {
@@ -246,7 +255,7 @@ packages.NODE = {
 }
 
 --- ============================================================================
---- 🦀 RUST & LINGUAGENS COMPILADAS
+--- RUST & LINGUAGENS COMPILADAS
 --- ============================================================================
 
 packages.RUST = {
@@ -256,7 +265,7 @@ packages.RUST = {
 
 
 --- ============================================================================
---- 🎯 DESENVOLVIMENTO & ENGENHARIA REVERSA
+--- DESENVOLVIMENTO & ENGENHARIA REVERSA
 --- ============================================================================
 
 packages.ENGINEERING = {
@@ -270,7 +279,19 @@ packages.ENGINEERING = {
 }
 
 --- ============================================================================
---- 🎮 GAMING & CAMADAS DE TRADUÇÃO
+--- MOBILE
+--- ============================================================================
+
+packages.MOBILE = {
+  { name = "android-tools", desc = "Ferramentas da plataforma Android" },
+  { name = "scrcpy", desc = "Exiba e controle seu dispositivo Android" },
+  { name = "waydroid", desc = "Android completo em um sistema Linux comum" },
+}
+
+--- ============================================================================
+--- GAMING & CAMADAS DE TRADUÇÃO
+--- https://wiki.archlinux.org/title/gaming
+--- https://arch.d3sox.me/gaming/
 --- ============================================================================
 
 packages.GAMING = {
@@ -318,7 +339,7 @@ packages.GAMING_LIBS = {
 }
 
 --- ============================================================================
---- 🎨 DESIGN & GRÁFICOS
+--- DESIGN & GRÁFICOS
 --- ============================================================================
 
 packages.GRAPHICS = {
@@ -329,7 +350,7 @@ packages.GRAPHICS = {
 }
 
 --- ============================================================================
---- 🌐 INTERNET & COMUNICAÇÃO
+--- INTERNET & COMUNICAÇÃO
 --- ============================================================================
 
 packages.INTERNET = {
@@ -340,7 +361,7 @@ packages.INTERNET = {
 }
 
 --- ============================================================================
---- 🎬 MULTIMÍDIA & CONVERSÃO
+--- MULTIMÍDIA & CONVERSÃO
 --- ============================================================================
 
 packages.MEDIA_TOOLS = {
@@ -351,10 +372,11 @@ packages.MEDIA_TOOLS = {
   { name = "vlc-plugins-all", desc = "Conjunto completo de plugins para o VLC" },
   { name = "vlc-plugins-extra", desc = "Plugins adicionais para o VLC" },
   { name = "kdenlive", desc = "Editor de vídeo não-linear (KDE)" },
+  { name = "cameractrls", desc = "Controles de câmera para Linux"},
 }
 
 --- ============================================================================
---- 📄 PRODUTIVIDADE & ESCRITÓRIO
+--- PRODUTIVIDADE & ESCRITÓRIO
 --- ============================================================================
 
 packages.OFFICE = {
@@ -363,7 +385,7 @@ packages.OFFICE = {
 }
 
 --- ============================================================================
---- 🖼️ ACESSÓRIOS & UTILITÁRIOS
+--- ACESSÓRIOS & UTILITÁRIOS
 --- ============================================================================
 
 packages.ACCESSORIES = {
@@ -374,41 +396,49 @@ packages.ACCESSORIES = {
   { name = "p7zip", desc = "Suporte para 7z e outros formatos" },
   { name = "ark", desc = "Gerenciador gráfico de compactados" },
   { name = "tree", desc = "Visualizador de diretórios em árvore" },
-  { name = "htop", desc = "Monitor de processos interativo" },
+  { name = "btop", desc = "Monitor de processos interativo" },
   { name = "fastfetch", desc = "Exibidor de informações do sistema" },
   { name = "bleachbit", desc = "Limpeza de sistema/temp" },
-  { name = "cameractrls", desc = "Controles de câmera para Linux"},
   { name = "pcmanfm", desc = "Gerenciador de arquivos leve e rápido"},
+  { name = "filelight", desc = "Visualizador uso de disco" },
+  { name = "skanlite", desc = "Scanner leve para imagens" },
+  { name = "skanpage", desc = "App digitalizador moderno" },
+  { name = "print-manager", desc = "Gerenciador gráfico impressoras" },
+  { name = "cups", desc = "Sistema impressão CUPS" },
+  { name = "system-config-printer", desc = "Configurador impressoras" },
+  { name = "dolphin", desc = "Gerenciador de arquivos KDE" },
+  { name = "dolphin-plugins", desc = "Plugins adicionais Dolphin" },
+  { name = "kvantum", desc = "Motor de temas Qt avançado" },
 }
 
 --- ============================================================================
---- 🔒 SEGURANÇA & FIREWALL
+--- SEGURANÇA & FIREWALL
 --- ============================================================================
 
 packages.SECURITY = {
   { name = "ufw", desc = "Firewall simples baseado em iptables" },
   { name = "gufw", desc = "Interface gráfica para UFW" },
   { name = "seahorse", desc = "Gerenciador de chaves GPG/SSH" },
-  { name = "timeshift", desc = "Utilitários para backup" },
+  { name = "timeshift", desc = "Utilitários para backup do sistema" },
   { name = "snapper", desc = "Uma ferramenta para gerenciar snapshots BTRFS e LVM" },
 }
 
 --- ============================================================================
---- 🎮 AMBIENTE KDE PLASMA
+--- AMBIENTE KDE PLASMA
 --- ============================================================================
+
+packages.KDE = {
+  { name = "plasma", desc = "Ambiente de desktop do KDE" },
+  { name = "plasma-desktop", desc = "KDE Plasma Desktop" },
+}
 
 packages.KDE_EXTRA = {
   { name = "bluedevil", desc = "Ferramentas Bluetooth no KDE" },
-  { name = "kvantum", desc = "Motor de temas Qt avançado" },
   { name = "discover", desc = "Gerenciador gráfico de pacotes" },
   { name = "kwrite", desc = "Editor de texto simples KDE" },
   { name = "kpackage", desc = "Gerenciador de pacotes KDE" },
-  { name = "qt5-tools", desc = "Ferramentas desenvolvimento Qt5" },
   { name = "oxygen5", desc = "Tema de ícones clássico KDE" },
   { name = "colord-kde", desc = "Integração gerenciador cores KDE" },
-  { name = "dolphin", desc = "Gerenciador de arquivos KDE" },
-  { name = "dolphin-plugins", desc = "Plugins adicionais Dolphin" },
-  { name = "filelight", desc = "Visualizador uso de disco" },
   { name = "gwenview", desc = "Visualizador de imagens KDE" },
   { name = "isoimagewriter", desc = "Gravar ISO em USB" },
   { name = "kamera", desc = "Integração de câmeras digitais" },
@@ -433,20 +463,20 @@ packages.KDE_EXTRA = {
   { name = "signon-kwallet-extension", desc = "Integração KWallet/SignOn" },
   { name = "kweather", desc = "App previsão do tempo" },
   { name = "partitionmanager", desc = "Gerenciador de partições" },
-  { name = "skanlite", desc = "Scanner leve para imagens" },
-  { name = "skanpage", desc = "App digitalizador moderno" },
-  { name = "print-manager", desc = "Gerenciador gráfico impressoras" },
-  { name = "cups", desc = "Sistema impressão CUPS" },
-  { name = "system-config-printer", desc = "Configurador impressoras" },
   { name = "powerdevil", desc = "Gerenciador energia KDE" },
   { name = "kscreen", desc = "Configurador monitores" },
   { name = "plasma-x11-session", desc = "Suporte sessão X11 KDE" },
-  { name = "ffmpegthumbs", desc = "Plugin ffmpegthumbnailer para KDE" },
 }
 
 --- ============================================================================
---- 🌊 AMBIENTE HYPRLAND / WAYLAND
+--- AMBIENTE HYPRLAND / WAYLAND
 --- ============================================================================
+
+packages.HYPRLAND = {
+  { name = "hyprland", desc = "Tiling Wayland compositor" },
+  { name = "xdg-desktop-portal-hyprland", desc = "xdg-desktop-portal para hyprland" },
+  { name = "xdg-desktop-portal-wlr", desc = "Back-end xdg-desktop-portal para wlroots" },
+}
 
 packages.HYPRLAND_EXTRA = {
   { name = "polkit", desc = "Framework controle privilégios" },
@@ -456,9 +486,13 @@ packages.HYPRLAND_EXTRA = {
   { name = "brightnessctl", desc = "Controle brilho via CLI" },
   { name = "pamixer", desc = "Controle volume via CLI" },
   { name = "pavucontrol", desc = "Interface para controle de volume" },
+  { name = "wf-recorder", desc = "Gravador de tela" },
+  { name = "wlr-protocols", desc = "Wayland protocols" },
+  { name = "volumeicon", desc = "Controle de volume para system tray" },
   { name = "playerctl", desc = "Controle players MPRIS" },
   { name = "cliphist", desc = "Gerenciador clipboard histórico" },
   { name = "nwg-displays", desc = "Gerenciador monitores GTK3" },
+  { name = "nwg-look", desc = "Editor de configurações GTK" },
   { name = "nwg-shell", desc = "Utilitários barra/menu Wayland" },
   { name = "nwg-bar", desc = "Barra botões GTK3 Wlroots" },
   { name = "awww", desc = "Daemon para papéis de parede animados no Wayland" },
@@ -481,8 +515,6 @@ packages.HYPRLAND_EXTRA = {
   { name = "hyprwayland-scanner", desc = "Scanner protocolo Wayland" },
   { name = "hyprgraphics", desc = "Utilidades gráficas Hypr" },
   { name = "hyprland-guiutils", desc = "Utilitários GUI Hypr" },
-  { name = "xdg-desktop-portal-hyprland", desc = "xdg-desktop-portal para hyprland" },
-  { name = "hyprsysteminfo", desc = "Interface gráfica para exibir as informações do seu sistema" },
   { name = "ifuse", desc = "Sistema de arquivos FUSE para acessar o conteúdo de dispositivos iOS" },
   { name = "libimobiledevice", desc = "Biblioteca para comunicação com serviços em dispositivos iOS" },
   { name = "slurp", desc = "Selecione uma região no Wayland" },
@@ -493,10 +525,12 @@ packages.HYPRLAND_EXTRA = {
   { name = "waybar", desc = "Barra Wayland altamente personalizável." },
   { name = "rofi", desc = "Um alternador de janelas, iniciador de aplicativos e substituto do dmenu" },
   { name = "rofi-emoji", desc = "Um plugin Rofi para selecionar emojis" },
+  { name = "wofi", desc = "Launcher para menu iniciar" },
+  { name = "yazi", desc = "Gerenciador de arquivos de terminal escrito em Rust e baseado em I/O assíncrona" },
 }
 
 --- ============================================================================
---- 📦 PACOTES DO AUR (UNOFFICIAL)
+--- PACOTES DO AUR (UNOFFICIAL)
 --- ============================================================================
 
 packages.AUR = {
@@ -517,43 +551,7 @@ packages.AUR = {
 }
 
 --- ============================================================================
---- 🔗 FUNÇÕES AUXILIARES PARA BUSCAR PACOTES
---- ============================================================================
-
---- Retorna todos os pacotes de uma categoria em formato de array
-function packages.get_category(category_name)
-  if packages[category_name] then
-    return packages[category_name]
-  else
-    return {}
-  end
-end
-
---- Retorna nomes de pacotes sem descrição (para instalação)
-function packages.get_names(pkg_list)
-  local names = {}
-  for _, pkg in ipairs(pkg_list) do
-    table.insert(names, pkg.name)
-  end
-  return names
-end
-
---- Busca um pacote específico retornando sua descrição
-function packages.get_description(pkg_name)
-  for category_name, pkg_list in pairs(packages) do
-    if type(pkg_list) == "table" then
-      for _, pkg in ipairs(pkg_list) do
-        if type(pkg) == "table" and pkg.name == pkg_name then
-          return pkg.desc
-        end
-      end
-    end
-  end
-  return "Pacote não descrito"
-end
-
---- ============================================================================
---- 📤 EXPORTAÇÃO DO MÓDULO
+--- EXPORTAÇÃO DO MÓDULO
 --- ============================================================================
 
 return packages
