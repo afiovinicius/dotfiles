@@ -4,6 +4,11 @@
     "text": "Lock",
 }
 {
+    "label": "logout",
+    "action": "hyprctl dispatch exit 0",
+    "text": "Logout",
+}
+{
     "label": "suspend",
     "action": "systemctl suspend",
     "text": "Suspend",
@@ -18,9 +23,4 @@
     "label": "reboot",
     "action": "systemctl reboot",
     "text": "Reboot",
-}
-{
-    "label": "logout",
-    "action": "hyprctl dispatch exit 0",
-    "text": "Logout",
 }

@@ -1,6 +1,6 @@
-# 📚 Glossário Técnico & Análise do Projeto Afio Arch
+# 📚 Glossário Técnico & Análise do Projeto Orzhov Arch
 
-> **Análise do Sistema e Repositório:** Documento gerado com base na arquitetura de scripts de automação (`init-setup`, `setup.sh`, `configs-system.sh`, `configs-desktop.sh`, `ecosystem.sh`, `utils.sh` e instaladores de AMB) do projeto **Afio Arch** (dotfiles de Afio Vinícius).
+> **Análise do Sistema e Repositório:** Documento gerado com base na arquitetura de scripts de automação (`init-setup`, `setup.sh`, `configs-system.sh`, `configs-desktop.sh`, `ecosystem.sh`, `utils.sh` e instaladores de AMB) do projeto **Orzhov Arch** (dotfiles de Afio Vinícius).
 
 ---
 
@@ -223,7 +223,7 @@ O repositório foi construído de forma modular para automatizar a instalação,
 
 ## 🎯 Conclusão e Observações Finais
 
-O projeto **Afio Arch** representa uma arquitetura extremamente otimizada e coesa para o **Arch Linux**, combinando:
+O projeto **Orzhov Arch** representa uma arquitetura extremamente otimizada e coesa para o **Arch Linux**, combinando:
 
 1. **Desempenho máximo de Hardware**: Através de tuning no Kernel (`zram`, `swappiness`, `noatime`, `irqbalance`, `cpupower`, `ryzenadj`).
 2. **Ambiente Gráfico Moderno e Flexível**: Opções entre o ecossistema estático e rico em recursos (**KDE Plasma**) e o ecossistema dinâmico, minimalista e ultra fluido (**Hyprland / Wayland**).

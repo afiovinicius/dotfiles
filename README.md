@@ -1,9 +1,9 @@
-# Afio Arch
+# Orzhov Arch
 
 [![OS](https://img.shields.io/badge/OS-Arch-1793D1?style=flat-square&logo=archlinux&logoColor=white)](https://archlinux.org)
 [![Shell](https://img.shields.io/badge/Shell-zsh-a6e3a1?style=flat-square)](https://fishshell.com)
 
-Este é uma base de instalação simples e rápida do Arch Linux, acompanhado de ferramentas auxiliares para instalar e configurar uma interface gráfica, um conjunto abrangente de pacotes que cobre áreas como jogos, programação, design & 3D, IoT e a base para seu SO. Com esta abordagem, você pode realizar uma instalação rápida sem a necessidade de gastar muito tempo baixando ou configurando componentes iniciais com acesso rápido a uma variedade de ferramentas e recursos para facilitar o seu dia a dia.
+Orzhov é uma base de instalação simples e rápida do Arch Linux, acompanhado de ferramentas auxiliares para instalar e configurar uma interface gráfica, um conjunto abrangente de pacotes que cobre áreas como jogos, programação, design & 3D, IoT e a base para seu SO. Com esta abordagem, você pode realizar uma instalação rápida sem a necessidade de gastar muito tempo baixando ou configurando componentes iniciais com acesso rápido a uma variedade de ferramentas e recursos para facilitar o seu dia a dia.
 
 É importante destacar que a personalização da interface é mínima, para uma experiência mais completa e alinhada às suas preferências, recomendo pesquisar e estudar mais a fundo sobre a interface gráfica e o ecossistema que deseja montar dentro do seu sistema.
 
@@ -61,7 +61,7 @@ Para garantir a execução estável de todas as otimizações (ZRAM, Vulkan 1.3,
   <tbody>
     <tr>
       <td>Processador (CPU)</td>
-      <td>AMD Ryzen Série 5000 (Zen 2 ou superior) ou Intel Core de 11ª Geração ou superior.<br>_Obrigatório suporte ao conjunto de instruções x86-64-v3.</td>
+      <td>AMD Ryzen Série 5000 (Zen 2 ou superior) ou Intel Core de 11ª Geração ou superior. Obrigatório suporte ao conjunto de instruções x86-64-v3.</td>
     </tr>
     <tr>
       <td>Placa de Vídeo (GPU)</td>
@@ -284,7 +284,7 @@ Ao reiniciar o sistema, verifique se está conectado à internet e siga os passo
   Antes de rodar o comando certifique-se de estar em $HOME que é o diretório pessoal (pasta home) do usuário conectado, pode verificar isso usando **_pwd_**, você pode navegar para dentro dessa pasta usando **_cd $HOME_**.
 
   ```bash
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/afiovinicius/dotfiles/main/init-setup)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/afiovinicius/dotfiles/init-setup)"
   ```
 
   Este comando baixa o script diretamente do GitHub e o executa no seu terminal sem precisar salvá-lo em um arquivo antes.

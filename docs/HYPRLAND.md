@@ -1,6 +1,6 @@
-# Afio Arch - Hyprland
+# Orzhov Arch - Hyprland
 
-A integração do Afio Arch é ser um serviço de desktop omakase baseada no [Arch](https://archlinux.org/) e que usa o [Hyprland](https://hypr.land/), entregando ferramentas, funcionalidades leves e produtivas, criadas com o [Quickshell](https://quickshell.org/), seguindo alguns principios do [Omarchy](https://omarchy.org/manual/getting-started/), é um workstation personalizado e com uma camada de integração.
+Orzhov Arch é um ambiente de desktop omakase baseada no [Arch](https://archlinux.org/) e [Hyprland](https://hypr.land/), que fornece uma camada integrada de interface, ferramentas e serviços leves para produtividade, criadas com o [Quickshell](https://quickshell.org/), seguindo alguns principios do [Omarchy](https://omarchy.org/manual/getting-started/), é um workstation personalizado e com uma camada de integração.
 
 ---
 
@@ -15,6 +15,7 @@ A integração do Afio Arch é ser um serviço de desktop omakase baseada no [Ar
 - Motion-driven
 - GPU accelerated
 - Zero configuração desnecessária
+- Reutilizar antes de reinventar
 
 ---
 
@@ -81,6 +82,7 @@ A integração do Afio Arch é ser um serviço de desktop omakase baseada no [Ar
 
 ## Camada de Integraçãoes
 
+```txt
 ├── Bluetooth Center
 ├── Color Center
 ├── Display Center
@@ -96,6 +98,7 @@ A integração do Afio Arch é ser um serviço de desktop omakase baseada no [Ar
 ├── Phone
 ├── Media
 ├── Devices
+```
 
 ---
 
@@ -164,3 +167,14 @@ Power Center
 | Archive Manager   |  **NÃO**   | Ark                    |
 | Partition Manager |  **NÃO**   | existente              |
 | Password Manager  |  **NÃO**   | backend existente      |
+
+## Referências
+
+[Ambxst](https://github.com/Axenide/Ambxst)
+[DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
+[Noctalia](https://github.com/noctalia-dev/noctalia)
+[DotsHyprland](https://github.com/end-4/dots-hyprland)
+
+## Mudanças
+
+- Ver a possibilidade de mudar do SDDM para greetd [model](https://github.com/Neftedollar/quickgreet)

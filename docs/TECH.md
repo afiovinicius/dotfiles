@@ -1,6 +1,6 @@
 # 🚀 Tech Stack & Arquitetura Híbrida: Lua + Shell Script
 
-Este documento define a nova arquitetura para o projeto **Afio Arch**, migrando de uma base puramente Bash/Shell Script para um ecossistema híbrido utilizando **Lua** como motor lógico principal e **Shell Script (SH)** como interface de execução de baixo nível e bootstrap.
+Este documento define a nova arquitetura para o projeto **Orzhov Arch**, migrando de uma base puramente Bash/Shell Script para um ecossistema híbrido utilizando **Lua** como motor lógico principal e **Shell Script (SH)** como interface de execução de baixo nível e bootstrap.
 
 ---
 
@@ -161,7 +161,7 @@ local utils = require("utils.aux")
 local pkgs = require("core.packages")
 local ecosystem = require("services.ecosystem")
 
-utils.print_info("Iniciando a instalação do Afio Arch...")
+utils.print_info("Iniciando a instalação do Orzhov Arch...")
 
 -- 1. Instala Core
 utils.install_packages(pkgs.core)

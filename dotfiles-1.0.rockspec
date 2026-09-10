@@ -1,5 +1,5 @@
 package = "dotfiles"
-version = "dev-1"
+version = "1.0"
 source = {
    url = "git+https://github.com/afiovinicius/dotfiles.git"
 }

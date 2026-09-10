@@ -6,4 +6,4 @@ random_wallpaper=$(find "$wallpapers_dir" -maxdepth 1 -type f | shuf -n 1)
 
 awww img "$random_wallpaper" --transition-type any --transition-duration 2
 
-~/.config/afioarch/wallpaper_effects.sh
+~/.config/hypr/scripts/wallpaper_effects.sh

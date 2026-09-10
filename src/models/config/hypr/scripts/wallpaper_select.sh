@@ -14,4 +14,4 @@ image_fullname_path=$(find "$wallpapers_dir" -type f -name "$selected_wallpaper.
 
 awww img "$image_fullname_path" --transition-type any --transition-duration 2
 
-~/.config/afioarch/wallpaper_effects.sh
+~/.config/hypr/scripts/wallpaper_effects.sh

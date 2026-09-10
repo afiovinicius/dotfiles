@@ -1,5 +1,5 @@
 --- ============================================================================
---- AFIO ARCH - FILESYSTEM UTILITIES
+--- ORZHOV ARCH - FILESYSTEM UTILITIES
 --- ============================================================================
 --- Funções auxiliares para manipulação de arquivos e diretórios.
 --- Responsável por validação de paths, leitura, backup, escrita e criação
@@ -7,7 +7,6 @@
 --- ============================================================================
 
 local files = {}
-
 
 --- ============================================================================
 --- EXISTS
@@ -18,15 +17,14 @@ local files = {}
 --- @param path string: Caminho do arquivo ou diretório
 --- @return boolean: true se o path existir, false caso contrário
 function files.exists(path)
-  if type(path) ~= "string" or path == "" then
-    return false
-  end
+	if type(path) ~= "string" or path == "" then
+		return false
+	end
 
-  local result = os.execute('test -e "' .. path .. '" 2>/dev/null')
+	local result = os.execute('test -e "' .. path .. '" 2>/dev/null')
 
-  return result == true or result == 0
+	return result == true or result == 0
 end
-
 
 --- ============================================================================
 --- IS PATH
@@ -46,37 +44,36 @@ end
 --- @param type_path string: Tipo esperado ("file" ou "dir")
 --- @return boolean, string|nil: Resultado da validação e mensagem de erro
 function files.is_path(path, type_path)
-  if type(path) ~= "string" or path == "" then
-    return false, "Path inválido"
-  end
+	if type(path) ~= "string" or path == "" then
+		return false, "Path inválido"
+	end
 
-  if type_path ~= "file" and type_path ~= "dir" then
-    return false, 'Tipo inválido. Use "file" ou "dir"'
-  end
+	if type_path ~= "file" and type_path ~= "dir" then
+		return false, 'Tipo inválido. Use "file" ou "dir"'
+	end
 
-  local is_file = os.execute('test -f "' .. path .. '" 2>/dev/null')
+	local is_file = os.execute('test -f "' .. path .. '" 2>/dev/null')
 
-  if is_file == true or is_file == 0 then
-    if type_path == "file" then
-      return true, nil
-    end
+	if is_file == true or is_file == 0 then
+		if type_path == "file" then
+			return true, nil
+		end
 
-    return false, "O path existe, mas é um arquivo"
-  end
+		return false, "O path existe, mas é um arquivo"
+	end
 
-  local is_dir = os.execute('test -d "' .. path .. '" 2>/dev/null')
+	local is_dir = os.execute('test -d "' .. path .. '" 2>/dev/null')
 
-  if is_dir == true or is_dir == 0 then
-    if type_path == "dir" then
-      return true, nil
-    end
+	if is_dir == true or is_dir == 0 then
+		if type_path == "dir" then
+			return true, nil
+		end
 
-    return false, "O path existe, mas é um diretório"
-  end
+		return false, "O path existe, mas é um diretório"
+	end
 
-  return false, "O path não existe ou possui um tipo não suportado"
+	return false, "O path não existe ou possui um tipo não suportado"
 end
-
 
 --- ============================================================================
 --- READ
@@ -89,29 +86,28 @@ end
 --- @param path string: Caminho do arquivo a ser lido
 --- @return string|nil, string|nil: Conteúdo do arquivo ou mensagem de erro
 function files.read(path)
-  local valid, message = files.is_path(path, "file")
+	local valid, message = files.is_path(path, "file")
 
-  if not valid then
-    return nil, message
-  end
+	if not valid then
+		return nil, message
+	end
 
-  local file, error_message = io.open(path, "r")
+	local file, error_message = io.open(path, "r")
 
-  if not file then
-    return nil, "Não foi possível abrir o arquivo: " .. tostring(error_message)
-  end
+	if not file then
+		return nil, "Não foi possível abrir o arquivo: " .. tostring(error_message)
+	end
 
-  local content = file:read("*a")
+	local content = file:read("*a")
 
-  file:close()
+	file:close()
 
-  if not content then
-    return nil, "Não foi possível ler o arquivo: " .. path
-  end
+	if not content then
+		return nil, "Não foi possível ler o arquivo: " .. path
+	end
 
-  return content, nil
+	return content, nil
 end
-
 
 --- ============================================================================
 --- BACKUP
@@ -129,33 +125,28 @@ end
 --- @param sudo boolean: true para executar a operação com sudo
 --- @return boolean, string|nil: true em sucesso ou false e mensagem de erro
 function files.backup(path, sudo)
-  local valid, message = files.is_path(path, "file")
+	local valid, message = files.is_path(path, "file")
 
-  if not valid then
-    return false, message
-  end
+	if not valid then
+		return false, message
+	end
 
-  local backup_path = path .. ".bak"
+	local backup_path = path .. ".bak"
 
-  local command = string.format(
-    'cp "%s" "%s"',
-    path,
-    backup_path
-  )
+	local command = string.format('cp "%s" "%s"', path, backup_path)
 
-  if sudo == true then
-    command = "sudo " .. command
-  end
+	if sudo == true then
+		command = "sudo " .. command
+	end
 
-  local result = os.execute(command)
+	local result = os.execute(command)
 
-  if result == true or result == 0 then
-    return true, nil
-  end
+	if result == true or result == 0 then
+		return true, nil
+	end
 
-  return false, "Não foi possível criar backup de: " .. path
+	return false, "Não foi possível criar backup de: " .. path
 end
-
 
 --- ============================================================================
 --- WRITE
@@ -174,67 +165,58 @@ end
 --- @param sudo boolean: true para executar a substituição com sudo
 --- @return boolean, string|nil: true em sucesso ou false e mensagem de erro
 function files.write(path, content, sudo)
-  local valid, message = files.is_path(path, "file")
+	local valid, message = files.is_path(path, "file")
 
-  if not valid then
-    return false, message
-  end
+	if not valid then
+		return false, message
+	end
 
-  if type(content) ~= "string" then
-    return false, "O conteúdo precisa ser uma string"
-  end
+	if type(content) ~= "string" then
+		return false, "O conteúdo precisa ser uma string"
+	end
 
-  local backup_success, backup_error = files.backup(path, sudo)
+	local backup_success, backup_error = files.backup(path, sudo)
 
-  if not backup_success then
-    return false, "Falha ao criar backup: " .. backup_error
-  end
+	if not backup_success then
+		return false, "Falha ao criar backup: " .. backup_error
+	end
 
-  local temp_path = os.tmpname()
+	local temp_path = os.tmpname()
 
-  local temp_file, temp_error = io.open(temp_path, "w")
+	local temp_file, temp_error = io.open(temp_path, "w")
 
-  if not temp_file then
-    return false, "Não foi possível criar arquivo temporário: " .. tostring(temp_error)
-  end
+	if not temp_file then
+		return false, "Não foi possível criar arquivo temporário: " .. tostring(temp_error)
+	end
 
-  local write_success, write_error = temp_file:write(content)
+	local write_success, write_error = temp_file:write(content)
 
-  temp_file:close()
+	temp_file:close()
 
-  if not write_success then
-    os.remove(temp_path)
+	if not write_success then
+		os.remove(temp_path)
 
-    return false, "Não foi possível escrever arquivo temporário: " .. tostring(write_error)
-  end
+		return false, "Não foi possível escrever arquivo temporário: " .. tostring(write_error)
+	end
 
-  local command
+	local command
 
-  if sudo == true then
-    command = string.format(
-      'sudo mv "%s" "%s"',
-      temp_path,
-      path
-    )
-  else
-    command = string.format(
-      'mv "%s" "%s"',
-      temp_path,
-      path
-    )
-  end
+	if sudo == true then
+		command = string.format('sudo mv "%s" "%s"', temp_path, path)
+	else
+		command = string.format('mv "%s" "%s"', temp_path, path)
+	end
 
-  local result = os.execute(command)
+	local result = os.execute(command)
 
-  if result == true or result == 0 then
-    return true, nil
-  end
+	if result == true or result == 0 then
+		return true, nil
+	end
 
-  os.remove(temp_path)
+	os.remove(temp_path)
 
-  return false, "Não foi possível substituir o arquivo: " .. path
+	return false, "Não foi possível substituir o arquivo: " .. path
 end
-
 
 --- ============================================================================
 --- CREATE
@@ -259,92 +241,85 @@ end
 --- @param sudo boolean: true para executar a operação final com sudo
 --- @return boolean, string|nil: true em sucesso ou false e mensagem de erro
 function files.create(path, content, sudo)
-  if type(path) ~= "string" or path == "" then
-    return false, "Path inválido"
-  end
+	if type(path) ~= "string" or path == "" then
+		return false, "Path inválido"
+	end
 
-  if type(content) ~= "string" then
-    return false, "O conteúdo precisa ser uma string"
-  end
+	if type(content) ~= "string" then
+		return false, "O conteúdo precisa ser uma string"
+	end
 
-  if files.exists(path) then
-    local is_file = os.execute('test -f "' .. path .. '" 2>/dev/null')
+	if files.exists(path) then
+		local is_file = os.execute('test -f "' .. path .. '" 2>/dev/null')
 
-    if is_file == true or is_file == 0 then
-      return false, "O arquivo já existe: " .. path
-    end
+		if is_file == true or is_file == 0 then
+			return false, "O arquivo já existe: " .. path
+		end
 
-    local is_dir = os.execute('test -d "' .. path .. '" 2>/dev/null')
+		local is_dir = os.execute('test -d "' .. path .. '" 2>/dev/null')
 
-    if is_dir == true or is_dir == 0 then
-      return false, "O destino já existe e é um diretório: " .. path
-    end
+		if is_dir == true or is_dir == 0 then
+			return false, "O destino já existe e é um diretório: " .. path
+		end
 
-    return false, "O destino já existe: " .. path
-  end
+		return false, "O destino já existe: " .. path
+	end
 
-  local directory = path:match("^(.*)/[^/]+$")
+	local directory = path:match("^(.*)/[^/]+$")
 
-  if not directory or directory == "" then
-    directory = "."
-  end
+	if not directory or directory == "" then
+		directory = "."
+	end
 
-  local directory_exists = files.is_path(directory, "dir")
+	local directory_exists = files.is_path(directory, "dir")
 
-  if not directory_exists then
-    local command = string.format(
-      'mkdir -p "%s"',
-      directory
-    )
+	if not directory_exists then
+		local command = string.format('mkdir -p "%s"', directory)
 
-    if sudo == true then
-      command = "sudo " .. command
-    end
+		if sudo == true then
+			command = "sudo " .. command
+		end
 
-    local result = os.execute(command)
+		local result = os.execute(command)
 
-    if not (result == true or result == 0) then
-      return false, "Não foi possível criar o diretório: " .. directory
-    end
-  end
+		if not (result == true or result == 0) then
+			return false, "Não foi possível criar o diretório: " .. directory
+		end
+	end
 
-  local temp_path = os.tmpname()
+	local temp_path = os.tmpname()
 
-  local temp_file, temp_error = io.open(temp_path, "w")
+	local temp_file, temp_error = io.open(temp_path, "w")
 
-  if not temp_file then
-    return false, "Não foi possível criar arquivo temporário: " .. tostring(temp_error)
-  end
+	if not temp_file then
+		return false, "Não foi possível criar arquivo temporário: " .. tostring(temp_error)
+	end
 
-  local write_success, write_error = temp_file:write(content)
+	local write_success, write_error = temp_file:write(content)
 
-  temp_file:close()
+	temp_file:close()
 
-  if not write_success then
-    os.remove(temp_path)
+	if not write_success then
+		os.remove(temp_path)
 
-    return false, "Não foi possível escrever arquivo temporário: " .. tostring(write_error)
-  end
+		return false, "Não foi possível escrever arquivo temporário: " .. tostring(write_error)
+	end
 
-  local command = string.format(
-    'mv "%s" "%s"',
-    temp_path,
-    path
-  )
+	local command = string.format('mv "%s" "%s"', temp_path, path)
 
-  if sudo == true then
-    command = "sudo " .. command
-  end
+	if sudo == true then
+		command = "sudo " .. command
+	end
 
-  local result = os.execute(command)
+	local result = os.execute(command)
 
-  if result == true or result == 0 then
-    return true, nil
-  end
+	if result == true or result == 0 then
+		return true, nil
+	end
 
-  os.remove(temp_path)
+	os.remove(temp_path)
 
-  return false, "Não foi possível mover o arquivo para: " .. path
+	return false, "Não foi possível mover o arquivo para: " .. path
 end
 
 --- ============================================================================
@@ -361,36 +336,40 @@ end
 --- @param sudo boolean: true para executar as operações com sudo
 --- @return boolean, string|nil: true em sucesso ou false e mensagem de erro
 function files.copy_dir(src, dest, sudo)
-  local valid_src, msg = files.is_path(src, "dir")
+	local valid_src, msg = files.is_path(src, "dir")
 
-  if not valid_src then
-    return false, "Diretório de origem inválido: " .. tostring(msg)
-  end
+	if not valid_src then
+		return false, "Diretório de origem inválido: " .. tostring(msg)
+	end
 
-  -- Se o destino já existe, remove para evitar arquivos fantasmas residuais
-  if files.exists(dest) then
-    local rm_cmd = string.format('rm -rf "%s"', dest)
-    if sudo == true then rm_cmd = "sudo " .. rm_cmd end
-    os.execute(rm_cmd)
-  end
+	-- Se o destino já existe, remove para evitar arquivos fantasmas residuais
+	if files.exists(dest) then
+		local rm_cmd = string.format('rm -rf "%s"', dest)
+		if sudo == true then
+			rm_cmd = "sudo " .. rm_cmd
+		end
+		os.execute(rm_cmd)
+	end
 
-  -- Garante que o diretório pai (/.config) exista
-  local parent_dest = dest:match("^(.*)/[^/]+$")
-  if parent_dest then
-    os.execute('mkdir -p "' .. parent_dest .. '"')
-  end
+	-- Garante que o diretório pai (/.config) exista
+	local parent_dest = dest:match("^(.*)/[^/]+$")
+	if parent_dest then
+		os.execute('mkdir -p "' .. parent_dest .. '"')
+	end
 
-  -- Realiza a cópia recursiva
-  local cp_cmd = string.format('cp -r "%s" "%s"', src, dest)
-  if sudo == true then cp_cmd = "sudo " .. cp_cmd end
+	-- Realiza a cópia recursiva
+	local cp_cmd = string.format('cp -r "%s" "%s"', src, dest)
+	if sudo == true then
+		cp_cmd = "sudo " .. cp_cmd
+	end
 
-  local result = os.execute(cp_cmd)
+	local result = os.execute(cp_cmd)
 
-  if result == true or result == 0 then
-    return true, nil
-  end
+	if result == true or result == 0 then
+		return true, nil
+	end
 
-  return false, "Não foi possível copiar o diretório para: " .. dest
+	return false, "Não foi possível copiar o diretório para: " .. dest
 end
 
 --- ============================================================================
