@@ -29,7 +29,10 @@ packages.DEFAULT = {
 	{ name = "sof-firmware", desc = "Firmware para dispositivos de áudio (Sound Open Firmware)" },
 	{ name = "networkmanager", desc = "Gerenciador de conexões de rede" },
 	{ name = "network-manager-applet", desc = "Applet visual para NetworkManager" },
+	{ name = "wireless_tools", desc = "Ferramentas que permitem manipular wifi" },
 	{ name = "btrfs-progs", desc = "Ferramentas para gerenciar Btrfs" },
+	{ name = "btrfs-assistant", desc = "GUI para gerenciar snapshots Btrfs" },
+	{ name = "btrfsmaintenance", desc = "Assistente de automaçao para Btrfs" },
 	{ name = "efibootmgr", desc = "Ferramenta para gerenciar entradas UEFI/EFI" },
 	{ name = "net-tools", desc = "Ferramentas de rede (ifconfig, netstat)" },
 	{ name = "mesa", desc = "Implementação de gráficos 3D open-source" },
@@ -306,7 +309,6 @@ packages.ENGINEERING = {
 	{ name = "luarocks", desc = "Gerenciador de pacotes Lua" },
 	{ name = "biome", desc = "Linter/formatador de JS/TS/JSON" },
 	{ name = "ghidra", desc = "Suite de engenharia reversa (NSA)" },
-	{ name = "opencode", desc = "CLI de IA open-source" },
 }
 
 --- ============================================================================
@@ -318,6 +320,16 @@ packages.MOBILE = {
 	{ name = "scrcpy", desc = "Exiba e controle seu dispositivo Android" },
 	{ name = "waydroid", desc = "Android completo em um sistema Linux comum" },
 }
+
+--- ============================================================================
+--- IA
+--- ============================================================================
+
+packages.IA = {
+	{ name = "opencode", desc = "CLI de IA open-source" },
+	{ name = "ollama", desc = "Servidor de modelos de IA" },
+}
+
 
 --- ============================================================================
 --- GAMING & CAMADAS DE TRADUÇÃO

@@ -471,7 +471,7 @@ end
 -- @return table: Retorna uma tabela com chave e tabela
 aux.groups_categories = {
 	["Pacotes Padrões"] = { "DEFAULT", "MULTIMEDIA_BASE", "AUDIO", "FONTS" },
-	["Desenvolvimento"] = { "DEVELOPMENT", "DATABASE", "PHP", "PYTHON", "NODE", "RUST", "QT", "ENGINEERING" },
+	["Desenvolvimento"] = { "DEVELOPMENT", "DATABASE", "IA", "PHP", "PYTHON", "NODE", "RUST", "QT", "ENGINEERING" },
 	["Games"] = { "GAMING", "GAMING_LIBS" },
 	["Multimídia"] = { "MEDIA_TOOLS" },
 	["Internet & Comunicação"] = { "INTERNET" },

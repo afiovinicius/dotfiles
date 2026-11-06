@@ -10,13 +10,10 @@ docker system prune -a --volumes -f
 echo -e "\n2️⃣  Limpando cache de pacotes antigos do pacman (mantendo a versão mais recente)..."
 sudo paccache -rk1
 
-echo -e "\n3️⃣  Removendo pacotes órfãos não mais requeridos..."
-sudo pacman -Rns $(pacman -Qqdt)
-
-echo -e "\n4️⃣  Limpando logs do systemd journal (mantendo apenas 3 dias)..."
+echo -e "\n3️⃣  Limpando logs do systemd journal (mantendo apenas 3 dias)..."
 sudo journalctl --vacuum-time=3d
 
-echo -e "\n5️⃣  Limpando caches de ferramentas de linha de comando..."
+echo -e "\n4️⃣  Limpando caches de ferramentas de linha de comando..."
 
 if command -v npm &> /dev/null; then
     echo "→ npm"
@@ -28,15 +25,18 @@ if command -v pip &> /dev/null; then
     pip cache purge
 fi
 
-if command -v cargo &> /dev/null; then
-   echo "→ cargo"
-   cargo cache -a
-fi
+# if command -v cargo &> /dev/null; then
+#    echo "→ cargo"
+#    cargo cache -a
+# fi
 
-echo -e "\n6️⃣  Limpando caches do sistema de páginas, inode e dentry."
+echo -e "\n5️⃣  Limpando caches do sistema de páginas, inode e dentry."
 sudo sh -c "echo 3 > /proc/sys/vm/drop_caches" && free -h
 
 echo -e "\n Diagnóstico: Maiores diretórios no sistema (top 10)..."
 sudo du -sh /* 2>/dev/null | sort -hr | head -10
+
+echo -e "\n6️⃣  Removendo pacotes órfãos não mais requeridos..."
+sudo pacman -Rns $(pacman -Qqdt)
 
 echo -e "\n✅ Limpeza concluída com sucesso!"
