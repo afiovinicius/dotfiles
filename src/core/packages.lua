@@ -590,6 +590,7 @@ packages.AUR = {
 	{ name = "claude-desktop-bin", desc = "Cliente Claude com MCP" },
 	{ name = "ryzenadj", desc = "Ajuste TDP/TCTL AMD Ryzen" },
 	{ name = "wlogout", desc = "Logout menu para wayland" },
+	{ naem = "jopdf", desc = "Editor de PDF gratuito e rápido para Linux" },
 }
 
 --- ============================================================================
